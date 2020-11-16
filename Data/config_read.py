@@ -19,6 +19,8 @@ class config:
         self.sentiment_db_name = self.get_value("sentiment_db_name")
         self.daily_schedule_run_time = self.get_value("daily_schedule_run_time")
         self.weekly_schedule_run_time = self.get_value("weekly_schedule_run_time")
+        self.email_username = self.get_value("email_username")
+        self.email_password = self.get_value("email_password")
 
     def get_value(self, str):
         file = open("config.txt")

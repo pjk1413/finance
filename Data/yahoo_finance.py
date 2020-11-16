@@ -62,8 +62,8 @@ class yfinance:
         period_dict = self.get_period()
         for period in period_dict:
             print(f"{period}: {len(period_dict[period])}")
-        x = len(period_dict)
-        utility.printProgressBar(0, x, prefix='Progress:', suffix='Complete', length=50)
+        l = len(period_dict)
+        utility.printProgressBar(0, l, prefix='Progress:', suffix='Complete', length=50)
         for x, period in enumerate(period_dict):
             ticker_list = ""
 
@@ -77,16 +77,14 @@ class yfinance:
 
             data = yf.download(tickers=ticker_list, threads=False, group_by="ticker", period=period)
 
-            l = len(period_dict[period])
-            utility.printProgressBar(0, l, prefix='Progress:', suffix='Complete', length=50)
-            for z, symbol in enumerate(period_dict[period]):
+            for symbol in period_dict[period]:
 
                 stock_obj = None
                 try:
                     stock_obj = data.get(symbol, None)
                     if stock_obj == None:
                         continue
-                except err:
+                except:
                     print(f"#### Error with symbol: {symbol}  ####")
                     continue
                 for header in stock_obj.columns.values:
@@ -124,7 +122,6 @@ class yfinance:
                                     self.conn.commit()
                             except connect.errors as err:
                                 print(err)
-            utility.printProgressBar(z + 1, l, prefix='Progress:', suffix='Complete', length=50)
         utility.printProgressBar(x + 1, l, prefix='Progress:', suffix='Complete', length=50)
 
 
@@ -184,7 +181,6 @@ class yfinance:
             temp_data = cursor.fetchall()
         except connect.errors as err:
             print(err)
-        # temp_data = ['VRCA', 'AAPL', 'SG', 'SFT', 'PBTS', 'IMAC', 'HOLI', 'AACG']
         print("Finding Ideal Period Length for each Symbol...")
 
         l = len(temp_data)

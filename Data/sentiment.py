@@ -3,15 +3,18 @@
 from urllib.error import HTTPError
 from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 import os
 import pandas as pd
-# NLTK VADER for sentiment analysis
-# from nltk.sentiment.vader import SentimentIntensityAnalyzer
+import Interface.utility as utility
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from Database.crud_func import crud
 from Data.config_read import config as get_values
 from Database.database import database
 import mysql.connector as connect
+import math
+import time
 
 class sentiment:
     def __init__(self):
@@ -19,8 +22,30 @@ class sentiment:
         self.conn = database().conn_sentiment
         self.news_tables = {}
         # self.tickers = ['VRCA', 'AAPL', 'SG', 'SFT', 'PBTS', 'IMAC', 'HOLI', 'AACG']
+        # https://chromedriver.chromium.org/downloads
         self.tickers = crud().get_list_of_stocks()
         self.finwiz_url = config.finwiz_url
+        self.time = time
+
+
+    def search_result_analyzer(self):
+        driver = webdriver.Chrome()
+        driver.get("https://www.google.com/finance")
+        # assert "Python" in driver.title
+        search = driver.find_element_by_id("search-bar")
+        search.send_keys("GOOG")
+        search.send_keys(Keys.RETURN)
+
+        results = driver.find_elements_by_class_name("yY3Lee")
+
+        for result in results:
+            print("RESULT")
+            text = result.find_element_by_class_name("AoCdqe")
+            print(text.get_attribute("innerText"))
+
+        # assert "No results found." not in driver.page_source
+        # driver.close()
+
 
 
     def sentiment_analysis(self, parsed_news):
@@ -50,12 +75,16 @@ class sentiment:
 
     # https://towardsdatascience.com/sentiment-analysis-of-stocks-from-financial-news-using-python-82ebdcefb638
     def gather_headlines(self):
-        for ticker in self.tickers:
+
+        l = len(self.tickers)
+        utility.printProgressBar(0, l, prefix='Progress:', suffix='Complete', length=50)
+        for z, ticker in enumerate(self.tickers):
             response = None
             data = None
-            url = self.finwiz_url + "=" + ticker
+            url = self.finwiz_url + "=" + ticker[0]
 
             try:
+
                 req = Request(url=url,headers={'user-agent': 'my-app/0.0.1'})
                 response = urlopen(req)
                 # Read the contents of the file into 'html'
@@ -88,11 +117,14 @@ class sentiment:
                     # Append ticker, date, time and headline as a list to the 'parsed_news' list
                     parsed_news.append([ticker, date, time, text, link])
 
-            except HTTPError:
-                print(HTTPError)
+
+            except:
+                self.time.sleep(1)
+
 
             data = self.sentiment_analysis(parsed_news)
             self.insert_data(data)
+            utility.printProgressBar(z + 1, l, prefix='Progress:', suffix='Complete', length=50)
 
     def insert_data(self, data):
         # Organize data, make sure it will fit into table
@@ -100,20 +132,20 @@ class sentiment:
             date = data.iloc[i].get('date')
             time = data.iloc[i].get('time')
             ticker = data.iloc[i].get('ticker')
-            headline = data.iloc[i].get('headline')
+            headline = str(data.iloc[i].get('headline')).replace("'", "\'")[:255]
             link = data.iloc[i].get('link')
-            neg = data.iloc[i].get('neg')
-            neu = data.iloc[i].get('neu')
-            pos = data.iloc[i].get('pos')
-            compound = data.iloc[i].get('compound')
+            neg = self.flt_num(data.iloc[i].get('neg'))
+            neu = self.flt_num(data.iloc[i].get('neu'))
+            pos = self.flt_num(data.iloc[i].get('pos'))
+            compound = self.flt_num(data.iloc[i].get('compound'))
 
             exists = self.check_if_exists(date, time, ticker, headline, link)
-            values = (values, headline, link, neg, neu, pos, compound)
+            values = (date, headline, link, neg, neu, pos, compound)
             if exists:
                 continue
             else:
                 try:
-                    sql_statement = f"INSERT INTO {ticker}_SENT (dt, headline, url, neg, neu, pos, compound) " \
+                    sql_statement = f"INSERT INTO {ticker[0]}_SENT (dt, headline, url, sent_neg, sent_neutral, sent_pos, sent_compound) " \
                                     "VALUES (%s, %s, %s, %s, %s, %s, %s)"
                     cursor = self.conn.cursor()
                     cursor.execute(sql_statement, values)
@@ -124,7 +156,7 @@ class sentiment:
 
     def check_if_exists(self, date, time, ticker, headline, link):
         # returns 1 if exists, 0 if not
-        sql_statement = f"SELECT IF( EXISTS( SELECT * FROM {ticker}_SENT WHERE dt = '{date}' AND headline = '{headline}' AND url = '{link}'), 1, 0)";
+        sql_statement = f"SELECT IF( EXISTS( SELECT * FROM {ticker[0]}_SENT WHERE dt = '{date}' AND url = '{link}'), 1, 0)";
 
         cursor = self.conn.cursor(buffered=True)
         data = None
@@ -138,3 +170,10 @@ class sentiment:
             return True
         else:
             return False
+
+
+    def flt_num(self, number):
+        if math.isnan(number):
+            return float('NaN')
+        else:
+            return round(float(number),3)

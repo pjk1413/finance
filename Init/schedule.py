@@ -22,13 +22,14 @@ class schedule_assist:
     def daily_schedule_function_group(self):
         yfinance.yfinance().update_data()
         sentiment.sentiment().gather_headlines()
+    #     Send email with all of the updates and errors that occured
 
 
     def weekly_schedule_function_group(self):
-        utility.utility().clean_stock_data()
         build_list.stock_list.list_to_db()
         build_table.build_tables.build_tables()
-
+        utility.utility().clean_stock_data()
+    # Send email with all of the updates and errors that occurred
 
     def run_schedule(self):
         run = True

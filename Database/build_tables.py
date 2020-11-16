@@ -85,7 +85,7 @@ class build_tables:
         for i, stock in enumerate(stock_list):
             sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS {stock[0]}_SENT (id INT AUTO_INCREMENT PRIMARY KEY, " \
                                       f"dt DATETIME, headline VARCHAR(255), sent_neg FLOAT(8,4), sent_neutral FLOAT(8,4), " \
-                                      f"sent_pos FLOAT(8,4), url VARCHAR(255));"
+                                      f"sent_pos FLOAT(8,4), sent_compound FLOAT(8,4), url VARCHAR(255));"
             conn = connect.connect(
                 host=self.host,
                 user=self.root_user,
