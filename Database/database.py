@@ -1,7 +1,7 @@
 import mysql.connector as connect
 from Data.config_read import config as get_values
 import datetime
-import mysql
+import mysql.connector.errors as error
 
 
 class database:
@@ -15,30 +15,46 @@ class database:
         self.host = config.db_host
         self.stock_db = config.stock_db_name
         self.sentiment_db = config.sentiment_db_name
-        self.conn_finance = connect.connect(
-            host=f"{self.host}",
-            user=f"{self.user}",
-            password=f"{self.password}",
-            database=f"{self.stock_db}"
-        )
-        self.conn_sentiment = connect.connect(
-            host=f"{self.host}",
-            user=f"{self.user}",
-            password=f"{self.password}",
-            database=f"{self.sentiment_db}"
-        )
+        self.utility_db = config.utility_db_name
+        try:
+            self.conn_finance = connect.connect(
+                host=f"{self.host}",
+                user=f"{self.user}",
+                password=f"{self.password}",
+                database=f"{self.stock_db}"
+            )
+            self.conn_sentiment = connect.connect(
+                host=f"{self.host}",
+                user=f"{self.user}",
+                password=f"{self.password}",
+                database=f"{self.sentiment_db}"
+            )
+            self.conn_utility = connect.connect(
+                host=f"{self.host}",
+                user=f"{self.user}",
+                password=f"{self.password}",
+                database=f"{self.utility_db}"
+            )
+        except error:
+            print("Error connecting to database")
+
+
+    def insert_status_log(self, statement):
+        sql_statement = "INSERT INTO STATUS_TBL (dt, "
 
 
     def insert_error_log(self, statement):
-        sql_statement = "INSERT INTO ERROR_LOG (dt, description) " \
+        sql_statement = "INSERT INTO error_log (dt, description) " \
                         "VALUES (%s, %s)"
         values = (datetime.datetime.now(), statement)
 
-        cursor = self.conn_finance.cursor()
         try:
+            cursor = self.conn_utility.cursor()
             cursor.execute(sql_statement, values)
+            self.conn_utility.commit()
             return True
-        except:
+        except error:
+            print(error)
             return False
 
 

@@ -1,6 +1,9 @@
 
 from os import system, name
+import Data.yahoo_finance as yfinance
 
+def restart_yfinance():
+    yfinance.yfinance().update_data()
 
 def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█', printEnd = "\r"):
     """

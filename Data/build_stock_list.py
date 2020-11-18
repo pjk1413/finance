@@ -93,8 +93,9 @@ class stock_list:
             sql_statement = f"INSERT INTO {self.stock_table_list_name} (ticker, description, sector, industry, market) " \
                         "VALUES (%s, %s, %s, %s, %s)"
             values = (data_dict["ticker"], data_dict["description"], data_dict["sector"], data_dict["industry"], "nasdaq")
-            cursor = self.conn.cursor()
+
             try:
+                cursor = self.conn.cursor()
                 cursor.execute(sql_statement, values)
                 self.conn.commit()
                 utility.printProgressBar(i + 1, l, prefix='Progress:', suffix='Complete', length=50)

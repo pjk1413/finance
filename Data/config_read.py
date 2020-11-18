@@ -21,6 +21,8 @@ class config:
         self.weekly_schedule_run_time = self.get_value("weekly_schedule_run_time")
         self.email_username = self.get_value("email_username")
         self.email_password = self.get_value("email_password")
+        self.utility_db_name = self.get_value("utility_db_name")
+        self.predict_db_name = self.get_value("predict_db_name")
 
     def get_value(self, str):
         file = open("config.txt")

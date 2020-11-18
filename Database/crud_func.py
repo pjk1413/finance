@@ -39,9 +39,9 @@ class crud:
 
     def get_list_of_stocks(self):
         sql_statement = f"SELECT ticker FROM STOCK_LIST_TBL;"
-        cursor = self.conn.cursor()
 
         try:
+            cursor = self.conn.cursor()
             cursor.execute(sql_statement)
             stock_list = cursor.fetchall()
             return stock_list

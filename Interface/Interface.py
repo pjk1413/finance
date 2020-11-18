@@ -7,6 +7,8 @@ import Init.schedule as schedule
 import Database.build_tables as tables
 from Data.config_read import config as get_values
 import Database.email_updates as email
+from Database.database import database
+import Database.clean as clean
 
 class view:
     def __init__(self):
@@ -21,11 +23,11 @@ class view:
         main_menu_item_list = [
             FunctionItem("Update all Data", self.gather_data),
             FunctionItem("Build All Tables", tables.build_tables().build_tables),
+            FunctionItem("Clean All Data", self.clean_data),
             FunctionItem("Hard Reset", self.confirmation_menu, [self.reset_program]),
             FunctionItem("Edit Configuration File", self.edit_config, menu=main_menu),
             FunctionItem("View Schedule", self.view_schedule),
-            FunctionItem("Run Schedule", self.run_schedule),
-            FunctionItem("Send Email", self.send_email)
+            FunctionItem("Run Schedule", self.run_schedule)
         ]
 
         for item in main_menu_item_list:
@@ -34,8 +36,8 @@ class view:
         main_menu.show()
 
 
-    def send_email(self):
-        email.send_email().daily_update_email()
+    def clean_data(self):
+        pass
 
 
     def confirmation_menu(self, function):
@@ -53,11 +55,12 @@ class view:
 
 
     def gather_data(self):
-        # sentiment.sentiment().search_result_analyzer()
-        # print("Beginning update of all stock data tables...")
-        # yfinance.yfinance().update_data()
+        print("Beginning update of all stock data tables...")
+        yfinance.yfinance().update_data()
+        database().insert_status_log("UPDATED ALL STOCK DATA TABLES")
         print("Beginning update of all sentiment data tables...")
         sentiment.sentiment().gather_headlines()
+        database().insert_status_log("UPDATED ALL SENTIMENT DATA TABLES")
 
 
     def run_schedule(self):

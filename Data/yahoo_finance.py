@@ -31,11 +31,17 @@ class yfinance:
 
     def get_date_range(self):
         sql_statement = f"SELECT dt FROM {self.symbol}_TBL ORDER BY dt DESC LIMIT 1;"
-        cursor = self.sql.conn_finance.cursor()
-        cursor.execute(sql_statement)
+        recent_date = None
+
+        try:
+            cursor = self.sql.conn_finance.cursor()
+            cursor.execute(sql_statement)
+            recent_date = cursor.fetchone()
+        except:
+            database().insert_error_log(f"ERROR GETTING DATE RANGE FOR YFINANCE {self.symbol}")
 
         current_date = datetime.datetime.now()
-        recent_date = cursor.fetchone()  # Grab most recent date on the table and compare with current date
+          # Grab most recent date on the table and compare with current date
         if recent_date == None:
             return 'max'
         else:
@@ -70,12 +76,16 @@ class yfinance:
             if len(period_dict[period]) == 0:
                 continue
 
-
             print(f"Beginning download for {period}")
             for ticker in period_dict[period]:
                 ticker_list += ticker + " "
 
-            data = yf.download(tickers=ticker_list, threads=False, group_by="ticker", period=period)
+            try:
+                data = yf.download(tickers=ticker_list, threads=False, group_by="ticker", period=period)
+            except:
+                database().insert_error_log("YFINANCE IS DOWN OR NOT WORKING")
+                utility.restart_yfinance()
+                return
 
             for symbol in period_dict[period]:
 
@@ -85,7 +95,7 @@ class yfinance:
                     if stock_obj == None:
                         continue
                 except:
-                    print(f"#### Error with symbol: {symbol}  ####")
+                    database().insert_error_log(f"ERROR FINDING TECHNICAL DATA FOR {symbol}")
                     continue
                 for header in stock_obj.columns.values:
 
@@ -105,8 +115,9 @@ class yfinance:
                             if values == False:
                                 continue
 
-                            cursor = self.conn.cursor()
+
                             try:
+                                cursor = self.conn.cursor()
                                 result = self.check_if_exists(symbol, date, adj_close, volume, open, close)
                                 if result:
                                     sql_statement = f"UPDATE {symbol}_STK " \
@@ -121,7 +132,7 @@ class yfinance:
                                     cursor.execute(sql_statement, values)
                                     self.conn.commit()
                             except connect.errors as err:
-                                print(err)
+                                database().insert_error_log(f"ERROR INSERTING/UPDATING TECHNICAL DATA INTO DATABASE FOR {symbol} AT {date}")
         utility.printProgressBar(x + 1, l, prefix='Progress:', suffix='Complete', length=50)
 
 
@@ -129,13 +140,14 @@ class yfinance:
         # returns 1 if exists, 0 if not
         sql_statement = f"SELECT IF( EXISTS( SELECT * FROM {symbol}_STK WHERE dt = '{date}'), 1, 0)";
 
-        cursor = self.conn.cursor(buffered=True)
+
         data = None
         try:
+            cursor = self.conn.cursor(buffered=True)
             cursor.execute(sql_statement)
             exists = cursor.fetchone()
         except connect.errors as error:
-            print(error)
+            database().insert_error_log(f"ERROR CHECKING TECHNICAL DATA FOR DATABASE FOR {symbol} AT {date}")
 
         if exists[0] == 1:
             return True
@@ -164,7 +176,6 @@ class yfinance:
 
     def get_period(self):
         sql_statement = f"SELECT ticker FROM finance_quant.{self.stock_table_list_name};"
-        cursor = self.conn.cursor()
 
         period_dict = {
             "1d" : [],
@@ -176,11 +187,11 @@ class yfinance:
         }
 
         try:
+            cursor = self.conn.cursor()
             cursor.execute(sql_statement)
-            # fake_data = cursor.fetchall()
             temp_data = cursor.fetchall()
         except connect.errors as err:
-            print(err)
+            database().insert_error_log(f"ERROR FETCHING ALL SYMBOLS FOR PERIOD LENGTH SEARCH")
         print("Finding Ideal Period Length for each Symbol...")
 
         l = len(temp_data)
@@ -190,20 +201,23 @@ class yfinance:
             if ticker[0] == "ZXYZ.A":
                 continue
             sql_statement = f"SELECT dt FROM {ticker[0]}_STK ORDER BY dt DESC LIMIT 1;"
-            cursor = self.conn.cursor()
+            recent_date = None
             try:
+                cursor = self.conn.cursor()
                 cursor.execute(sql_statement)
+                recent_date = cursor.fetchone()
             except connect.errors as error:
-                print(error)
+                database().insert_error_log(f"ERROR FINDING IDEAL PERIOD FOR TECHNICAL DATA INTO DATABASE FOR {ticker[0]}")
 
             current_date = datetime.datetime.now()
-            recent_date = cursor.fetchone()
 
             if recent_date == None or recent_date == "":
                 period_dict["1y"].append(ticker[0])
             else:
                 difference = current_date - recent_date[0]
-                if difference.days < 2:
+                if difference.days < 1:
+                    continue
+                elif difference.days < 2:
                     period_dict["1d"].append(ticker[0])
                 elif difference.days < 6:
                     period_dict["5d"].append(ticker[0])

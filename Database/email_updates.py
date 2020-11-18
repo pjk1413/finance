@@ -1,5 +1,7 @@
 import smtplib, ssl
 import Data.config_read as configuration
+import Database.clean as clean
+import datetime
 
 
 class send_email:
@@ -8,19 +10,89 @@ class send_email:
         self.username = config.email_username
         self.password = config.email_password
 
-    def daily_update_email(self):
-        port = 465  # For SSL
 
-        print(self.username)
-        print(self.password)
+    def warning_email(self):
+        port = 465  # For SSL
 
         context = ssl.create_default_context()
         sender_email = self.username
         receiver_email = "pjk1413@gmail.com"
-        message = """\
-        Subject: Hi there
 
-        This message is sent from Python."""
+        warnings = ""
+
+        list_of_stock_status = ""
+
+        for stock in clean.clean().get_stock_table_status_behind():
+            list_of_stock_status += stock + "\n"
+
+        message = f"""
+                Subject: Database Status {datetime.datetime.now()}
+                Database Status as of {datetime.datetime.now()}
+
+                {warnings}
+
+                List of all stock tables that are currently behind or not up to date:
+                {list_of_stock_status}
+                """
+
+        with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
+            server.login(self.username, self.password)
+            server.sendmail(sender_email, receiver_email, message)
+
+
+    def weekly_update_email(self):
+        port = 465  # For SSL
+
+        context = ssl.create_default_context()
+        sender_email = self.username
+        receiver_email = "pjk1413@gmail.com"
+
+        warnings = ""
+
+        list_of_stock_status = ""
+
+        for stock in clean.clean().get_stock_table_status_behind():
+            list_of_stock_status += stock + "\n"
+
+        message = f"""
+                Subject: Database Status {datetime.datetime.now()}
+                Database Status as of {datetime.datetime.now()}
+
+                {warnings}
+
+                List of all stock tables that are currently behind or not up to date:
+                {list_of_stock_status}
+                """
+
+        with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
+            server.login(self.username, self.password)
+            server.sendmail(sender_email, receiver_email, message)
+
+
+    def daily_update_email(self):
+        port = 465  # For SSL
+
+        context = ssl.create_default_context()
+        sender_email = self.username
+        receiver_email = "pjk1413@gmail.com"
+
+        warnings = ""
+
+        list_of_stock_status = ""
+
+        for stock in clean.clean().get_stock_table_status_behind():
+            list_of_stock_status += stock + "\n"
+
+
+        message = f"""
+        Subject: Database Status {datetime.datetime.now()}
+        Database Status as of {datetime.datetime.now()}
+        
+        {warnings}
+        
+        List of all stock tables that are currently behind or not up to date:
+        {list_of_stock_status}
+        """
 
         with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
             server.login(self.username, self.password)

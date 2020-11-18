@@ -10,6 +10,7 @@ import pandas as pd
 import Interface.utility as utility
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from Database.crud_func import crud
+from Database.database import database
 from Data.config_read import config as get_values
 from Database.database import database
 import mysql.connector as connect
@@ -119,6 +120,7 @@ class sentiment:
 
 
             except:
+                database().insert_error_log(f"ERROR GATHERING HEADLINES FOR {ticker} AT {date}")
                 self.time.sleep(1)
 
 
@@ -132,8 +134,8 @@ class sentiment:
             date = data.iloc[i].get('date')
             time = data.iloc[i].get('time')
             ticker = data.iloc[i].get('ticker')
-            headline = str(data.iloc[i].get('headline')).replace("'", "\'")[:255]
-            link = data.iloc[i].get('link')
+            headline = str(data.iloc[i].get('headline')).replace("'", "\'")[:500]
+            link = str(data.iloc[i].get('link'))[:350]
             neg = self.flt_num(data.iloc[i].get('neg'))
             neu = self.flt_num(data.iloc[i].get('neu'))
             pos = self.flt_num(data.iloc[i].get('pos'))
@@ -151,20 +153,19 @@ class sentiment:
                     cursor.execute(sql_statement, values)
                     self.conn.commit()
                 except connect.errors as err:
-                    print(err)
+                    database().insert_error_log(f"ERROR INSERTING VALUES INTO DATABASE FOR {ticker[0]} AT {date}")
 
 
     def check_if_exists(self, date, time, ticker, headline, link):
         # returns 1 if exists, 0 if not
         sql_statement = f"SELECT IF( EXISTS( SELECT * FROM {ticker[0]}_SENT WHERE dt = '{date}' AND url = '{link}'), 1, 0)";
 
-        cursor = self.conn.cursor(buffered=True)
-        data = None
         try:
+            cursor = self.conn.cursor(buffered=True)
             cursor.execute(sql_statement)
             exists = cursor.fetchone()
         except connect.errors as error:
-            print(error)
+            database().insert_error_log(f"ERROR CHECKING VALUES INTO DATABASE FOR {ticker[0]} AT {date}")
 
         if exists[0] == 1:
             return True

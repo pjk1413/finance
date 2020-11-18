@@ -35,9 +35,12 @@ class connect_mysql:
                 print(err)
 
     def execute_sql_statement_select(self, sql):
-        mysql = self.conn.cursor()
-        mysql.execute(sql)
-        return mysql.fetchall()
+        try:
+            mysql = self.conn.cursor()
+            mysql.execute(sql)
+            return mysql.fetchall()
+        except:
+            pass
 
     # Checks whether or not the entry already exists
     def execute_sql_entry_check(self, sql):
