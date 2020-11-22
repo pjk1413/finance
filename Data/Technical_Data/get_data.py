@@ -1,5 +1,5 @@
 # https://api.tiingo.com/products/end-of-day-stock-price-data
-# https://www.alphavantage.co/premium/ - free api key: KHWQTGUQ4KFEIFBM
+# https://www.alphavantage.co/premium/
 # https://www.quandl.com/tools/api
 # https://eodhistoricaldata.com/
 # https://iexcloud.io/core-data/
