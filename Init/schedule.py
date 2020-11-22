@@ -3,7 +3,7 @@ import keyboard
 from halo import Halo
 
 import Data.config_read as config
-import Data.yahoo_finance as yfinance
+import Data.Technical_Data.yahoo_finance as yfinance
 import Data.sentiment as sentiment
 import Data.utility as utility
 import Data.build_stock_list as build_list

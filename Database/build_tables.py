@@ -5,7 +5,7 @@ import Data.build_stock_list as stk_list
 import mysql.connector as connect
 import Data.config_read as config
 import Interface.utility as utility
-import mysql.connector.errors as errors
+import mysql.connector.errors as mysqlError
 import time
 
 
@@ -22,28 +22,64 @@ class build_tables:
         self.stock_db_name = con.stock_db_name
 
     def build_tables(self):
-        print("Error Log table created successfully") if self.create_error_log_table() else print("FAILED CREATING ERROR LOG TABLE")
-        print("Status table created successfully") if self.create_status_table() else print("FAILED CREATING STATUS TABLE")
-        print("Stock List table created successfully") if self.create_stock_list_table() else print("FAILED CREATING STOCK LIST TABLE")
-        print("Stock List loaded into the database") if stk_list.stock_list().list_to_db() else print("FAILED LOADING STOCK LIST INTO DATABASE")
-        print("All Stock tables created successfully") if self.create_all_stock_tables() else print("FAILED CREATING ALL STOCK TABLES")
-        print("All Sentiment tables created successfully") if self.create_all_sentiment_tables() else print("FAILED CREATING ALL SENTIMENT TABLES")
-        print("""
-        ------------------
-        ALL TABLES CREATED
-        ------------------
-        """)
+        result = True
+
+        if self.create_error_log_table():
+            print("Error Log table created successfully")
+        else:
+            print("FAILED CREATING ERROR LOG TABLE")
+            result = False
+        if self.create_status_table():
+            print("Status table created successfully")
+        else:
+            print("FAILED CREATING STATUS TABLE")
+            result = False
+        if self.create_stock_list_table():
+            print("Stock List table created successfully")
+        else:
+            print("FAILED CREATING STOCK LIST TABLE")
+            result = False
+        if stk_list.stock_list().list_to_db():
+            print("Stock List loaded into the database\n")
+        else:
+            print("FAILED LOADING STOCK LIST INTO DATABASE")
+            result = False
+
+        if result == False:
+            print("ERROR IN TABLE CREATION - DID NOT COMPLETE BUILD TABLE TASKS")
+            database().insert_error_log("ERROR IN TABLE BUILD - DID NOT COMPLETE BUILD TABLE TASKS")
+            input("PRESS")
+            return
+        else:
+            if self.create_all_stock_tables():
+                print("All Stock tables created successfully")
+            else:
+                print("FAILED CREATING ALL STOCK TABLES")
+                result = False
+            if self.create_all_sentiment_tables():
+                print("All Sentiment tables created successfully")
+            else:
+                print("FAILED CREATING ALL SENTIMENT TABLES")
+                result = False
+
+        if result == True:
+            print("""
+            ------------------
+            ALL TABLES CREATED
+            ------------------
+            """)
 
 
     def create_status_table(self):
         sql_statement = "CREATE TABLE IF NOT EXISTS STATUS_TBL (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                        "dt DATETIME, statement VARCHAR(255);"
+                        "dt DATETIME, statement VARCHAR(255));"
         try:
             cursor = self.conn_utility.cursor()
             cursor.execute(sql_statement)
             return True
-        except:
-            print("ERROR CREATING ERROR LOG TABLE - NO ERROR LOG TABLE EXISTS")
+        except mysqlError:
+            print("ERROR CREATING STATUS TABLE - NO STATUS TABLE EXISTS")
+            print(mysqlError)
             return False
 
 
@@ -55,8 +91,9 @@ class build_tables:
             cursor = self.conn_utility.cursor()
             cursor.execute(sql_statement)
             return True
-        except:
+        except mysqlError:
             print("ERROR CREATING ERROR LOG TABLE - NO ERROR LOG TABLE EXISTS")
+            print(mysqlError)
             return False
 
 

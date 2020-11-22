@@ -22,31 +22,11 @@ class sentiment:
         config = get_values()
         self.conn = database().conn_sentiment
         self.news_tables = {}
-        # self.tickers = ['VRCA', 'AAPL', 'SG', 'SFT', 'PBTS', 'IMAC', 'HOLI', 'AACG']
+        self.tickers = [('VRCA',), ('AAPL',), ('SG',), ('SFT',), ('PBTS',), ('IMAC',), ('HOLI',), ('AACG',)]
         # https://chromedriver.chromium.org/downloads
-        self.tickers = crud().get_list_of_stocks()
+        # self.tickers = crud().get_list_of_stocks()
         self.finwiz_url = config.finwiz_url
         self.time = time
-
-
-    def search_result_analyzer(self):
-        driver = webdriver.Chrome()
-        driver.get("https://www.google.com/finance")
-        # assert "Python" in driver.title
-        search = driver.find_element_by_id("search-bar")
-        search.send_keys("GOOG")
-        search.send_keys(Keys.RETURN)
-
-        results = driver.find_elements_by_class_name("yY3Lee")
-
-        for result in results:
-            print("RESULT")
-            text = result.find_element_by_class_name("AoCdqe")
-            print(text.get_attribute("innerText"))
-
-        # assert "No results found." not in driver.page_source
-        # driver.close()
-
 
 
     def sentiment_analysis(self, parsed_news):
@@ -85,7 +65,6 @@ class sentiment:
             url = self.finwiz_url + "=" + ticker[0]
 
             try:
-
                 req = Request(url=url,headers={'user-agent': 'my-app/0.0.1'})
                 response = urlopen(req)
                 # Read the contents of the file into 'html'
@@ -102,14 +81,14 @@ class sentiment:
                     # read the text from each tr tag into text
                     # get text from a only
                     text = x.a.get_text()
+
                     link = x.a['href']
                     # splite text in the td tag into a list
                     date_scrape = x.td.text.split()
-                    # if the length of 'date_scrape' is 1, load 'time' as the only element
 
+                    # if the length of 'date_scrape' is 1, load 'time' as the only element
                     if len(date_scrape) == 1:
                         time = date_scrape[0]
-
                     # else load 'date' as the 1st element and 'time' as the second
                     else:
                         date = date_scrape[0]
@@ -117,16 +96,14 @@ class sentiment:
 
                     # Append ticker, date, time and headline as a list to the 'parsed_news' list
                     parsed_news.append([ticker, date, time, text, link])
-
-
             except:
                 database().insert_error_log(f"ERROR GATHERING HEADLINES FOR {ticker} AT {date}")
                 self.time.sleep(1)
 
-
             data = self.sentiment_analysis(parsed_news)
             self.insert_data(data)
             utility.printProgressBar(z + 1, l, prefix='Progress:', suffix='Complete', length=50)
+
 
     def insert_data(self, data):
         # Organize data, make sure it will fit into table
@@ -158,7 +135,7 @@ class sentiment:
 
     def check_if_exists(self, date, time, ticker, headline, link):
         # returns 1 if exists, 0 if not
-        sql_statement = f"SELECT IF( EXISTS( SELECT * FROM {ticker[0]}_SENT WHERE dt = '{date}' AND url = '{link}'), 1, 0)";
+        sql_statement = f"SELECT IF( EXISTS( SELECT * FROM {ticker[0]}_SENT WHERE dt = '{date}' AND url = '{link}'), 1, 0);";
 
         try:
             cursor = self.conn.cursor(buffered=True)
@@ -166,7 +143,7 @@ class sentiment:
             exists = cursor.fetchone()
         except connect.errors as error:
             database().insert_error_log(f"ERROR CHECKING VALUES INTO DATABASE FOR {ticker[0]} AT {date}")
-
+        print(exists)
         if exists[0] == 1:
             return True
         else:

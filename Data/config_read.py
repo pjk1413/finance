@@ -23,6 +23,7 @@ class config:
         self.email_password = self.get_value("email_password")
         self.utility_db_name = self.get_value("utility_db_name")
         self.predict_db_name = self.get_value("predict_db_name")
+        self.alpha_vantage_api_key = self.get_value("alpha_vantage_api_key")
 
     def get_value(self, str):
         file = open("config.txt")

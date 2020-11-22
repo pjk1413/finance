@@ -40,8 +40,17 @@ class database:
 
 
     def insert_status_log(self, statement):
-        sql_statement = "INSERT INTO STATUS_TBL (dt, "
-
+        sql_statement = "INSERT INTO STATUS_TBL (dt, statement) " \
+                        "VALUES (%s, %s)"
+        values = (datetime.datetime.now(), statement)
+        try:
+            cursor = self.conn_utility.cursor()
+            cursor.execute(sql_statement, values)
+            self.conn_utility.commit()
+            return True
+        except error:
+            print(error)
+            return False
 
     def insert_error_log(self, statement):
         sql_statement = "INSERT INTO error_log (dt, description) " \

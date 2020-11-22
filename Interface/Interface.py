@@ -1,14 +1,12 @@
 from consolemenu import *
 from consolemenu.items import *
 import os
-import Data.yahoo_finance as yfinance
-import Data.sentiment as sentiment
+import Data.Technical_Data.yahoo_finance as yfinance
 import Init.schedule as schedule
 import Database.build_tables as tables
 from Data.config_read import config as get_values
-import Database.email_updates as email
 from Database.database import database
-import Database.clean as clean
+
 
 class view:
     def __init__(self):
@@ -58,9 +56,9 @@ class view:
         print("Beginning update of all stock data tables...")
         yfinance.yfinance().update_data()
         database().insert_status_log("UPDATED ALL STOCK DATA TABLES")
-        print("Beginning update of all sentiment data tables...")
-        sentiment.sentiment().gather_headlines()
-        database().insert_status_log("UPDATED ALL SENTIMENT DATA TABLES")
+        # print("Beginning update of all sentiment data tables...")
+        # sentiment.sentiment().gather_headlines()
+        # database().insert_status_log("UPDATED ALL SENTIMENT DATA TABLES")
 
 
     def run_schedule(self):

@@ -1,9 +1,7 @@
 import Database.build_database as build
-import Database.build_tables as tables
-from Data.config_read import config as get_values
 import Data.build_stock_list as fill
 import Interface.Interface as interface
-import Data.yahoo_finance as yfinance
+import Data.Technical_Data.yahoo_finance as yfinance
 import Data.sentiment as sentiment
 ##########################################
 # Runs at start up

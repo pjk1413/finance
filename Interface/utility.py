@@ -1,6 +1,6 @@
 
 from os import system, name
-import Data.yahoo_finance as yfinance
+import Data.Technical_Data.yahoo_finance as yfinance
 
 def restart_yfinance():
     yfinance.yfinance().update_data()
