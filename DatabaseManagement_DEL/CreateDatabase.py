@@ -1,8 +1,8 @@
-from DatabaseManagement.Connection import connect_mysql as mysql
-from DataLoad.DataYahoo import candlestick
+from DatabaseManagement_DEL.Connection import connect_mysql as mysql
+from DataLoad_DEL.DataYahoo import candlestick
 import math
 from datetime import datetime
-import DatabaseManagement.DateHandle as dh
+import DatabaseManagement_DEL.DateHandle as dh
 
 
 # Function for starting from scratch

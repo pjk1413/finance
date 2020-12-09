@@ -5,10 +5,9 @@ from halo import Halo
 import Data.config_read as config
 import Data.Technical_Data.yahoo_finance as yfinance
 import Data.sentiment as sentiment
-import Data.utility as utility
-import Data.build_stock_list as build_list
+import Data.stock_list as build_list
 import Database.build_tables as build_table
-import Database.email_updates as email
+import Database.Service.email_service as email
 
 class schedule_assist:
     def __init__(self):
@@ -26,7 +25,7 @@ class schedule_assist:
     def weekly_schedule_function_group(self):
         build_list.stock_list.list_to_db()
         build_table.build_tables.build_tables()
-        utility.utility().clean_stock_data()
+        # utility.utility().clean_stock_data()
         email.send_email().weekly_update_email()
 
 

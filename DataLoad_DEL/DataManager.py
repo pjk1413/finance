@@ -1,4 +1,4 @@
-from DatabaseManagement.MySQLData import mysql_db
+from DatabaseManagement_DEL.MySQLData import mysql_db
 import datetime
 
 

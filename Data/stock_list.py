@@ -18,8 +18,7 @@ import Interface.utility as utility
 class stock_list:
     def __init__(self):
         config = get_values()
-        self.conn = database().conn_finance
-        self.error = database()
+        self.conn_stock = database().conn_stock
         self.tables = tables.build_tables()
         self.directory = config.file_location
         self.stock_table_list_name = "STOCK_LIST_TBL"
@@ -29,6 +28,18 @@ class stock_list:
             "amex.csv" : config.amex_listed_url
         }
 
+    def get_list_of_stocks(self):
+        sql_statement = f"SELECT ticker, sector, industry, market FROM STOCK_LIST_TBL;"
+
+        try:
+            cursor = self.conn_stock.cursor()
+            cursor.execute(sql_statement)
+            stock_list = cursor.fetchall()
+            return [('AAPL',), ('GOOG',), ('SPCE',), ('AMZN',), ('MSFT',), ('PYPL',), ('GM',), ('NFLX',)]
+            # return stock_list
+        except:
+            database.insert_error_log("ERROR FETCHING STOCK_LIST_TBL: " + self.conn_stock.get_warnings)
+            print("ERROR : Could not fetch list of stock symbols")
 
     def refresh_directory(self):
         try:
@@ -100,8 +111,8 @@ class stock_list:
                 self.conn.commit()
                 utility.printProgressBar(i + 1, l, prefix='Progress:', suffix='Complete', length=50)
             except connect.errors as err:
-                return False
                 print(err)
+                return False
         return True
 
 

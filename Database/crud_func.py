@@ -9,8 +9,6 @@ class crud:
         self.conn = database().conn_finance
         self.stock_table_list_name = "STOCK_LIST_TBL"
 
-
-
     def check_stock_entry_in_list(self, ticker):
         sql_statement = f"SELECT ticker, sector, industry FROM STOCK_LIST_TBL WHERE ticker='{ticker}';"
         cursor = self.conn.cursor()

@@ -1,8 +1,9 @@
-import Database.build_database as build
-import Data.build_stock_list as fill
+import Database.build_database as database_build
+import Data.stock_list as fill
 import Interface.Interface as interface
 import Data.Technical_Data.yahoo_finance as yfinance
 import Data.sentiment as sentiment
+import Database.build_tables as tables_build
 ##########################################
 # Runs at start up
 # Gets the status of the databases, brings up a menu and gives the user choices as to what to do
@@ -14,11 +15,17 @@ class init:
         pass
 
     def startup(self):
-        build.build_database().build_database()
+        database_build.build_database().build_database()
         self.get_database_status()
         self.get_list_status()
-        # tables.build_tables().build_tables()
-        # self.update_all_tables()
+        tables_build.build_tables().build_tables()
+        answer = input("""
+        Would you like to...
+        1. Update Data Tables
+        2. Skip 
+        """)
+        if answer == "1" or answer.lower() == "update data tables":
+            self.update_all_tables()
         interface.view().start_up()
 
 

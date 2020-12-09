@@ -1,73 +1,55 @@
 from Database.database import database
-from Database.crud_func import crud
 from Database.build_database import build_database as build
-import Data.build_stock_list as stk_list
-import mysql.connector as connect
+import Data.stock_list as stk_list
 import Data.config_read as config
+from Database.database import insert_error_log
 import Interface.utility as utility
+from Database.utility import list_of_schema
+import Data.Technical_Data.Model.stock_model as stock_model
 import mysql.connector.errors as mysqlError
-import time
+import sys
 
 
 class build_tables:
     def __init__(self):
         con = config.config()
         self.conn_utility = database().conn_utility
-        self.conn = database().conn_finance
-        self.crud = crud()
+        self.conn_stock = database().conn_stock
+        self.conn_sentiment = database().conn_sentiment
         self.host = con.db_host
         self.root_user = con.db_user_root
         self.root_pass = con.db_pass_root
+        self.db_user = con.db_user
+        self.db_pass = con.db_pass
         self.sentiment_db_name = con.sentiment_db_name
         self.stock_db_name = con.stock_db_name
 
     def build_tables(self):
         result = True
-
-        if self.create_error_log_table():
-            print("Error Log table created successfully")
-        else:
-            print("FAILED CREATING ERROR LOG TABLE")
-            result = False
-        if self.create_status_table():
-            print("Status table created successfully")
-        else:
-            print("FAILED CREATING STATUS TABLE")
-            result = False
-        if self.create_stock_list_table():
-            print("Stock List table created successfully")
-        else:
-            print("FAILED CREATING STOCK LIST TABLE")
-            result = False
-        if stk_list.stock_list().list_to_db():
-            print("Stock List loaded into the database\n")
-        else:
-            print("FAILED LOADING STOCK LIST INTO DATABASE")
-            result = False
+        result = self.create_error_log_table()
+        result = self.create_status_table()
+        result = self.create_stock_list_table()
+        result = self.create_reference_table()
+        result = self.create_all_sentiment_tables()
+        result = stk_list.stock_list().list_to_db()
 
         if result == False:
-            print("ERROR IN TABLE CREATION - DID NOT COMPLETE BUILD TABLE TASKS")
-            database().insert_error_log("ERROR IN TABLE BUILD - DID NOT COMPLETE BUILD TABLE TASKS")
-            input("PRESS")
-            return
+            print("ERROR : Unable to create all tables.  Application will exit...")
+            insert_error_log("ERROR IN TABLE BUILD - DID NOT COMPLETE BUILD TABLE TASKS - PROGRAM TERMINATED")
+            input("PRESS ANY KEY TO EXIT PROGRAM")
+            sys.exit(0)
         else:
-            if self.create_all_stock_tables():
-                print("All Stock tables created successfully")
-            else:
-                print("FAILED CREATING ALL STOCK TABLES")
-                result = False
-            if self.create_all_sentiment_tables():
-                print("All Sentiment tables created successfully")
-            else:
-                print("FAILED CREATING ALL SENTIMENT TABLES")
-                result = False
+            result = self.create_all_stock_tables()
+            result = self.create_all_sentiment_tables()
+            result = self.grant_access_to_stock_tables()
 
         if result == True:
+            print("FINISHED : All tables setup/startup completed successfully")
+        else:
             print("""
-            ------------------
-            ALL TABLES CREATED
-            ------------------
-            """)
+                    ERROR : Error during setup/startup of table build \n \n
+                    Application will now exit...""")
+            sys.exit(0)
 
 
     def create_status_table(self):
@@ -76,10 +58,10 @@ class build_tables:
         try:
             cursor = self.conn_utility.cursor()
             cursor.execute(sql_statement)
+            print("Status table created successfully")
             return True
         except mysqlError:
-            print("ERROR CREATING STATUS TABLE - NO STATUS TABLE EXISTS")
-            print(mysqlError)
+            print(f"ERROR : Could not create Status table \n SQL Error: {mysqlError}")
             return False
 
 
@@ -90,103 +72,105 @@ class build_tables:
         try:
             cursor = self.conn_utility.cursor()
             cursor.execute(sql_statement)
+            print("Error Log table created successfully")
             return True
         except mysqlError:
-            print("ERROR CREATING ERROR LOG TABLE - NO ERROR LOG TABLE EXISTS")
-            print(mysqlError)
+            print(f"ERROR : Could not create Error Log table \n SQL Error : {mysqlError}")
             return False
 
 
     def create_stock_list_table(self):
         table_name = "STOCK_LIST_TBL"
-
         sql_statement = f"CREATE TABLE IF NOT EXISTS {table_name} (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                        f"ticker VARCHAR(8), description VARCHAR(255), sector VARCHAR(60), industry VARCHAR(60), market VARCHAR(6));"
-
+                        f"ticker VARCHAR(10), description VARCHAR(500), sector VARCHAR(60), industry VARCHAR(60), market VARCHAR(10));"
         try:
-            cursor = self.conn.cursor()
+            cursor = self.conn_stock.cursor()
             cursor.execute(sql_statement)
+            print("Stock List table created successfully")
             return True
-        except:
-            db = database()
-            db.insert_error_log(f"ERROR CREATING TABLE [{table_name}]: {self.conn.get_warnings}")
+        except mysqlError:
+            insert_error_log(f"ERROR : Could not create Stock List table \n SQL Error : {mysqlError}")
             return False
 
 
+    def create_reference_table(self):
+        result = True
+        sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS DATA_REFERENCE (id INT AUTO_INCREMENT PRIMARY KEY, " \
+                                  f"ticker VARCHAR(10), SENTIMENT_ID INT);"
+        try:
+            cursor = self.conn_utility.cursor()
+            cursor.execute(sql_statement_sentiment)
+        except mysqlError:
+            insert_error_log(f"ERROR CREATING TABLE REFERENCE: {mysqlError}")
+            print(f"ERROR CREATING TABLE REFERENCE: {mysqlError}")
+            result = False
+        return result
+
     def grant_access_to_stock_tables(self):
-        build().grant_all_user()
+        try:
+            for db in list_of_schema():
+                build().grant_all_user(db)
+            return True
+        except:
+            return False
 
 
     def create_all_sentiment_tables(self):
         result = True
-        stock_list = self.crud.get_list_of_stocks()
-
-        l = len(stock_list)
-        utility.printProgressBar(0, l, prefix='Progress:', suffix='Complete', length=50)
-        for i, stock in enumerate(stock_list):
-            sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS {stock[0]}_SENT (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                                      f"dt DATETIME, headline VARCHAR(500), sent_neg FLOAT(8,4), sent_neutral FLOAT(8,4), " \
-                                      f"sent_pos FLOAT(8,4), sent_compound FLOAT(8,4), url VARCHAR(350));"
+        if not self.create_sentiment_table():
+            result = False
+        return result
 
 
-            try:
-                conn = connect.connect(
-                    host=self.host,
-                    user=self.root_user,
-                    password=self.root_pass,
-                    database=self.sentiment_db_name
-                )
-                cursor = conn.cursor()
-                cursor.execute(sql_statement_sentiment)
-                conn.close()
-                utility.printProgressBar(i + 1, l, prefix='Progress:', suffix='Complete', length=50)
-            except errors:
-                db = database()
-                db.insert_error_log(f"ERROR CREATING TABLE PRICES {stock}: {self.conn.get_warnings}")
-                print(f"ERROR CREATING TABLE SENTIMENT {stock[0]}: {conn.get_warnings}")
-                result = False
-
+    def create_sentiment_table(self):
+        result = True
+        sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS SENTIMENT_DATA (id INT AUTO_INCREMENT PRIMARY KEY, " \
+                                  f"crawlDate DATETIME, publishedDate VARCHAR(500), tickers VARCHAR(500), tags VARCHAR(500), " \
+                                  f"description TEXT, source VARCHAR(255), title VARCHAR(500), url VARCHAR(500), " \
+                                  f"sent_neg FLOAT(8,4), sent_neutral FLOAT(8,4), sent_pos FLOAT(8,4), sent_compound FLOAT(8,4));"
+        try:
+            cursor = self.conn_sentiment.cursor()
+            cursor.execute(sql_statement_sentiment)
+        except mysqlError:
+            insert_error_log(f"ERROR CREATING TABLE SENTIMENT: {mysqlError}")
+            print(f"ERROR CREATING TABLE SENTIMENT: {mysqlError}")
+            result = False
         return result
 
 
     def create_predict_tables(self):
         # Create all tables with all variables needed to model data appropriatley
         result = True
-
         sql_statement_linear_regression = "CREATE TABLE IF NOT EXISTS linear_regression (id INT AUTO_INCREMENT PRIMARY KEY, " \
                                           "dt DATETIME, stock VARCHAR(10), description VARCHAR(100), b FLOAT(8,4), x FLOAT(8,4)"
 
 
     def create_all_stock_tables(self):
         result = True
-        stock_list = self.crud.get_list_of_stocks()
+        stock_list = stk_list.stock_list().get_list_of_stocks()
+        list_of_indicators = stock_model.stock_daily().get_model_indicators()
 
         l = len(stock_list)
         utility.printProgressBar(0, l, prefix='Progress:', suffix='Complete', length=50)
         for i, stock in enumerate(stock_list):
 
-            # Look into data types for indicator values and certain metrics that could be added in
             sql_statement = f"CREATE TABLE IF NOT EXISTS {stock[0]}_STK (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                            f"dt DATETIME, open FLOAT(8,4), close FLOAT(8,4), high FLOAT(8,4), low FLOAT(8,4), adj_close FLOAT(8,4), " \
-                            f"volume INT, split VARCHAR(25), dividend FLOAT(8,4), ma FLOAT(8,4), ema FLOAT(8,4), stoch FLOAT(8,4), " \
-                            f"macd FLOAT(8,4), boll_bands FLOAT(8,4), rsi FLOAT(8,4), fibo_retrac FLOAT(8,4), ichimoku FLOAT(8,4), " \
-                            f"std_dev FLOAT(8,4), avg_dir_idx FLOAT(8,4));"
+                            f"dt DATETIME, open FLOAT(10,4), close FLOAT(10,4), high FLOAT(10,4), low FLOAT(10,4), adj_close FLOAT(10,4), " \
+                            f"volume INT, split VARCHAR(25), dividend FLOAT(10,4), "
 
+            for ind in list_of_indicators:
+                sql_statement += f"{ind} VARCHAR(50)"
+                if not list_of_indicators.index(ind) == len(list_of_indicators) - 1:
+                    sql_statement += ", "
+                else:
+                    sql_statement += ");"
             try:
-                conn = connect.connect(
-                    host=self.host,
-                    user=self.root_user,
-                    password=self.root_pass,
-                    database=self.stock_db_name
-                )
-                cursor = self.conn.cursor()
+                cursor = self.conn_stock.cursor()
                 cursor.execute(sql_statement)
-                conn.close()
                 utility.printProgressBar(i + 1, l, prefix='Progress:', suffix='Complete', length=50)
-            except:
-                db = database()
-                db.insert_error_log(f"ERROR CREATING TABLE PRICES {stock}: {self.conn.get_warnings}")
-                print(f"ERROR CREATING TABLE {stock}: {self.conn.get_warnings}")
+            except mysqlError:
+                insert_error_log(f"ERROR CREATING TABLE PRICES {stock}: {self.conn.get_warnings}")
+                print(f"ERROR : Could not create table for {stock} \n SQL Error : {mysqlError}")
                 result = False
         return result
 

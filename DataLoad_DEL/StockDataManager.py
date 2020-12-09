@@ -6,7 +6,7 @@ import StockAPI.Alphavantage_API as alphaV
 import StockAPI.Morningstar_API as morning_star
 import StockAPI.Zirra_API as zirra_api
 
-from DatabaseManagement.MySQLData import mysql_db
+from DatabaseManagement_DEL.MySQLData import mysql_db
 
 # All Dates are in UTC/UNIX format
 

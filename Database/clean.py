@@ -6,6 +6,10 @@ class clean:
         pass
 
 
+    def remove_duplicate_entries(self):
+        pass
+
+
     def clean_stock_table_data(self):
         pass
 

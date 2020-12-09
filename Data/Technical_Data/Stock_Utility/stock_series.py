@@ -1,4 +1,6 @@
-import Data.Technical_Data.Stock_Utility.stock_model as stock
+
+
+
 
 
 class stock_series:

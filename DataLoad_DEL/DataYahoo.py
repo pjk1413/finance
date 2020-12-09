@@ -1,5 +1,5 @@
 import yfinance as yf
-from DatabaseManagement.Connection import connect_mysql as mysql
+from DatabaseManagement_DEL.Connection import connect_mysql as mysql
 # https://aroussi.com/post/python-yahoo-finance
 
 
