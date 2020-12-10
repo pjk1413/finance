@@ -3,10 +3,12 @@ from Database.build_database import build_database as build
 import Data.stock_list as stk_list
 import Data.config_read as config
 from Database.database import insert_error_log
+from Database.database import insert_status_log
 import Interface.utility as utility
 from Database.utility import list_of_schema
 import Data.Technical_Data.Model.stock_model as stock_model
 import mysql.connector.errors as mysqlError
+from Database.database import insert_log_statement
 import sys
 
 
@@ -29,8 +31,8 @@ class build_tables:
         result = self.create_error_log_table()
         result = self.create_status_table()
         result = self.create_stock_list_table()
-        result = self.create_reference_table()
         result = self.create_all_sentiment_tables()
+        result = self.prepare_dow_table()
         result = stk_list.stock_list().list_to_db()
 
         if result == False:
@@ -44,8 +46,12 @@ class build_tables:
             result = self.grant_access_to_stock_tables()
 
         if result == True:
+            insert_status_log("FINISHED : All tables setup/startup completed successfully")
             print("FINISHED : All tables setup/startup completed successfully")
         else:
+            insert_log_statement("""
+                    ERROR : Error during setup/startup of table build \n \n
+                    Application will now exit...""")
             print("""
                     ERROR : Error during setup/startup of table build \n \n
                     Application will now exit...""")
@@ -58,10 +64,11 @@ class build_tables:
         try:
             cursor = self.conn_utility.cursor()
             cursor.execute(sql_statement)
-            print("Status table created successfully")
+
+            insert_log_statement("Status table created successfully")
             return True
         except mysqlError:
-            print(f"ERROR : Could not create Status table \n SQL Error: {mysqlError}")
+            insert_log_statement(f"ERROR : Could not create Status table \n SQL Error: {mysqlError}")
             return False
 
 
@@ -72,10 +79,10 @@ class build_tables:
         try:
             cursor = self.conn_utility.cursor()
             cursor.execute(sql_statement)
-            print("Error Log table created successfully")
+            insert_log_statement("Error Log table created successfully")
             return True
         except mysqlError:
-            print(f"ERROR : Could not create Error Log table \n SQL Error : {mysqlError}")
+            insert_log_statement(f"ERROR : Could not create Error Log table \n SQL Error : {mysqlError}")
             return False
 
 
@@ -86,23 +93,22 @@ class build_tables:
         try:
             cursor = self.conn_stock.cursor()
             cursor.execute(sql_statement)
-            print("Stock List table created successfully")
+            insert_log_statement("Stock List table created successfully")
             return True
         except mysqlError:
             insert_error_log(f"ERROR : Could not create Stock List table \n SQL Error : {mysqlError}")
             return False
 
 
-    def create_reference_table(self):
+    def create_sentiment_reference_table(self):
         result = True
-        sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS DATA_REFERENCE (id INT AUTO_INCREMENT PRIMARY KEY, " \
+        sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS SENTIMENT_DATA_REFERENCE (id INT AUTO_INCREMENT PRIMARY KEY, " \
                                   f"ticker VARCHAR(10), SENTIMENT_ID INT);"
         try:
-            cursor = self.conn_utility.cursor()
+            cursor = self.conn_sentiment.cursor()
             cursor.execute(sql_statement_sentiment)
         except mysqlError:
             insert_error_log(f"ERROR CREATING TABLE REFERENCE: {mysqlError}")
-            print(f"ERROR CREATING TABLE REFERENCE: {mysqlError}")
             result = False
         return result
 
@@ -119,13 +125,15 @@ class build_tables:
         result = True
         if not self.create_sentiment_table():
             result = False
+        if not self.create_sentiment_reference_table():
+            result = False
         return result
 
 
     def create_sentiment_table(self):
         result = True
         sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS SENTIMENT_DATA (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                                  f"crawlDate DATETIME, publishedDate VARCHAR(500), tickers VARCHAR(500), tags VARCHAR(500), " \
+                                  f"crawlDate DATETIME, publishedDate VARCHAR(500), tickers VARCHAR(1000), tags VARCHAR(1000), " \
                                   f"description TEXT, source VARCHAR(255), title VARCHAR(500), url VARCHAR(500), " \
                                   f"sent_neg FLOAT(8,4), sent_neutral FLOAT(8,4), sent_pos FLOAT(8,4), sent_compound FLOAT(8,4));"
         try:
@@ -133,7 +141,6 @@ class build_tables:
             cursor.execute(sql_statement_sentiment)
         except mysqlError:
             insert_error_log(f"ERROR CREATING TABLE SENTIMENT: {mysqlError}")
-            print(f"ERROR CREATING TABLE SENTIMENT: {mysqlError}")
             result = False
         return result
 
@@ -170,7 +177,23 @@ class build_tables:
                 utility.printProgressBar(i + 1, l, prefix='Progress:', suffix='Complete', length=50)
             except mysqlError:
                 insert_error_log(f"ERROR CREATING TABLE PRICES {stock}: {self.conn.get_warnings}")
-                print(f"ERROR : Could not create table for {stock} \n SQL Error : {mysqlError}")
                 result = False
         return result
 
+    def prepare_dow_table(self):
+        # TODO List of dow_30 stocks needs to be placed somewhere to be looped through
+        dow_list = []
+        sql_statement = f"CREATE TABLE IF NOT EXISTS DOW_30 (id INT AUTO_INCREMENT PRIMARY KEY, ticker VARCHAR(10));"
+        try:
+            cursor = self.conn_stock.cursor()
+            cursor.execute(sql_statement)
+        except:
+            insert_error_log(f"ERROR CREATING TABLE DOW_30: {self.conn.get_warnings}")
+
+        # sql_select_if_exists = "SELECT EXISTS(SELECT * FROM DOW_30 WHERE )"
+        # try:
+        # except:
+        #
+        # sql_insert_statement = f"INSERT INTO DOW_30 (ticker) VALUES ("
+        # try:
+        # except:

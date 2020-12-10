@@ -2,6 +2,7 @@ from Data.config_read import config as con
 import Data.Technical_Data.Model.stock_model as stock_model
 from Data.Technical_Data.Model.stock_model import stock_model
 import requests
+from Data.stock_list import stock_list
 from Database.database import insert_error_log
 import datetime
 import json
@@ -17,8 +18,8 @@ class retrieve_technical_data:
         config = con()
         self.np = config.process_number
         self.tiingo_api_key = config.tiingo_api_key
-        # self.list_of_stocks = stock_list().get_list_of_stocks()
-        self.list_of_stocks = [('AAPL',),('GOOG',),('MSFT',),('SPCE',),('GM',),('AMZN',),('NFLX',), ('PYPL',)]
+        self.list_of_stocks = stock_list().get_list_of_stocks()
+        # self.list_of_stocks = [('AAPL',),('GOOG',),('MSFT',),('SPCE',),('GM',),('AMZN',),('NFLX',), ('PYPL',)]
 
 
     def run_data_load(self, range = 'latest'):
@@ -75,7 +76,6 @@ class retrieve_technical_data:
             return "Error"
         else:
             return json.loads(response.text)
-
 
 
     def parse_stock_obj(self, ticker, data):

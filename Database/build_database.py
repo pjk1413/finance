@@ -1,13 +1,12 @@
 from Data.config_read import config as get_values
-import Database.database as database
-from Database.database import database as database
+
+from Database.database import insert_log_statement
 import mysql.connector as connect
 import sys
 from Database.utility import list_of_schema
 
 # Create databases using root user
 # Create a master user that can interact with each and every database with GRANT similar credentials
-
 class build_database:
     def __init__(self):
         config = get_values()
@@ -30,13 +29,13 @@ class build_database:
 
         result = self.flush_all()
         if result:
+            insert_log_statement("FINISHED : All database setup/startup completed succesfully")
             print("FINISHED : All database setup/startup completed succesfully")
         else:
             print("""
             ERROR : Error during setup/startup of database \n \n
             Application will now exit...""")
             sys.exit(0)
-
 
 
     def root_prep(self):
@@ -53,8 +52,10 @@ class build_database:
             conn.close()
 
             print(f"Root user altered - all privileges granted to root user")
+            insert_log_statement("Root user altered - all privileges granted to root user")
             return True
         except connect.errors as err:
+            insert_log_statement("ERROR : Could not alter root user\n SQL Error : " + err)
             print("ERROR : Could not alter root user\n SQL Error : " + err)
             return False
 
@@ -72,9 +73,11 @@ class build_database:
             cursor.execute(sql_statement)
             conn.close()
 
+            insert_log_statement(f"Database created successfully {db_name}")
             print(f"Database created successfully {db_name}")
             return True
         except connect.errors as err:
+            insert_log_statement(f"ERROR : Could not create database {db_name} \n SQL Error : " + err)
             print(f"ERROR : Could not create database {db_name} \n SQL Error : " + err)
             return False
 
@@ -90,10 +93,11 @@ class build_database:
             cursor = conn.cursor()
             cursor.execute(sql_statement)
             conn.close()
+            insert_log_statement(f"User created successfully {self.user}")
             print(f"User created successfully {self.user}")
             return True
-
         except connect.errors as err:
+            insert_log_statement(f"ERROR : Could not create {self.user} \n SQL Error : " + err)
             print(f"ERROR : Could not create {self.user} \n SQL Error : " + err)
             return False
 
@@ -110,9 +114,11 @@ class build_database:
             cursor = conn.cursor()
             cursor.execute(sql_statement)
             conn.close()
+            insert_log_statement(f"USER: {self.user} granted all privileges on {db_name}")
             print(f"USER: {self.user} granted all privileges on {db_name}")
             return True
         except connect.errors as err:
+            insert_log_statement(f"ERROR : Could not grant privileges to {self.user} on {db_name} \n SQL Error : " + err)
             print(f"ERROR : Could not grant privileges to {self.user} on {db_name} \n SQL Error : " + err)
             return False
 
@@ -129,9 +135,11 @@ class build_database:
             cursor = conn.cursor()
             cursor.execute(sql_statement)
             conn.close()
+            insert_log_statement("Flushed all privileges")
             print("Flushed all privileges")
             return True
         except connect.errors as err:
+            insert_log_statement("ERROR : Could not flush privileges \n SQL Error : " + err)
             print("ERROR : Could not flush privileges \n SQL Error : " + err)
             return False
 

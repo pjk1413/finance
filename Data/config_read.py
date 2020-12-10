@@ -31,6 +31,7 @@ class config:
         self.sma_periods = self.get_values_list("sma_periods", return_type="num")
         self.ema_periods = self.get_values_list("ema_periods", return_type="num")
         self.ema_smoothing = int(self.get_value("ema_smoothing"))
+        self.log_file = self.get_value("log_file")
 
 
     def get_values_list(self, str, return_type= "str"):

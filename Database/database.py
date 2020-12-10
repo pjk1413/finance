@@ -20,6 +20,7 @@ class database:
         self.utility_db = config.utility_db_name
         self.fundamental_db = config.fundamental_db_name
         self.predict_db = config.predict_db_name
+        self.log_file = config.log_file
         try:
             self.conn_stock = connect.connect(
                 host=f"{self.host}",
@@ -54,9 +55,17 @@ class database:
         except error:
             print("Error connecting to database")
 
-
-def insert_status_log(self, statement):
+def insert_log_statement(statement):
     config = get_values()
+    f = open(config.log_file, "a")
+    f.write(statement)
+    f.close()
+    print(statement)
+
+
+def insert_status_log(statement):
+    config = get_values()
+    insert_log_statement(f"STATUS: {statement}")
     sql_statement = "INSERT INTO STATUS_TBL (dt, statement) " \
                     "VALUES (%s, %s)"
     values = (datetime.datetime.now(), statement)
@@ -77,6 +86,7 @@ def insert_status_log(self, statement):
 
 def insert_error_log(statement):
     config = get_values()
+    insert_log_statement(f"ERROR: {statement}")
     sql_statement = "INSERT INTO error_log (dt, description) " \
                     "VALUES (%s, %s)"
     values = (datetime.datetime.now(), statement)
