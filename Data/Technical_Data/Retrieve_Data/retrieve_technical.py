@@ -19,7 +19,6 @@ class retrieve_technical_data:
         self.np = config.process_number
         self.tiingo_api_key = config.tiingo_api_key
         self.list_of_stocks = stock_list().get_list_of_stocks()
-        # self.list_of_stocks = [('AAPL',),('GOOG',),('MSFT',),('SPCE',),('GM',),('AMZN',),('NFLX',), ('PYPL',)]
 
 
     def run_data_load(self, range = 'latest'):

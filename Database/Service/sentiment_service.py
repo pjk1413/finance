@@ -115,7 +115,7 @@ class sentiment_service:
             exists = cursor.fetchone()
         except errors as error:
             insert_error_log(f"ERROR CHECKING SENTIMENT DATA FOR {id} AND {ticker} IN SENTIMENT DATA REFERENCE")
-        if exists[0] is 0:
+        if exists[0] == 0:
             return False
         else:
             return True

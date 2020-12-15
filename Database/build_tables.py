@@ -9,7 +9,10 @@ from Database.utility import list_of_schema
 import Data.Technical_Data.Model.stock_model as stock_model
 import mysql.connector.errors as mysqlError
 from Database.database import insert_log_statement
+import os
 import sys
+import subprocess
+import Data.Init_Gather.gather_stock_data as gsd
 
 
 class build_tables:
@@ -33,7 +36,12 @@ class build_tables:
         result = self.create_stock_list_table()
         result = self.create_all_sentiment_tables()
         result = self.prepare_dow_table()
-        result = stk_list.stock_list().list_to_db()
+
+        subprocess.call('start py run.py', shell=True)
+        # os.system('cmd /k "py run.py"')
+        print("PAST")
+        # gsd.gather_stock_data().update_stock_list()
+        # result = stk_list.stock_list().update_stock_list()
 
         if result == False:
             print("ERROR : Unable to create all tables.  Application will exit...")
@@ -47,7 +55,6 @@ class build_tables:
 
         if result == True:
             insert_status_log("FINISHED : All tables setup/startup completed successfully")
-            print("FINISHED : All tables setup/startup completed successfully")
         else:
             insert_log_statement("""
                     ERROR : Error during setup/startup of table build \n \n
@@ -89,7 +96,19 @@ class build_tables:
     def create_stock_list_table(self):
         table_name = "STOCK_LIST_TBL"
         sql_statement = f"CREATE TABLE IF NOT EXISTS {table_name} (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                        f"ticker VARCHAR(10), description VARCHAR(500), sector VARCHAR(60), industry VARCHAR(60), market VARCHAR(10));"
+                        f"ticker VARCHAR(50), name VARCHAR(255), sector VARCHAR(60), industry VARCHAR(60), status VARCHAR(6), country VARCHAR(50), market VARCHAR(25), " \
+                        f"currency VARCHAR(50), fullTimeEmployees INT, description VARCHAR(500), lastSplitDate DATETIME, lastSplitFactor VARCHAR(10), " \
+                        f"location VARCHAR(50), website VARCHAR(255), secFilingWebsite VARCHAR(255), lastUpdated DATETIME, dividendDate DATETIME, assetType VARCHAR(15), " \
+                        f"exDividendDate DATETIME, payoutRatio FLOAT(8,4), forwardAnnualDividendYield FLOAT(8,4), forwardAnnualDividendRate FLOAT(8,4), " \
+                        f"percentInstituions FLOAT(8,4), percentInsiders FLOAT(8,4), shortPercentFloat FLOAT(8,4), shortPercentOutstanding FLOAT(8,4), " \
+                        f"shortRatio FLOAT(8,4), sharesShortPriorMonth INT, sharesShort INT, sharesFloat INT, sharesOutstanding INT, 200MA FLOAT(8,4), " \
+                        f"50MA FLOAT(8,4), 52Low FLOAT(8,4), 52High FLOAT(8,4), beta FLOAT(8,4), EVToEBITDA FLOAT(8,4), EVToRevenue FLOAT(8,4), " \
+                        f"priceToBookRatio FLOAT(8,4), priceToSalesRatioTTM FLOAT(8,4), forwardPE FLOAT(8,4), trailingPE FLOAT(8,4), analystTargetPrice FLOAT(8,4), " \
+                        f"quarterlyRevenueGrowthYOY FLOAT(8,4), quarterlyEarningsGrowthYOY FLOAT(8,4), dilutedEPSTTM FLOAT(8,4), grossProfitTTM INT, " \
+                        f"revenueTTM INT, returnOnEquityTTM FLOAT(8,4), returnOnAssestsTTM FLOAT(8,4), operatingMarginTTM FLOAT(8,4), profitMargin FLOAT(8,4), " \
+                        f"revenuePerShareTTM FLOAT(8,4), eps FLOAT(8,4), dividendYield FLOAT(8,4), dividendPerShare FLOAT(8,4), bookValue FLOAT(8,4), " \
+                        f"pegRatio FLOAT(8,4), peRatio FLOAT(8,4), EBITDA INT, marketCapitalization INT, latestQuarter DATETIME, ipoDate DATETIME, " \
+                        f"delistingDate DATETIME);"
         try:
             cursor = self.conn_stock.cursor()
             cursor.execute(sql_statement)
@@ -111,6 +130,7 @@ class build_tables:
             insert_error_log(f"ERROR CREATING TABLE REFERENCE: {mysqlError}")
             result = False
         return result
+
 
     def grant_access_to_stock_tables(self):
         try:
@@ -155,7 +175,7 @@ class build_tables:
     def create_all_stock_tables(self):
         result = True
         stock_list = stk_list.stock_list().get_list_of_stocks()
-        list_of_indicators = stock_model.stock_daily().get_model_indicators()
+        list_of_indicators = stock_model.stock_model().get_model_indicators()
 
         l = len(stock_list)
         utility.printProgressBar(0, l, prefix='Progress:', suffix='Complete', length=50)
@@ -180,6 +200,7 @@ class build_tables:
                 result = False
         return result
 
+
     def prepare_dow_table(self):
         # TODO List of dow_30 stocks needs to be placed somewhere to be looped through
         dow_list = []
@@ -189,11 +210,3 @@ class build_tables:
             cursor.execute(sql_statement)
         except:
             insert_error_log(f"ERROR CREATING TABLE DOW_30: {self.conn.get_warnings}")
-
-        # sql_select_if_exists = "SELECT EXISTS(SELECT * FROM DOW_30 WHERE )"
-        # try:
-        # except:
-        #
-        # sql_insert_statement = f"INSERT INTO DOW_30 (ticker) VALUES ("
-        # try:
-        # except:

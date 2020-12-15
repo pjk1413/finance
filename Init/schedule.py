@@ -17,7 +17,6 @@ class schedule_assist:
 
     def daily_schedule_function_group(self):
         rt.retrieve_technical_data().run_data_load()
-        yfinance.yfinance().update_data()
         sentiment.sentiment().gather_headlines()
         # email.send_email().daily_update_email()
 

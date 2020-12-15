@@ -61,7 +61,6 @@ class stock_service:
             insert_error_log(f"ERROR: Could not select all stock data for symbol {ticker}")
 
 
-
     def update_stock_obj(self, stock_obj: stock_model):
         # check data
         result = True
@@ -78,6 +77,7 @@ class stock_service:
         except errors:
             print(errors)
             insert_error_log(f"ERROR UPDATING TECHNICAL DATA INTO DATABASE FOR {stock_obj.symbol} AT {stock_obj.date}")
+
 
     def insert_stock_obj(self, stock_obj: stock_model):
         # check data

@@ -17,6 +17,7 @@ import datetime
 import requests
 import json
 
+# TODO allow data retrieval for multiple tickers at once
 class retrieve_sentiment_data:
     def __init__(self):
         config = con()

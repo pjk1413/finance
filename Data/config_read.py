@@ -32,6 +32,7 @@ class config:
         self.ema_periods = self.get_values_list("ema_periods", return_type="num")
         self.ema_smoothing = int(self.get_value("ema_smoothing"))
         self.log_file = self.get_value("log_file")
+        self.db_port = self.get_value("db_port")
 
 
     def get_values_list(self, str, return_type= "str"):

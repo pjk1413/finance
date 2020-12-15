@@ -14,7 +14,7 @@ class database:
         self.user = config.db_user
         self.password = config.db_pass
         self.host = config.db_host
-        # self.list_of_db = list_of_schema()
+        self.port = config.db_port
         self.stock_db = config.stock_db_name
         self.sentiment_db = config.sentiment_db_name
         self.utility_db = config.utility_db_name
@@ -32,33 +32,38 @@ class database:
                 host=f"{self.host}",
                 user=f"{self.user}",
                 password=f"{self.password}",
-                database=f"{self.sentiment_db}"
+                database=f"{self.sentiment_db}",
+                port=f"{self.port}"
             )
             self.conn_utility = connect.connect(
                 host=f"{self.host}",
                 user=f"{self.user}",
                 password=f"{self.password}",
-                database=f"{self.utility_db}"
+                database=f"{self.utility_db}",
+                port=f"{self.port}"
             )
             self.conn_fundamental = connect.connect(
                 host=f"{self.host}",
                 user=f"{self.user}",
                 password=f"{self.password}",
-                database=f"{self.fundamental_db}"
+                database=f"{self.fundamental_db}",
+                port=f"{self.port}"
             )
             self.conn_predict = connect.connect(
                 host=f"{self.host}",
                 user=f"{self.user}",
                 password=f"{self.password}",
-                database=f"{self.predict_db}"
+                database=f"{self.predict_db}",
+                port=f"{self.port}"
             )
         except error:
             print("Error connecting to database")
 
+
 def insert_log_statement(statement):
     config = get_values()
     f = open(config.log_file, "a")
-    f.write(statement)
+    f.write(statement + "\n")
     f.close()
     print(statement)
 

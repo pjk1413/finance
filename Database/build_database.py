@@ -16,6 +16,7 @@ class build_database:
         self.db_user_root = config.db_user_root
         self.db_root_pass = config.db_pass_root
         self.list_of_db = list_of_schema()
+        self.user_host = '192.168.1.48'
 
 
     def build_database(self):
@@ -30,7 +31,6 @@ class build_database:
         result = self.flush_all()
         if result:
             insert_log_statement("FINISHED : All database setup/startup completed succesfully")
-            print("FINISHED : All database setup/startup completed succesfully")
         else:
             print("""
             ERROR : Error during setup/startup of database \n \n
@@ -39,7 +39,7 @@ class build_database:
 
 
     def root_prep(self):
-        sql_statement = "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;"
+        sql_statement = f"GRANT ALL PRIVILEGES ON *.* TO '{self.db_user_root}'@'%' WITH GRANT OPTION;"
 
         try:
             conn = connect.connect(
@@ -51,12 +51,10 @@ class build_database:
             cursor.execute(sql_statement)
             conn.close()
 
-            print(f"Root user altered - all privileges granted to root user")
             insert_log_statement("Root user altered - all privileges granted to root user")
             return True
         except connect.errors as err:
             insert_log_statement("ERROR : Could not alter root user\n SQL Error : " + err)
-            print("ERROR : Could not alter root user\n SQL Error : " + err)
             return False
 
 
@@ -74,11 +72,9 @@ class build_database:
             conn.close()
 
             insert_log_statement(f"Database created successfully {db_name}")
-            print(f"Database created successfully {db_name}")
             return True
         except connect.errors as err:
             insert_log_statement(f"ERROR : Could not create database {db_name} \n SQL Error : " + err)
-            print(f"ERROR : Could not create database {db_name} \n SQL Error : " + err)
             return False
 
     def create_user(self):
@@ -94,11 +90,9 @@ class build_database:
             cursor.execute(sql_statement)
             conn.close()
             insert_log_statement(f"User created successfully {self.user}")
-            print(f"User created successfully {self.user}")
             return True
         except connect.errors as err:
             insert_log_statement(f"ERROR : Could not create {self.user} \n SQL Error : " + err)
-            print(f"ERROR : Could not create {self.user} \n SQL Error : " + err)
             return False
 
 
@@ -114,12 +108,10 @@ class build_database:
             cursor = conn.cursor()
             cursor.execute(sql_statement)
             conn.close()
-            insert_log_statement(f"USER: {self.user} granted all privileges on {db_name}")
-            print(f"USER: {self.user} granted all privileges on {db_name}")
+            insert_log_statement(f"USER: '{self.user}' granted all privileges on {db_name}")
             return True
         except connect.errors as err:
-            insert_log_statement(f"ERROR : Could not grant privileges to {self.user} on {db_name} \n SQL Error : " + err)
-            print(f"ERROR : Could not grant privileges to {self.user} on {db_name} \n SQL Error : " + err)
+            insert_log_statement(f"ERROR : Could not grant privileges to '{self.user}' on {db_name} \n SQL Error : " + err)
             return False
 
 
@@ -136,10 +128,8 @@ class build_database:
             cursor.execute(sql_statement)
             conn.close()
             insert_log_statement("Flushed all privileges")
-            print("Flushed all privileges")
             return True
         except connect.errors as err:
             insert_log_statement("ERROR : Could not flush privileges \n SQL Error : " + err)
-            print("ERROR : Could not flush privileges \n SQL Error : " + err)
             return False
 

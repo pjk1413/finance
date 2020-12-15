@@ -6,6 +6,8 @@ import Init.schedule as schedule
 import Database.build_tables as tables
 from Data.config_read import config as get_values
 from Database.database import database
+import Data.Technical_Data.Retrieve_Data.retrieve_technical as rt
+import Data.Technical_Data.Retrieve_Data.retrieve_sentiment as rs
 
 
 class view:
@@ -19,10 +21,9 @@ class view:
         main_menu = ConsoleMenu("Welcome to Finance.Quant")
 
         main_menu_item_list = [
-            FunctionItem("Update all Data", self.gather_data),
-            FunctionItem("Build All Tables", tables.build_tables().build_tables),
+            FunctionItem("Update all Data Historical", self.gather_data_historical()),
+            FunctionItem("Update all Data Recent", self.gather_data_recent()),
             FunctionItem("Clean All Data", self.clean_data),
-            FunctionItem("Hard Reset", self.confirmation_menu, [self.reset_program]),
             FunctionItem("Edit Configuration File", self.edit_config, menu=main_menu),
             FunctionItem("View Schedule", self.view_schedule),
             FunctionItem("Run Schedule", self.run_schedule)
@@ -52,14 +53,14 @@ class view:
         confirmation.show()
 
 
-    def gather_data(self):
+    def gather_data_historical(self):
         print("Beginning update of all stock data tables...")
-        yfinance.yfinance().update_data()
-        database().insert_status_log("UPDATED ALL STOCK DATA TABLES")
-        # print("Beginning update of all sentiment data tables...")
-        # sentiment.sentiment().gather_headlines()
-        # database().insert_status_log("UPDATED ALL SENTIMENT DATA TABLES")
+        rt.retrieve_technical_data().run_data_load(range='historical')
+        rs.retrieve_sentiment_data().run_data_load(range='historical')
 
+    def gather_data_recent(self):
+        rt.retrieve_technical_data().run_data_load(range='latest')
+        rs.retrieve_sentiment_data().run_data_load(range='latest')
 
     def run_schedule(self):
         schedule.schedule_assist().run_schedule()
