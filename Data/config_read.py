@@ -33,6 +33,7 @@ class config:
         self.ema_smoothing = int(self.get_value("ema_smoothing"))
         self.log_file = self.get_value("log_file")
         self.db_port = self.get_value("db_port")
+        self.character_set = self.get_value("character_set")
 
 
     def get_values_list(self, str, return_type= "str"):

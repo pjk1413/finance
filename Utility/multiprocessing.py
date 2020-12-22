@@ -1,17 +1,9 @@
 import multiprocessing
 import time
 
-class tDif:
-    def __init__(self):
-        self.start_time = time.time()
-
-    def get_end_time(self):
-        print(time.time() - self.start_time)
-
 class multiprocessing:
-    def __init__(self, threads = 5):
-        self.threads = threads
-        self.jobs = []
+    def __init__(self, threads = multiprocessing.cpu_count() - 2):
+        self.o = None
 
 
     def start(self):

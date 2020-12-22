@@ -4,91 +4,40 @@ import mysql.connector.errors as errors
 from Database.database import insert_error_log
 from Data.Technical_Data.Model.sentiment_model import sentiment_model
 from Utility.string_manipulation import list_to_database
+import pymysql.converters as con
+from pymysql.converters import escape_string
 
 class sentiment_service:
     def __init__(self):
         self.conn_sentiment = database().conn_sentiment
         pass
 
-
-    def update_sentiment_object(self, sentiment_obj: sentiment_model):
-        try:
-            tickers = list_to_database(sentiment_obj.symbols)
-            tags = list_to_database(sentiment_obj.tags)
-            cursor = self.conn_sentiment.cursor()
-            sql_statement = f"UPDATE SENTIMENT_DATA " \
-                            f"SET crawlDate='{sentiment_obj.crawl_date}', publishedDate='{sentiment_obj.published_date}', " \
-                            f"tickers='{tickers}', tags='{tags}', source='{sentiment_obj.source}', url='{sentiment_obj.url}, " \
-                            f"title='{sentiment_obj.title}', description='{sentiment_obj.description}', " \
-                            f"sent_neg='{sentiment_obj.sentiment_data['negative']}', sent_pos='{sentiment_obj.sentiment_data['positive']}', " \
-                            f"sent_neutral='{sentiment_obj.sentiment_data['neutral']}', sent_compound='{sentiment_obj.sentiment_data['compound']}'" \
-                            f"WHERE publishedDate='{sentiment_obj.published_date}' AND url='{sentiment_obj.url}';"
-            cursor.execute(sql_statement)
-            self.conn_stock.commit()
-        except errors:
-            print(errors)
-            insert_error_log(f"ERROR UPDATING SENTIMENT DATA INTO DATABASE FOR {sentiment_obj.source} ON {sentiment_obj.published_date}")
-
-
     def insert_sentiment_obj(self, sentiment_obj: sentiment_model):
         result = True
-        try:
-            # TODO check length of tickers and tags and limit to under 1000 characters each
-            tickers = list_to_database(sentiment_obj.symbols)
-            tags = list_to_database(sentiment_obj.tags)
-            cursor = self.conn_sentiment.cursor()
-            result = self.check_if_exists(sentiment_obj.source, sentiment_obj.crawl_date, sentiment_obj.published_date, sentiment_obj.url)
-            if result != False:
-                sql_statement = f"UPDATE SENTIMENT_DATA " \
-                                f"SET crawlDate='{sentiment_obj.crawl_date}', publishedDate='{sentiment_obj.published_date}', " \
-                                f"tickers='{tickers}', tags='{tags}', source='{sentiment_obj.source}', url='{sentiment_obj.url}, " \
-                                f"title='{sentiment_obj.title}', description='{sentiment_obj.description}', " \
-                                f"sent_neg='{sentiment_obj.sentiment_data['negative']}', sent_pos='{sentiment_obj.sentiment_data['positive']}', " \
-                                f"sent_neutral='{sentiment_obj.sentiment_data['neutral']}', sent_compound='{sentiment_obj.sentiment_data['compound']}'" \
-                                f"WHERE publishedDate='{sentiment_obj.published_date}' AND url='{sentiment_obj.url}';"
-                cursor.execute(sql_statement)
-                self.conn_sentiment.commit()
-            elif result == False:
+        tickers = list_to_database(sentiment_obj.symbols)
+        tags = list_to_database(sentiment_obj.tags)
 
-                values = (sentiment_obj.crawl_date, sentiment_obj.published_date, tickers, tags, sentiment_obj.source, sentiment_obj.url,
-                          sentiment_obj.title, sentiment_obj.description, sentiment_obj.sentiment_data['negative'], sentiment_obj.sentiment_data['positive'],
-                          sentiment_obj.sentiment_data['neutral'], sentiment_obj.sentiment_data['compound'])
-                sql_statement = f"INSERT INTO SENTIMENT_DATA (crawlDate, publishedDate, tickers, tags, source, url, title, description, " \
-                                f"sent_neg, sent_pos, sent_neutral, sent_compound) " \
-                                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-                cursor.execute(sql_statement, values)
-                self.conn_sentiment.commit()
-                self.insert_sentiment_reference(sentiment_obj)
-        except errors as err:
-            insert_error_log(f"ERROR INSERTING/UPDATING SENTIMENT DATA INTO DATABASE FOR {sentiment_obj.title} AT {sentiment_obj.source}")
+        sql_statement = f"INSERT INTO SENTIMENT_DATA (crawlDate, publishedDate, tickers, tags, source, url, title, description, " \
+                        f"sent_neg, sent_pos, sent_neutral, sent_compound) " \
+                        f"VALUES ('{sentiment_obj.crawl_date}', '{sentiment_obj.published_date}', '{tickers}', '{tags}', " \
+                        f"'{sentiment_obj.source}', '{sentiment_obj.url}', '{cl(sentiment_obj.title)}', '{cl(sentiment_obj.description)}', " \
+                        f"{sentiment_obj.sentiment_data['negative']}, {sentiment_obj.sentiment_data['positive']}, " \
+                        f"{sentiment_obj.sentiment_data['neutral']}, {sentiment_obj.sentiment_data['compound']}) " \
+                        f"ON DUPLICATE KEY UPDATE " \
+                        f"crawlDate='{sentiment_obj.crawl_date}', publishedDate='{sentiment_obj.published_date}', tickers='{tickers}', " \
+                        f"tags='{tags}', source='{sentiment_obj.source}', url='{sentiment_obj.url}', title='{cl(sentiment_obj.title)}', " \
+                        f"description='{cl(sentiment_obj.description)}';"
+        return sql_statement
 
 
     def insert_sentiment_reference(self, sentiment_obj: sentiment_model):
-        sql_select_statement = f"SELECT id FROM SENTIMENT_DATA WHERE url='{sentiment_obj.url}';"
-        try:
-            cursor = self.conn_sentiment.cursor(buffered=True)
-            cursor.execute(sql_select_statement)
-            id = cursor.fetchone()
-        except:
-            insert_error_log(f"ERROR FINDING NEW SENTIMENT ROW ON {sentiment_obj.source} AT {sentiment_obj.published_date}")
-
-        if id is None:
-            id = 1
-        entries = len(sentiment_obj.symbols)
-        sql_insert_statement = "INSERT INTO SENTIMENT_DATA_REFERENCE (ticker, SENTIMENT_ID) " \
-                        "VALUES "
+        sql_statement = "INSERT INTO stock_sentiment_data.sentiment_data_reference (ticker, SENTIMENT_ID) VALUES "
         for ticker in sentiment_obj.symbols:
-            if not self.check_if_relationship_exists(id[0], ticker):
-                entries -= 1
-                sql_insert_statement += f"('{ticker}', {id[0]}), "
-        sql_insert_statement = sql_insert_statement[0:len(sql_insert_statement)-2] + ";"
-        if entries > 0:
-            try:
-                cursor = self.conn_sentiment.cursor()
-                cursor.execute(sql_insert_statement)
-                self.conn_sentiment.commit()
-            except:
-                insert_error_log(f"ERROR INSERTING NEW SENTIMENT ROW REFERENCE ON {sentiment_obj.source} AT {sentiment_obj.published_date}")
+            sql_statement += f"('{ticker}', (SELECT id FROM stock_sentiment_data.sentiment_data WHERE url='{sentiment_obj.url}' " \
+                        f"AND publishedDate='{sentiment_obj.published_date}' LIMIT 1)), "
+        sql_statement = sql_statement[:-2]
+        sql_statement += ";"
+        return sql_statement
 
 
     def check_if_exists(self, source, crawl_date, published_date, url):
@@ -119,3 +68,13 @@ class sentiment_service:
             return False
         else:
             return True
+
+def cl(str):
+    return escape_string(str)
+    # list_to_remove = [
+    #     '"', "'", '`', '@', '#', '%', '^', '&', '*', 'α'
+    # ]
+    # for x in list_to_remove:
+    #     str = str.replace(x, '')
+    # # print("XX : " + str)
+    # return str

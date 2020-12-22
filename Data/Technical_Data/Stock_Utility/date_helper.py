@@ -8,7 +8,7 @@ def find_most_recent_date(stock):
     :param ticker symbol
     :return: datetime object representing most recent date entered into database
     """
-    sql_statement = f"SELECT dt FROM {stock}_STK ORDER BY dt DESC LIMIT 1;"
+    sql_statement = f"SELECT dt FROM STOCK_DATA WHERE ticker='{stock}' ORDER BY dt DESC LIMIT 1;"
     try:
         connection = db.database().conn_stock
         cursor = connection.cursor()

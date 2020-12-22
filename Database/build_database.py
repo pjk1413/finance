@@ -17,6 +17,8 @@ class build_database:
         self.db_root_pass = config.db_pass_root
         self.list_of_db = list_of_schema()
         self.user_host = '192.168.1.48'
+        self.char_set = config.character_set
+        self.sentiment_db_name = config.sentiment_db_name
 
 
     def build_database(self):
@@ -59,8 +61,10 @@ class build_database:
 
 
     def create_database(self, db_name):
-        sql_statement = f"CREATE DATABASE IF NOT EXISTS {db_name};"
-
+        if db_name == self.sentiment_db_name:
+            sql_statement = f"CREATE DATABASE IF NOT EXISTS {db_name} CHARACTER SET {self.char_set};"
+        else:
+            sql_statement = f"CREATE DATABASE IF NOT EXISTS {db_name};"
         try:
             conn = connect.connect(
                 host=f"{self.host}",

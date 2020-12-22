@@ -1,17 +1,20 @@
 import math
+import time
+from pymysql.converters import escape_string
+from pymysql.converters import escape_str
+import Utility.multithreading as multi_threading
 from dateutil import parser
 import pandas as pd
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import requests.exceptions as exc
 from Data.Technical_Data.Model.sentiment_model import sentiment_model
 from Data.stock_list import stock_list
-from Database.Service.sentiment_service import sentiment_service as service
 from Data.config_read import config as con
 from Database.database import database
-from Utility.string_manipulation import clean
+from Utility.string_manipulation import clean, list_to_database
 from Interface.utility import printProgressBar
 from Data.Technical_Data.Stock_Utility.date_helper import find_most_recent_date
-import multiprocessing as mp
+from yaspin import yaspin
 from Database.database import insert_error_log
 import datetime
 import requests
@@ -27,46 +30,50 @@ class retrieve_sentiment_data:
         self.list_of_stocks = stock_list().get_list_of_stocks()
         # self.list_of_stocks = [('GM',)]
 
+    # TODO look into pooling downloads or running the entire function through a multiprocessor
     def run_data_load(self, range='latest'):
-        processList = []
-        list_of_processes = []
-        l = len(self.list_of_stocks)
-        try:
-            if range == 'historical':
-                for stock in self.list_of_stocks:
-                    processList.append(
-                        mp.Process(target=self.parse_sentiment_obj, args=(self.retrieve_historical(stock[0]))))
-
-            if range == 'latest':
-                for i, stock in enumerate(self.list_of_stocks):
-                    processList.append(
-                        mp.Process(target=self.parse_sentiment_obj, args=(self.retrieve_latest(stock[0]))))
-
-            printProgressBar(0, l, prefix='Progress:', suffix='Complete', length=50)
-            for i, x in enumerate(processList):
-                x.start()
-                list_of_processes.append(x)
-                if len(list_of_processes) > self.np:
-                    for y in list_of_processes:
-                        y.join()
-                printProgressBar(i + 1, l, prefix='Progress:', suffix='Complete', length=50)
-            # Cleanup
-            for x in processList:
-                x.join()
-        except:
-            insert_error_log("ERROR: Multiprocessor threw an error during data load")
+        start = time.perf_counter()
+        if range == 'latest':
+            l = len(self.list_of_stocks)
+            printProgressBar(0, l, prefix=f'Sentiment Progress:', suffix='Complete', length=50)
+            for i, entry in enumerate(self.list_of_stocks):
+                sentiment_obj_list = self.parse_sentiment_obj(self.retrieve_latest(entry[0]))
+                sql_statement_list = []
+                for obj in sentiment_obj_list:
+                    sql_statement_list.append(self.insert_sentiment_obj(obj))
+                    sql_statement_list.append(self.insert_sentiment_reference(obj))
+                threader = multi_threading.Multi_Threading(sql_statement_list, "sentiment")
+                threader.run_insert()
+                printProgressBar(i + 1, l, prefix=f'Current: {entry[0]} - Progress:', suffix='Complete', length=50)
+        if range == 'historical':
+            l = len(self.list_of_stocks)
+            printProgressBar(0, l, prefix='Sentiment Progress:', suffix='Complete', length=50)
+            for i, entry in enumerate(self.list_of_stocks):
+                sentiment_obj_list = self.parse_sentiment_obj(self.retrieve_historical(entry[0]))
+                sql_statement_list = []
+                # TODO use multiprocessor to speed up building lists here
+                for obj in sentiment_obj_list:
+                    sql_statement_list.append(self.insert_sentiment_obj(obj))
+                    sql_statement_list.append(self.insert_sentiment_reference(obj))
+                threader = multi_threading.Multi_Threading(sql_statement_list, "sentiment")
+                threader.run_insert()
+                printProgressBar(i + 1, l, prefix=f'Current: {entry[0]} - Progress:', suffix='Complete', length=50)
+        finish = time.perf_counter()
+        print(f"Downloaded stock sentiment data in {finish - start} seconds \n")
 
     def retrieve_historical(self, ticker, years_back=2):
         start_date = (datetime.datetime.now() - datetime.timedelta(days=365 * years_back)).strftime('%Y-%m-%d')
         if start_date is not None:
+            # TODO look into spinning symbol to indicate work being done
+            # TODO combine tickers into groups of 5 to grab more data at once
+            # TODO look into storing data as a text file first before inserting into database
             response = requests.get(f"https://api.tiingo.com/tiingo/news?tickers={ticker}&"
                                     f"startDate={start_date}&format=json&resampleFreq=daily&token={self.tiingo_api_key}")
             if "Error:" in response.text:
-                print("Error")
                 insert_error_log(f"ERROR: {clean(response.text).replace('Error: ', '')}")
                 return "Error"
             else:
-                return [json.loads(response.text)]
+                return json.loads(response.text)
         else:
             return "Error"
 
@@ -76,6 +83,8 @@ class retrieve_sentiment_data:
             start_date = (datetime.datetime.now() - datetime.timedelta(days=365 * years_back)).strftime('%Y-%m-%d')
         else:
             start_date = start_date[0].date()
+        # TODO combine tickers into groups of 5 to grab more data at once
+        # TODO look into storing data as a text file first before inserting into database
         response = requests.get(f"https://api.tiingo.com/tiingo/news?tickers={ticker}&"
                                 f"startDate={start_date}&format=json&resampleFreq=daily&token={self.tiingo_api_key}")
         if "Error:" in response.text:
@@ -85,12 +94,14 @@ class retrieve_sentiment_data:
             return json.loads(response.text)
 
     def parse_sentiment_obj(self, data):
+        sentiment_obj_list = []
         if data != "Error":
             try:
                 for sent_json in data:
+                    # print(sent_json['description'])
                     sentiment_obj = sentiment_model()
-                    sentiment_obj.crawl_date = parser.parse(sent_json['crawlDate'])
-                    sentiment_obj.published_date = parser.parse(sent_json['publishedDate'])
+                    sentiment_obj.crawl_date = parser.parse(sent_json['crawlDate']).strftime('%Y-%m-%d %H:%M:%S')
+                    sentiment_obj.published_date = parser.parse(sent_json['publishedDate']).strftime('%Y-%m-%d %H:%M:%S')
                     sentiment_obj.source = sent_json['source']
                     sentiment_obj.url = sent_json['url']
                     sentiment_obj.title = sent_json['title']
@@ -98,7 +109,8 @@ class retrieve_sentiment_data:
                     sentiment_obj.symbols = sent_json['tickers']
                     sentiment_obj.tags = sent_json['tags']
                     sentiment_obj.sentiment_data = self.sentiment_analysis([sent_json['description'], sent_json['title']])
-                    service().insert_sentiment_obj(sentiment_obj)
+                    sentiment_obj_list.append(sentiment_obj)
+                return sentiment_obj_list
             except exc:
                 insert_error_log("ERROR: Could not parse sentiment object during data load")
                 # print(exc)
@@ -144,3 +156,37 @@ class retrieve_sentiment_data:
             return float('NaN')
         else:
             return round(float(number),3)
+
+    # TODO may need to update the update statement to include more information
+    # TODO may need to update how we limit data entering columns
+    def insert_sentiment_obj(self, sentiment_obj: sentiment_model):
+        tickers = clean_sql(list_to_database(sentiment_obj.symbols))[:1999]
+        tags = clean_sql(list_to_database(sentiment_obj.tags))[:1999]
+        description = clean_sql(sentiment_obj.description)
+        title = clean_sql(sentiment_obj.title)
+        sql_statement = "INSERT INTO SENTIMENT_DATA (crawlDate, publishedDate, tickers, tags, source, url, title, description, " \
+            "sent_neg, sent_pos, sent_neutral, sent_compound) " \
+            f"VALUES ('{sentiment_obj.crawl_date}', '{sentiment_obj.published_date}', '{tickers}', '{tags}', " \
+            f"'{sentiment_obj.source}', '{sentiment_obj.url}', '{title}', '{description}', " \
+            f"{sentiment_obj.sentiment_data['negative']}, {sentiment_obj.sentiment_data['positive']}, " \
+            f"{sentiment_obj.sentiment_data['neutral']}, {sentiment_obj.sentiment_data['compound']}) " \
+            "ON DUPLICATE KEY UPDATE " \
+            "crawlDate=VALUES(crawlDate), publishedDate=VALUES(publishedDate), " \
+            "tickers=VALUES(tickers), tags=VALUES(tags), source=VALUES(source), " \
+            "url=VALUES(url), title=VALUES(title);"
+
+        return sql_statement
+
+    def insert_sentiment_reference(self, sentiment_obj: sentiment_model):
+        sql_statement = "INSERT INTO stock_sentiment_data.sentiment_data_reference (ticker, SENTIMENT_ID) VALUES "
+        for ticker in sentiment_obj.symbols:
+            sql_statement += f"('{ticker}', (SELECT id FROM stock_sentiment_data.sentiment_data WHERE url='{sentiment_obj.url}' " \
+                 f"AND publishedDate='{sentiment_obj.published_date}' LIMIT 1)),"
+        sql_statement = sql_statement[:-1]
+        sql_statement += ";"
+        return sql_statement
+
+def clean_sql(str):
+    clean_str = str.replace("'", "''")
+    clean_str = clean_str.replace('"', '""')
+    return clean_str

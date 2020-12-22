@@ -1,3 +1,5 @@
+import threading
+
 from Database.database import database
 from Database.build_database import build_database as build
 import Data.stock_list as stk_list
@@ -13,7 +15,7 @@ import os
 import sys
 import subprocess
 import Data.Init_Gather.gather_stock_data as gsd
-
+import time
 
 class build_tables:
     def __init__(self):
@@ -30,40 +32,30 @@ class build_tables:
         self.stock_db_name = con.stock_db_name
 
     def build_tables(self):
-        result = True
-        result = self.create_error_log_table()
-        result = self.create_status_table()
-        result = self.create_stock_list_table()
-        result = self.create_all_sentiment_tables()
-        result = self.prepare_dow_table()
+        function_list = [
+            self.create_error_log_table(),
+            self.create_status_table(),
+            self.create_stock_list_table(),
+            self.prepare_dow_table(),
+            gsd.gather_stock_data().update_stock_list(),
+            self.create_all_stock_tables(),
+            self.create_all_sentiment_tables(),
+            self.grant_access_to_stock_tables()
+        ]
 
-        subprocess.call('start py run.py', shell=True)
-        # os.system('cmd /k "py run.py"')
-        print("PAST")
-        # gsd.gather_stock_data().update_stock_list()
-        # result = stk_list.stock_list().update_stock_list()
-
-        if result == False:
-            print("ERROR : Unable to create all tables.  Application will exit...")
-            insert_error_log("ERROR IN TABLE BUILD - DID NOT COMPLETE BUILD TABLE TASKS - PROGRAM TERMINATED")
+        try:
+            for func in function_list:
+                result = True
+                result = func
+                if not result:
+                    print("ERROR : Unable to create all tables.  Application will exit...")
+                    insert_error_log("ERROR IN TABLE BUILD - DID NOT COMPLETE BUILD TABLE TASKS - PROGRAM TERMINATED")
+            subprocess.call('start py run.py', shell=True),
+            insert_status_log("FINISHED : All tables setup/startup completed successfully")
+        except subprocess.SubprocessError:
+            print(subprocess.SubprocessError)
             input("PRESS ANY KEY TO EXIT PROGRAM")
             sys.exit(0)
-        else:
-            result = self.create_all_stock_tables()
-            result = self.create_all_sentiment_tables()
-            result = self.grant_access_to_stock_tables()
-
-        if result == True:
-            insert_status_log("FINISHED : All tables setup/startup completed successfully")
-        else:
-            insert_log_statement("""
-                    ERROR : Error during setup/startup of table build \n \n
-                    Application will now exit...""")
-            print("""
-                    ERROR : Error during setup/startup of table build \n \n
-                    Application will now exit...""")
-            sys.exit(0)
-
 
     def create_status_table(self):
         sql_statement = "CREATE TABLE IF NOT EXISTS STATUS_TBL (id INT AUTO_INCREMENT PRIMARY KEY, " \
@@ -82,7 +74,6 @@ class build_tables:
     def create_error_log_table(self):
         sql_statement = "CREATE TABLE IF NOT EXISTS error_log (id INT AUTO_INCREMENT PRIMARY KEY, " \
                         "dt DATETIME, description VARCHAR(255));"
-
         try:
             cursor = self.conn_utility.cursor()
             cursor.execute(sql_statement)
@@ -95,20 +86,20 @@ class build_tables:
 
     def create_stock_list_table(self):
         table_name = "STOCK_LIST_TBL"
-        sql_statement = f"CREATE TABLE IF NOT EXISTS {table_name} (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                        f"ticker VARCHAR(50), name VARCHAR(255), sector VARCHAR(60), industry VARCHAR(60), status VARCHAR(6), country VARCHAR(50), market VARCHAR(25), " \
-                        f"currency VARCHAR(50), fullTimeEmployees INT, description VARCHAR(500), lastSplitDate DATETIME, lastSplitFactor VARCHAR(10), " \
-                        f"location VARCHAR(50), website VARCHAR(255), secFilingWebsite VARCHAR(255), lastUpdated DATETIME, dividendDate DATETIME, assetType VARCHAR(15), " \
-                        f"exDividendDate DATETIME, payoutRatio FLOAT(8,4), forwardAnnualDividendYield FLOAT(8,4), forwardAnnualDividendRate FLOAT(8,4), " \
-                        f"percentInstituions FLOAT(8,4), percentInsiders FLOAT(8,4), shortPercentFloat FLOAT(8,4), shortPercentOutstanding FLOAT(8,4), " \
-                        f"shortRatio FLOAT(8,4), sharesShortPriorMonth INT, sharesShort INT, sharesFloat INT, sharesOutstanding INT, 200MA FLOAT(8,4), " \
-                        f"50MA FLOAT(8,4), 52Low FLOAT(8,4), 52High FLOAT(8,4), beta FLOAT(8,4), EVToEBITDA FLOAT(8,4), EVToRevenue FLOAT(8,4), " \
-                        f"priceToBookRatio FLOAT(8,4), priceToSalesRatioTTM FLOAT(8,4), forwardPE FLOAT(8,4), trailingPE FLOAT(8,4), analystTargetPrice FLOAT(8,4), " \
-                        f"quarterlyRevenueGrowthYOY FLOAT(8,4), quarterlyEarningsGrowthYOY FLOAT(8,4), dilutedEPSTTM FLOAT(8,4), grossProfitTTM INT, " \
-                        f"revenueTTM INT, returnOnEquityTTM FLOAT(8,4), returnOnAssestsTTM FLOAT(8,4), operatingMarginTTM FLOAT(8,4), profitMargin FLOAT(8,4), " \
-                        f"revenuePerShareTTM FLOAT(8,4), eps FLOAT(8,4), dividendYield FLOAT(8,4), dividendPerShare FLOAT(8,4), bookValue FLOAT(8,4), " \
-                        f"pegRatio FLOAT(8,4), peRatio FLOAT(8,4), EBITDA INT, marketCapitalization INT, latestQuarter DATETIME, ipoDate DATETIME, " \
-                        f"delistingDate DATETIME);"
+        sql_statement = f"CREATE TABLE IF NOT EXISTS {table_name} (ticker VARCHAR(50) PRIMARY KEY, name VARCHAR(255), sector VARCHAR(60), industry VARCHAR(60), status VARCHAR(6), country VARCHAR(50), market VARCHAR(25), " \
+                        f"currency VARCHAR(50), fullTimeEmployees BIGINT, description VARCHAR(2000), lastSplitDate DATETIME, lastSplitFactor VARCHAR(10), " \
+                        f"location VARCHAR(500), website VARCHAR(255), secFilingWebsite VARCHAR(255), lastUpdated DATETIME, dividendDate DATETIME, assetType VARCHAR(15), " \
+                        f"exDividendDate DATETIME, payoutRatio FLOAT(12,4), forwardAnnualDividendYield FLOAT(12,4), forwardAnnualDividendRate FLOAT(12,4), " \
+                        f"percentInstitutions FLOAT(12,4), percentInsiders FLOAT(12,4), shortPercentFloat FLOAT(12,4), shortPercentOutstanding FLOAT(12,4), " \
+                        f"shortRatio FLOAT(12,4), sharesShortPriorMonth BIGINT, sharesShort BIGINT, sharesFloat BIGINT, sharesOutstanding BIGINT, 200MA FLOAT(12,4), " \
+                        f"50MA FLOAT(12,4), 52Low FLOAT(12,4), 52High FLOAT(12,4), beta FLOAT(12,4), EVToEBITDA FLOAT(12,4), EVToRevenue FLOAT(12,4), " \
+                        f"priceToBookRatio FLOAT(12,4), priceToSalesRatioTTM FLOAT(12,4), forwardPE FLOAT(12,4), trailingPE FLOAT(12,4), analystTargetPrice FLOAT(12,4), " \
+                        f"quarterlyRevenueGrowthYOY FLOAT(12,4), quarterlyEarningsGrowthYOY FLOAT(12,4), dilutedEPSTTM FLOAT(12,4), grossProfitTTM BIGINT, " \
+                        f"revenueTTM BIGINT, returnOnEquityTTM FLOAT(12,4), returnOnAssestsTTM FLOAT(12,4), operatingMarginTTM FLOAT(12,4), profitMargin FLOAT(12,4), " \
+                        f"revenuePerShareTTM FLOAT(12,4), eps FLOAT(12,4), dividendYield FLOAT(12,4), dividendPerShare FLOAT(12,4), bookValue FLOAT(12,4), " \
+                        f"pegRatio FLOAT(12,4), peRatio FLOAT(12,4), EBITDA INT, marketCapitalization BIGINT, latestQuarter DATETIME, ipoDate DATETIME, " \
+                        f"delistingDate DATETIME, " \
+                        f"CONSTRAINT unique_entry UNIQUE (ticker));"
         try:
             cursor = self.conn_stock.cursor()
             cursor.execute(sql_statement)
@@ -118,19 +109,19 @@ class build_tables:
             insert_error_log(f"ERROR : Could not create Stock List table \n SQL Error : {mysqlError}")
             return False
 
-
     def create_sentiment_reference_table(self):
         result = True
         sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS SENTIMENT_DATA_REFERENCE (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                                  f"ticker VARCHAR(10), SENTIMENT_ID INT);"
+                                  f"ticker VARCHAR(10), SENTIMENT_ID INT, " \
+                                  f"FOREIGN KEY (SENTIMENT_ID) REFERENCES SENTIMENT_DATA(id));"
         try:
             cursor = self.conn_sentiment.cursor()
             cursor.execute(sql_statement_sentiment)
+            insert_log_statement("Sentiment reference table created successfully")
         except mysqlError:
             insert_error_log(f"ERROR CREATING TABLE REFERENCE: {mysqlError}")
             result = False
         return result
-
 
     def grant_access_to_stock_tables(self):
         try:
@@ -139,7 +130,6 @@ class build_tables:
             return True
         except:
             return False
-
 
     def create_all_sentiment_tables(self):
         result = True
@@ -153,9 +143,10 @@ class build_tables:
     def create_sentiment_table(self):
         result = True
         sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS SENTIMENT_DATA (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                                  f"crawlDate DATETIME, publishedDate VARCHAR(500), tickers VARCHAR(1000), tags VARCHAR(1000), " \
+                                  f"crawlDate DATETIME, publishedDate VARCHAR(100), tickers VARCHAR(2000), tags VARCHAR(2000), " \
                                   f"description TEXT, source VARCHAR(255), title VARCHAR(500), url VARCHAR(500), " \
-                                  f"sent_neg FLOAT(8,4), sent_neutral FLOAT(8,4), sent_pos FLOAT(8,4), sent_compound FLOAT(8,4));"
+                                  f"sent_neg FLOAT(8,4), sent_neutral FLOAT(8,4), sent_pos FLOAT(8,4), sent_compound FLOAT(8,4), " \
+                                  f"CONSTRAINT unique_value UNIQUE (url, publishedDate));"
         try:
             cursor = self.conn_sentiment.cursor()
             cursor.execute(sql_statement_sentiment)
@@ -169,37 +160,22 @@ class build_tables:
         # Create all tables with all variables needed to model data appropriatley
         result = True
         sql_statement_linear_regression = "CREATE TABLE IF NOT EXISTS linear_regression (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                                          "dt DATETIME, stock VARCHAR(10), description VARCHAR(100), b FLOAT(8,4), x FLOAT(8,4)"
-
+                                          "dt DATETIME, stock VARCHAR(10), description VARCHAR(100), b FLOAT(12,4), x FLOAT(12,4)"
 
     def create_all_stock_tables(self):
         result = True
-        stock_list = stk_list.stock_list().get_list_of_stocks()
-        list_of_indicators = stock_model.stock_model().get_model_indicators()
-
-        l = len(stock_list)
-        utility.printProgressBar(0, l, prefix='Progress:', suffix='Complete', length=50)
-        for i, stock in enumerate(stock_list):
-
-            sql_statement = f"CREATE TABLE IF NOT EXISTS {stock[0]}_STK (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                            f"dt DATETIME, open FLOAT(10,4), close FLOAT(10,4), high FLOAT(10,4), low FLOAT(10,4), adj_close FLOAT(10,4), " \
-                            f"volume INT, split VARCHAR(25), dividend FLOAT(10,4), "
-
-            for ind in list_of_indicators:
-                sql_statement += f"{ind} VARCHAR(50)"
-                if not list_of_indicators.index(ind) == len(list_of_indicators) - 1:
-                    sql_statement += ", "
-                else:
-                    sql_statement += ");"
-            try:
-                cursor = self.conn_stock.cursor()
-                cursor.execute(sql_statement)
-                utility.printProgressBar(i + 1, l, prefix='Progress:', suffix='Complete', length=50)
-            except mysqlError:
-                insert_error_log(f"ERROR CREATING TABLE PRICES {stock}: {self.conn.get_warnings}")
-                result = False
+        sql_statement = f"CREATE TABLE IF NOT EXISTS STOCK_DATA (id INT AUTO_INCREMENT PRIMARY KEY, ticker VARCHAR(15), " \
+                        f"dt DATETIME NOT NULL, open FLOAT(12,4), close FLOAT(12,4), high FLOAT(12,4), low FLOAT(12,4), adj_close FLOAT(12,4), " \
+                        f"volume INT, split VARCHAR(25), dividend FLOAT(12,4), " \
+                        f"CONSTRAINT unique_entry UNIQUE (ticker, dt));"
+        try:
+            cursor = self.conn_stock.cursor()
+            cursor.execute(sql_statement)
+            insert_log_statement("Stock Data table created successfully")
+        except mysqlError:
+            insert_error_log(f"ERROR CREATING TABLE PRICES: {self.conn.get_warnings}")
+            result = False
         return result
-
 
     def prepare_dow_table(self):
         # TODO List of dow_30 stocks needs to be placed somewhere to be looped through
@@ -208,5 +184,8 @@ class build_tables:
         try:
             cursor = self.conn_stock.cursor()
             cursor.execute(sql_statement)
+            insert_log_statement("Dow30 table created successfully")
+            return True
         except:
             insert_error_log(f"ERROR CREATING TABLE DOW_30: {self.conn.get_warnings}")
+            return False

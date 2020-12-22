@@ -2,12 +2,8 @@ import schedule
 import keyboard
 from halo import Halo
 import Data.Technical_Data.Retrieve_Data.retrieve_technical as rt
+import Data.Technical_Data.Retrieve_Data.retrieve_sentiment as rs
 import Data.config_read as config
-import Data.Technical_Data.yahoo_finance as yfinance
-import Data.sentiment as sentiment
-import Data.stock_list as build_list
-import Database.build_tables as build_table
-import Database.Service.email_service as email
 
 class schedule_assist:
     def __init__(self):
@@ -17,7 +13,7 @@ class schedule_assist:
 
     def daily_schedule_function_group(self):
         rt.retrieve_technical_data().run_data_load()
-        sentiment.sentiment().gather_headlines()
+        rs.retrieve_sentiment_data().run_data_load()
         # email.send_email().daily_update_email()
 
     def weekly_schedule_function_group(self):

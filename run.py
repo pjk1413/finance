@@ -7,5 +7,7 @@ run = True
 # args = sys.argv[1:]
 while run:
     program = gsd.gather_stock_data()
+    print("Updating stock list...")
     program.update_stock_list()
+    print("Updating stock data...")
     program.gather_extra_data()

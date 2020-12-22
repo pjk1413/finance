@@ -10,21 +10,17 @@ import Data.Init_Gather.gather_stock_data as gsd
 def startup(run_historical):
     build_database.build_database().build_database()
     build_tables.build_tables().build_tables()
-    # if run_historical:
-    #     rt.retrieve_technical_data().run_data_load(range='historical')
-    #     rs.retrieve_sentiment_data().run_data_load(range='historical')
-
+    if run_historical:
+        rt.retrieve_technical_data().run_data_load(range='historical')
+        rs.retrieve_sentiment_data().run_data_load(range='historical')
+    run()
 
 def run():
     schedule.schedule_assist().run_schedule()
 
-
 if __name__ == '__main__':
     startup(True)
-    # gsd.gather_stock_data().update_stock_list()
-    # stock_list.stock_list().update_stock_list()
-    # startup(True)
-    # Interface.view().start_up()
+
 
 
 

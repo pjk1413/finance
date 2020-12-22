@@ -5,7 +5,6 @@ import mysql.connector.errors as error
 from Database.utility import list_of_schema
 from Database.Service.email_service import warning_email
 
-
 class database:
     def __init__(self):
         config = get_values()
@@ -58,7 +57,6 @@ class database:
             )
         except error:
             print("Error connecting to database")
-
 
 def insert_log_statement(statement):
     config = get_values()

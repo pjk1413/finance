@@ -19,7 +19,7 @@ class stock_service:
 
 
     def select_all_stock_objs(self, ticker, dataframe = False, cleaned = True):
-        sql_statement = f"SELECT * FROM stock_technical_data.{ticker}_STK;";
+        sql_statement = f"SELECT * FROM stock_technical_data.STOCK_DATA where ticker={ticker} ORDER BY dt DESC;";
         try:
             cursor = self.conn_stock.cursor(dictionary=True)
             cursor.execute(sql_statement)
@@ -66,12 +66,12 @@ class stock_service:
         result = True
         try:
             cursor = self.conn_stock.cursor()
-            sql_statement = f"UPDATE {stock_obj.symbol}_STK " \
+            sql_statement = f"UPDATE STOCK_DATA " \
                             f"SET open='{stock_obj.open}', close='{stock_obj.close}', " \
                             f"high='{stock_obj.high}', low='{stock_obj.low}', " \
                             f"adj_close='{stock_obj.adj_close}', volume='{stock_obj.volume}', dividend='{stock_obj.dividend}'," \
                             f"split='{stock_obj.split}', sma_ind='{stock_obj.sma_ind}' " \
-                            f"WHERE dt='{stock_obj.date}' ;"
+                            f"WHERE dt='{stock_obj.date}' AND ticker='{stock_obj.symbol}' ;"
             cursor.execute(sql_statement)
             self.conn_stock.commit()
         except errors:
@@ -80,35 +80,18 @@ class stock_service:
 
 
     def insert_stock_obj(self, stock_obj: stock_model):
-        # check data
-        result = True
-        try:
-            cursor = self.conn_stock.cursor()
-            result = self.check_if_exists(stock_obj.symbol, stock_obj.date, stock_obj.adj_close,
-                stock_obj.volume, stock_obj.open, stock_obj.close, stock_obj.high, stock_obj.low, stock_obj.split, stock_obj.dividend)
-            if result:
-                sql_statement = f"UPDATE {stock_obj.symbol}_STK " \
-                                f"SET open='{stock_obj.open}', close='{stock_obj.close}', " \
-                                f"high='{stock_obj.high}', low='{stock_obj.low}', " \
-                                f"adj_close='{stock_obj.adj_close}', volume='{stock_obj.volume}', dividend='{stock_obj.dividend}'," \
-                                f"split='{stock_obj.split}' " \
-                                f"WHERE dt='{stock_obj.date}' ;"
-                cursor.execute(sql_statement)
-                self.conn_stock.commit()
-            elif result == False:
-                values = (stock_obj.date, stock_obj.open, stock_obj.close, stock_obj.high, stock_obj.low, stock_obj.adj_close,
-                          stock_obj.volume, stock_obj.dividend, stock_obj.split)
-                sql_statement = f"INSERT INTO {stock_obj.symbol}_STK (dt, open, close, high, low, adj_close, volume, dividend, split) " \
-                                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
-                cursor.execute(sql_statement, values)
-                self.conn_stock.commit()
-        except errors as err:
-            insert_error_log(f"ERROR INSERTING/UPDATING TECHNICAL DATA INTO DATABASE FOR {stock_obj.symbol} AT {stock_obj.date}")
+        sql_statement = f"INSERT INTO STOCK_DATA (dt, ticker, open, close, high, low, adj_close, volume, dividend, split) " \
+                                f"VALUES ('{stock_obj.date}', '{stock_obj.symbol}', {stock_obj.open}, {stock_obj.close}, {stock_obj.high}, " \
+                                f"{stock_obj.low}, {stock_obj.adj_close}, {stock_obj.volume}, {stock_obj.dividend}, {stock_obj.split}) " \
+                                f"ON DUPLICATE KEY UPDATE " \
+                                f"open={stock_obj.open}, close={stock_obj.close}, high={stock_obj.high}, low={stock_obj.low}, " \
+                                f"adj_close={stock_obj.adj_close}, volume={stock_obj.volume}, dividend={stock_obj.dividend}, split={stock_obj.split}"
+        return sql_statement
 
 
     # Errors with adding a more detailed exist checker
     def check_if_exists(self, symbol, date, adj_close, volume, open, close, high, low, split, dividend):
-        sql_statement = f"SELECT IF( EXISTS( SELECT * FROM {symbol}_STK WHERE dt = '{date}' AND volume = '{volume}'), 1, 0);";
+        sql_statement = f"SELECT IF( EXISTS( SELECT * FROM STOCK_DATA WHERE dt = '{date}' AND volume = '{symbol}'), 1, 0);";
         try:
             cursor = self.conn_stock.cursor(buffered=True)
             cursor.execute(sql_statement)
