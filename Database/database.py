@@ -2,7 +2,7 @@ import mysql.connector as connect
 from Data.config_read import config as get_values
 import datetime
 import mysql.connector.errors as error
-from Database.utility import list_of_schema
+from time import sleep
 from Database.Service.email_service import warning_email
 
 class database:
@@ -27,6 +27,12 @@ class database:
                 password=f"{self.password}",
                 database=f"{self.stock_db}"
             )
+        except error.InterfaceError:
+            print("Error opening connection STOCK")
+            sleep(2)
+        except error:
+            print(f"Error opening connection {error}")
+        try:
             self.conn_sentiment = connect.connect(
                 host=f"{self.host}",
                 user=f"{self.user}",
@@ -34,6 +40,12 @@ class database:
                 database=f"{self.sentiment_db}",
                 port=f"{self.port}"
             )
+        except error.InterfaceError:
+            print("Error opening connection SENTIMENT")
+            sleep(2)
+        except error:
+            print(f"Error opening connection {error}")
+        try:
             self.conn_utility = connect.connect(
                 host=f"{self.host}",
                 user=f"{self.user}",
@@ -41,6 +53,12 @@ class database:
                 database=f"{self.utility_db}",
                 port=f"{self.port}"
             )
+        except error.InterfaceError:
+            print("Error opening connection UTILITY")
+            sleep(2)
+        except error:
+            print(f"Error opening connection {error}")
+        try:
             self.conn_fundamental = connect.connect(
                 host=f"{self.host}",
                 user=f"{self.user}",
@@ -48,6 +66,11 @@ class database:
                 database=f"{self.fundamental_db}",
                 port=f"{self.port}"
             )
+        except error.InterfaceError:
+            print("Error opening connection FUNDAMENTAL")
+            sleep(2)
+        except error:
+            print(f"Error opening connection {error}")
             self.conn_predict = connect.connect(
                 host=f"{self.host}",
                 user=f"{self.user}",
@@ -55,8 +78,11 @@ class database:
                 database=f"{self.predict_db}",
                 port=f"{self.port}"
             )
+        except error.InterfaceError:
+            print("Error opening connection PREDICT")
+            sleep(2)
         except error:
-            print("Error connecting to database")
+            print(f"Error opening connection {error}")
 
 def insert_log_statement(statement):
     config = get_values()

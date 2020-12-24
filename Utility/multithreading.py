@@ -1,12 +1,10 @@
 
 import Data.config_read as con
 from threading import Thread
-from datetime import datetime
-import time
 import pymysql
 from dbutils.pooled_db import PooledDB
-from mysql.connector import connect
 import mysql.connector.errors as err
+from time import sleep
 
 class mySqlObj:
     def __init__(self, connection, sql_statement):
@@ -29,8 +27,6 @@ class Multi_Threading:
                                password=f'{config.db_pass}',
                                database=f'{self.getPool(database)}',
                                autocommit=True,
-                               # charset=charSet,
-                               # cursorclass=cusrorType,
                                blocking=True,
                                maxconnections=5)
 
@@ -44,7 +40,11 @@ class Multi_Threading:
 
     def run_insert(self):
         for i, statement in enumerate(self.list):
-            connection = self.conn_pool.connection()
+            try:
+                connection = self.conn_pool.connection()
+            except err.InterfaceError as error:
+                print(f"INTERFACE ERROR: {error}")
+                sleep(2)
             t = Thread(target=execute_insert_statement, args=(i, connection ,statement))
             self.thread_list.append(t)
             t.start()
@@ -54,8 +54,11 @@ class Multi_Threading:
 
     def run(self):
         for i, statement in enumerate(self.list):
-
-            connection = self.conn_pool.connection()
+            try:
+                connection = self.conn_pool.connection()
+            except err.InterfaceError as error:
+                print(f"INTERFACE ERROR: {error}")
+                sleep(2)
             t = Thread(target=execute_statement, args=(i, connection, statement))
             self.thread_list.append(t)
             t.start()
@@ -64,10 +67,16 @@ class Multi_Threading:
             t.join()
 
 def execute_statement(num, conn, statement):
-    cursor = conn.cursor()
-    cursor.execute(statement)
-    cursor.close()
-    conn.close()
+    try:
+        cursor = conn.cursor()
+        cursor.execute(statement)
+        cursor.close()
+        conn.close()
+    except err.InterfaceError as error:
+        print(f"INTERFACE ERROR: {error}")
+        sleep(2)
+    except err:
+        print(err)
 
 def execute_insert_statement(num, conn, statement):
     try:
@@ -76,5 +85,8 @@ def execute_insert_statement(num, conn, statement):
         conn.commit()
         cursor.close()
         conn.close()
+    except err.InterfaceError as error:
+        print(f"INTERFACE ERROR: {error}")
+        sleep(2)
     except err:
         print(err)
