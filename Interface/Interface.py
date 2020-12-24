@@ -1,11 +1,8 @@
 from consolemenu import *
 from consolemenu.items import *
 import os
-import Data.Technical_Data.yahoo_finance as yfinance
 import Init.schedule as schedule
-import Database.build_tables as tables
 from Data.config_read import config as get_values
-from Database.database import database
 import Data.Technical_Data.Retrieve_Data.retrieve_technical as rt
 import Data.Technical_Data.Retrieve_Data.retrieve_sentiment as rs
 

@@ -1,7 +1,6 @@
 import Database.build_database as database_build
 import Data.stock_list as fill
 import Interface.Interface as interface
-import Data.Technical_Data.yahoo_finance as yfinance
 import Data.sentiment as sentiment
 import Database.build_tables as tables_build
 ##########################################
@@ -41,11 +40,3 @@ class init:
 
     def fill_stock_list_table(self):
         fill.stock_list().list_to_db()
-
-
-    def update_all_tables(self):
-        print("--------------------------------------------")
-        print("Beginning update of all stock data tables...")
-        yfinance.yfinance().update_data()
-        print("Beginning update of all sentiment data tables...")
-        sentiment.sentiment().gather_headlines()

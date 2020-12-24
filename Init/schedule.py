@@ -1,6 +1,5 @@
 import schedule
 import keyboard
-from halo import Halo
 import Data.Technical_Data.Retrieve_Data.retrieve_technical as rt
 import Data.Technical_Data.Retrieve_Data.retrieve_sentiment as rs
 import Data.config_read as config

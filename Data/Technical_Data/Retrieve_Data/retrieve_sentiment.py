@@ -1,7 +1,5 @@
 import math
 import time
-from pymysql.converters import escape_string
-from pymysql.converters import escape_str
 import Utility.multithreading as multi_threading
 from dateutil import parser
 import pandas as pd
@@ -14,13 +12,13 @@ from Database.database import database
 from Utility.string_manipulation import clean, list_to_database
 from Interface.utility import printProgressBar
 from Data.Technical_Data.Stock_Utility.date_helper import find_most_recent_date
-from yaspin import yaspin
 from Database.database import insert_error_log
 import datetime
 import requests
 import json
 
 # TODO allow data retrieval for multiple tickers at once
+# TODO clean up class to make it more streamlined, less repetition
 class retrieve_sentiment_data:
     def __init__(self):
         config = con()
@@ -28,7 +26,6 @@ class retrieve_sentiment_data:
         self.np = config.process_number
         self.tiingo_api_key = config.tiingo_api_key
         self.list_of_stocks = stock_list().get_list_of_stocks()
-        # self.list_of_stocks = [('GM',)]
 
     # TODO look into pooling downloads or running the entire function through a multiprocessor
     def run_data_load(self, range='latest'):
@@ -45,6 +42,7 @@ class retrieve_sentiment_data:
                 threader = multi_threading.Multi_Threading(sql_statement_list, "sentiment")
                 threader.run_insert()
                 printProgressBar(i + 1, l, prefix=f'Current: {entry[0]} - Progress:', suffix='Complete', length=50)
+
         if range == 'historical':
             l = len(self.list_of_stocks)
             printProgressBar(0, l, prefix='Sentiment Progress:', suffix='Complete', length=50)
@@ -64,7 +62,6 @@ class retrieve_sentiment_data:
     def retrieve_historical(self, ticker, years_back=2):
         start_date = (datetime.datetime.now() - datetime.timedelta(days=365 * years_back)).strftime('%Y-%m-%d')
         if start_date is not None:
-            # TODO look into spinning symbol to indicate work being done
             # TODO combine tickers into groups of 5 to grab more data at once
             # TODO look into storing data as a text file first before inserting into database
             response = requests.get(f"https://api.tiingo.com/tiingo/news?tickers={ticker}&"
@@ -121,28 +118,17 @@ class retrieve_sentiment_data:
     def sentiment_analysis(self, data):
         neg, neu, pos, compound = 0, 0, 0, 0
         for words in data:
-            prep_words = [[words]]
-
-            # Instantiate the sentiment intensity analyzer
-            # pip install vaderSentiment
             vader = SentimentIntensityAnalyzer()
-            # Set column names
+
             columns = ['entry']
-            # Convert the parsed_news list into a DataFrame called 'parsed_and_scored_news'
             scored_data = pd.DataFrame(data, columns=columns)
-            # Iterate through the headlines and get the polarity scores using vader
             scores = scored_data['entry'].apply(vader.polarity_scores).tolist()
-            # Convert the 'scores' list of dicts into a DataFrame
             scores_df = pd.DataFrame(scores)
-            # Join the DataFrames of the news and the list of dicts
             scored_data = scored_data.join(scores_df, rsuffix='_right')
-            # Convert the date column from string to datetime
-            # parsed_and_scored_news['date'] = pd.to_datetime(parsed_and_scored_news.date).dt.date
-            # parsed_and_scored_news.head()
-            neg += self.flt_num(scored_data.iloc[0].get('neg'))
-            neu += self.flt_num(scored_data.iloc[0].get('neu'))
-            pos += self.flt_num(scored_data.iloc[0].get('pos'))
-            compound += self.flt_num(scored_data.iloc[0].get('compound'))
+            neg += flt_num(scored_data.iloc[0].get('neg'))
+            neu += flt_num(scored_data.iloc[0].get('neu'))
+            pos += flt_num(scored_data.iloc[0].get('pos'))
+            compound += flt_num(scored_data.iloc[0].get('compound'))
         sent_dict = {
             'negative' : neg/len(data),
             'neutral' : neu/len(data),
@@ -150,12 +136,6 @@ class retrieve_sentiment_data:
             'compound' : compound/len(data)
         }
         return sent_dict
-
-    def flt_num(self, number):
-        if math.isnan(number):
-            return float('NaN')
-        else:
-            return round(float(number),3)
 
     # TODO may need to update the update statement to include more information
     # TODO may need to update how we limit data entering columns
@@ -186,7 +166,14 @@ class retrieve_sentiment_data:
         sql_statement += ";"
         return sql_statement
 
+
 def clean_sql(str):
     clean_str = str.replace("'", "''")
     clean_str = clean_str.replace('"', '""')
     return clean_str
+
+def flt_num(self, number):
+    if math.isnan(number):
+        return float('NaN')
+    else:
+        return round(float(number),3)

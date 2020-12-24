@@ -2,17 +2,13 @@ from Data.config_read import config as con
 import Data.Technical_Data.Model.stock_model as stock_model
 from Data.Technical_Data.Model.stock_model import stock_model
 import requests
-import multiprocessing
-import gc
 import Utility.multithreading as multi_threading
 from Data.stock_list import stock_list
-from yaspin import yaspin
 import time
 from Database.database import insert_error_log
 import datetime
 import json
 import requests.exceptions as exc
-from Database.Service.stock_service import stock_service as service
 from Data.Technical_Data.Stock_Utility.date_helper import find_most_recent_date
 from Utility.string_manipulation import clean
 from Interface.utility import printProgressBar

@@ -50,6 +50,7 @@ ABTX,Allegiance Bancshares Inc,NASDAQ,Stock,2015-10-08,null,Active
 ABUS,Arbutus Biopharma Corp,NASDAQ,Stock,2015-08-03,null,Active
 AC,Associated Capital Group Inc - Class A,NYSE,Stock,2015-12-01,null,Active
 ACA,Arcosa Inc,NYSE,Stock,2018-10-30,null,Active
+ACAC,Acies Acquisition Corp - Class A,NASDAQ,Stock,2020-12-21,null,Active
 ACACU,Acies Acquisition Corp - Units (1 Ord Share Class A & 1/3 War),NASDAQ,Stock,2020-10-23,null,Active
 ACACW,Acies Acquisition Corp - Warrants (30/11/2027),NASDAQ,Stock,2020-12-15,null,Active
 ACAD,ACADIA Pharmaceuticals Inc,NASDAQ,Stock,2004-05-27,null,Active
@@ -83,6 +84,7 @@ ACIC-WS,Atlas Crest Investment Corp - Warrants (01/01/9999),NYSE,Stock,2020-12-1
 ACIO,ETF Series Solutions Aptus Collared Income Opportunity ETF,BATS,ETF,2019-07-10,null,Active
 ACIU,AC Immune SA,NASDAQ,Stock,2016-09-23,null,Active
 ACIW,ACI Worldwide Inc,NASDAQ,Stock,1995-02-27,null,Active
+ACKIU,Ackrell SPAC Partners I Co - Units (1 Ord & 1/2 War),NASDAQ,Stock,2020-12-21,null,Active
 ACLS,Axcelis Technologies Inc,NASDAQ,Stock,2000-07-11,null,Active
 ACM,AECOM,NYSE,Stock,2007-05-10,null,Active
 ACMR,ACM Research Inc,NASDAQ,Stock,2017-11-03,null,Active
@@ -131,7 +133,6 @@ ADMS,Adamas Pharmaceuticals Inc,NASDAQ,Stock,2014-04-10,null,Active
 ADNT,Adient plc,NYSE,Stock,2016-10-31,null,Active
 ADOC,Edoc Acquisition Corp - Class A,NASDAQ,Stock,2020-12-10,null,Active
 ADOCR,Edoc Acquisition Corp,NASDAQ,Stock,2020-12-10,null,Active
-ADOCU,Edoc Acquisition Corp - Units (1 Ord Class A 1 Right & 1 War),NASDAQ,Stock,2020-11-10,null,Active
 ADOCW,Edoc Acquisition Corp - Warrants (30/11/2027),NASDAQ,Stock,2020-12-10,null,Active
 ADP,Automatic Data Processing Inc,NASDAQ,Stock,1983-04-06,null,Active
 ADPT,Adaptive Biotechnologies Corp,NASDAQ,Stock,2019-06-27,null,Active
@@ -188,6 +189,7 @@ AFI,Armstrong Flooring Inc,NYSE,Stock,2016-03-17,null,Active
 AFIB,Acutus Medical Inc,NASDAQ,Stock,2020-08-06,null,Active
 AFIF,Anfield Universal Fixed Income ETF,BATS,ETF,2018-09-18,null,Active
 AFIN,American Fin Tr Inc - Class A,NASDAQ,Stock,2018-07-19,null,Active
+AFINO,American Fin Tr Inc,NASDAQ,Stock,2020-12-15,null,Active
 AFINP,American Fin Tr Inc,NASDAQ,Stock,2019-03-22,null,Active
 AFK,VanEck Vectors Africa Index ETF,NYSE ARCA,ETF,2008-07-14,null,Active
 AFL,Aflac Inc,NYSE,Stock,1984-07-19,null,Active
@@ -1048,7 +1050,6 @@ BJRI,BJs Restaurant Inc,NASDAQ,Stock,1996-10-10,null,Active
 BJUL,Innovator S&P 500 Buffer ETF - July,BATS,ETF,2018-08-29,null,Active
 BJUN,Innovator S&P 500 Buffer ETF June,BATS,ETF,2019-06-03,null,Active
 BK,Bank Of New York Mellon Corp,NYSE,Stock,1973-05-03,null,Active
-BK-P-C,Bank Of New York Mellon Corporation The Dep Shs Repstg 14000th Perp Pfd Ser C,NYSE,Stock,2014-09-22,null,Active
 BKAG,BNY Mellon Core Bond ETF,NYSE ARCA,Stock,2020-04-24,null,Active
 BKCC,Blackrock Kelso Capital Corp,NASDAQ,Stock,2007-06-27,null,Active
 BKD,Brookdale Senior Living Inc,NYSE,Stock,2005-11-22,null,Active
@@ -1179,7 +1180,7 @@ BPMC,Blueprint Medicines Corp,NASDAQ,Stock,2015-04-30,null,Active
 BPMP,BP Midstream Partners LP representing Limited Partner Interests,NYSE,Stock,2017-10-26,null,Active
 BPOP,Popular Inc,NASDAQ,Stock,1990-03-26,null,Active
 BPOPM,Popular Inc Popular Capital Trust II 6125 Cumulative Monthly Income Trust Preferred Securities,NASDAQ,Stock,2008-11-19,null,Active
-BPOPN,Popular Inc Popular Capital Trust I 670 Cumulative Monthly Income Trust Preferred Securities,NASDAQ,Stock,2004-05-05,null,Active
+BPOPN,Popular Capital Trust I,NASDAQ,Stock,2004-05-05,null,Active
 BPRN,Bank of Princeton,NASDAQ,Stock,2016-07-12,null,Active
 BPT,BP Prudhoe Bay Royalty Trust,NYSE,Stock,1989-05-24,null,Active
 BPTH,Bio-Path Holdings Inc,NASDAQ,Stock,2008-03-04,null,Active
@@ -1391,7 +1392,7 @@ CAMT,Camtek Ltd,NASDAQ,Stock,2000-07-28,null,Active
 CAN,Canaan Inc,NASDAQ,Stock,2019-11-20,null,Active
 CANE,Teucrium Sugar Fund,NYSE ARCA,ETF,2011-09-19,null,Active
 CANF,Can-Fite Biopharma Ltd,NYSE MKT,Stock,2012-11-06,null,Active
-CANG,Cango Inc American Depositary Shares each representing two 2 Class A,NYSE,Stock,2018-07-26,null,Active
+CANG,Cango Inc,NYSE,Stock,2018-07-26,null,Active
 CAP-U,Capitol Investment Corp V Units each consisting of one share of Class A common stock and onethird of one redeemable warrant,NYSE,Stock,2020-12-02,null,Active
 CAP-U,Capitol Investment Corp V - Units (1 Ord Share Class A & 1/3 War),NYSE,Stock,2020-12-03,null,Active
 CAPA,HighCape Capital Acquisition Corp - Class A,NASDAQ,Stock,2020-11-13,null,Active
@@ -1661,7 +1662,7 @@ CHU,China Unicom Hong Kong Ltd,NYSE,Stock,2000-06-21,null,Active
 CHUY,Chuy`s Holdings Inc,NASDAQ,Stock,2012-07-24,null,Active
 CHW,Calamos Global Dynamic Income Fund,NASDAQ,ETF,2007-07-26,null,Active
 CHWY,Chewy Inc - Class A,NYSE,Stock,2019-06-14,null,Active
-CHX,ChampionX Corporation,NYSE,Stock,2018-04-27,null,Active
+CHX,ChampionX Corporation,NASDAQ,Stock,2018-04-27,null,Active
 CHX-W,ChampionX Corporation Additional Shares When Issued,NYSE,Stock,2020-05-29,null,Active
 CHY,Calamos Convertible Hi Income Fund,NASDAQ,ETF,2003-05-29,null,Active
 CI,Cigna Corp,NYSE,Stock,1982-03-31,null,Active
@@ -1705,7 +1706,7 @@ CKH,SEACOR Holdings Inc,NYSE,Stock,2018-01-29,null,Active
 CKPT,Checkpoint Therapeutics Inc,NASDAQ,Stock,2016-12-19,null,Active
 CKX,CKX Lands Inc,NYSE MKT,Stock,1999-07-13,null,Active
 CL,Colgate-Palmolive Company,NYSE,Stock,1977-01-03,null,Active
-CLA,Colonnade Acquisition Corp - Class A,NYSE,Stock,2020-10-09,null,Active
+CLA,Colonnade Acquisition Corp Class A,NYSE,Stock,2020-10-09,null,Active
 CLA-U,Colonnade Acquisition Corp - Units (1 Ord Share Class A & 1/2 War),NYSE,Stock,2020-10-09,null,Active
 CLA-U,Colonnade Acquisition Corp Units each consisting of one Class A ordinary share and onehalf of one redeemable warrant,NYSE,Stock,2020-08-21,null,Active
 CLA-WS,Colonnade Acquisition Corp - Warrants (31/08/2027),NYSE,Stock,2020-10-09,null,Active
@@ -1883,7 +1884,9 @@ COMM,CommScope Holding Company Inc,NASDAQ,Stock,2013-10-25,null,Active
 COMT,BTC iShares Commodities Select Strategy ETF,NASDAQ,ETF,2014-10-16,null,Active
 CONE,CyrusOne Inc,NASDAQ,Stock,2013-01-18,null,Active
 CONN,Conns Inc,NASDAQ,Stock,2003-11-25,null,Active
+CONX,CONX Corp - Class A,NASDAQ,Stock,2020-12-21,null,Active
 CONXU,CONX Corp - Units (1 Ord Share Class A & 1/4 War),NASDAQ,Stock,2020-10-30,null,Active
+CONXW,CONX Corp - Warrants (30/10/2027),NASDAQ,Stock,2020-12-21,null,Active
 COO,Cooper Companies Inc,NYSE,Stock,1983-12-30,null,Active
 COOLU,Corner Growth Acquisition Corp - Units (1 Ord Share Class A & 1/3 War),NASDAQ,Stock,2020-12-17,null,Active
 COOP,Mr. Cooper Group Inc,NASDAQ,Stock,2012-03-28,null,Active
@@ -1943,7 +1946,7 @@ CRAI,CRA International Inc,NASDAQ,Stock,1998-04-24,null,Active
 CRAK,VanEck Vectors Oil Refiners ETF,NYSE ARCA,ETF,2015-08-19,null,Active
 CRBN,BTC iShares MSCI ACWI Low Carbon Target ETF,NYSE ARCA,ETF,2014-12-15,null,Active
 CRBP,Corbus Pharmaceuticals Holdings Inc,NASDAQ,Stock,2014-11-11,null,Active
-CRC,California Resources Corporation New,NYSE,Stock,2020-10-28,null,Active
+CRC,California Resources Corporation - New,NYSE,Stock,2020-10-28,null,Active
 CRD-A,Crawford & Company. Class A,NYSE,Stock,1992-03-19,null,Active
 CRD-B,Crawford & Co. - Class B,NYSE,Stock,1990-01-12,null,Active
 CRDF,Cardiff Oncology Inc,NASDAQ,Stock,2004-07-27,null,Active
@@ -2008,8 +2011,11 @@ CSOD,Cornerstone OnDemand Inc,NASDAQ,Stock,2011-03-17,null,Active
 CSPI,CSP Inc,NASDAQ,Stock,1990-03-27,null,Active
 CSPR,Casper Sleep Inc,NYSE,Stock,2020-02-06,null,Active
 CSQ,Calamos Strategic Total Return Fund,NASDAQ,ETF,2004-04-01,null,Active
+CSR,Centerspace,NYSE,Stock,1997-10-17,null,Active
+CSR,CHINA SECURITY & SURVEILLANCE TECHNOLOGY INC.,NYSE,Stock,2007-10-29,null,Active
+CSR-P-C,Centerspace,NYSE,Stock,2017-09-26,null,Active
 CSSE,Chicken Soup for the Soul Entertainment Inc - Class A,NASDAQ,Stock,2017-08-18,null,Active
-CSSEN,Chicken Soup For The Soul Entertainment Inc 9.50 Notes 2025,NASDAQ,Stock,2020-07-21,null,Active
+CSSEN,Chicken Soup for the Soul Entertainment Inc,NASDAQ,Stock,2020-07-21,null,Active
 CSSEP,Chicken Soup for the Soul Entertainment Inc 975 PRF PERPETUAL USD 25 Ser A,NASDAQ,Stock,2018-06-27,null,Active
 CSTE,Caesarstone SdotYam Ltd,NASDAQ,Stock,2012-03-22,null,Active
 CSTL,Castle Biosciences Inc,NASDAQ,Stock,2019-07-25,null,Active
@@ -2113,7 +2119,7 @@ CWEN,Clearway Energy Inc Class C,NYSE,Stock,2013-07-17,null,Active
 CWEN-A,Clearway Energy Inc Class A,NYSE,Stock,2015-05-15,null,Active
 CWENA,Clearway Energy Inc Class A,NYSE,Stock,2015-05-15,null,Active
 CWH,Camping World Holdings Inc - Class A,NYSE,Stock,2016-10-07,null,Active
-CWI,SPDRR MSCI ACWI EXUS ETF,NYSE ARCA,ETF,2007-01-17,null,Active
+CWI,SSgA SPDR MSCI ACWI ex-US,NYSE ARCA,ETF,2007-01-17,null,Active
 CWK,Cushman & Wakefield plc,NYSE,Stock,2018-08-02,null,Active
 CWS,ADVISORSHARES FOCUSED EQUITY ETF,NYSE ARCA,ETF,2016-09-21,null,Active
 CWST,Casella Waste Systems Inc Class A,NASDAQ,Stock,1997-10-29,null,Active
@@ -2210,6 +2216,7 @@ DCTH,Delcath Systems Inc,NASDAQ,Stock,2018-05-29,null,Active
 DCUE,Dominion Energy Inc,NYSE,Stock,2019-06-12,null,Active
 DD,DuPont de Nemours Inc,NYSE,Stock,1962-01-02,null,Active
 DDD,3D Systems Corp,NYSE,Stock,1990-11-05,null,Active
+DDEC,FT Cboe Vest U.S. Equity Deep Buffer ETF - December,BATS,ETF,2020-12-21,null,Active
 DDF,Delaware Investments Dividend And Income,NYSE,ETF,1994-10-27,null,Active
 DDG,ProShares Short Oil & Gas,NYSE ARCA,ETF,2008-06-18,null,Active
 DDIV,First Trust Dorsey Wright Momentum & Dividend ETF,NASDAQ,ETF,2017-11-02,null,Active
@@ -2236,7 +2243,7 @@ DEH-WS,D8 Holdings Corp - Warrants (05/08/2027),NYSE,Stock,2020-09-04,null,Activ
 DEI,Douglas Emmett Inc,NYSE,Stock,2006-10-25,null,Active
 DELL,Dell Technologies Inc - Class C,NYSE,Stock,2018-12-21,null,Active
 DEM,WisdomTree Emerging Markets High Dividend Fund,NYSE ARCA,ETF,2007-07-13,null,Active
-DEMZ,DEMZ POLITICAL CONTRIBUTIONS ETF,NASDAQ,ETF,2020-11-03,null,Active
+DEMZ,DEMZ Political Contributions ETF,NASDAQ,ETF,2020-11-03,null,Active
 DEN,Denbury Inc - New,NYSE,Stock,2020-09-21,null,Active
 DENN,Denny`s Corp,NASDAQ,Stock,1998-01-08,null,Active
 DEO,Diageo plc,NYSE,Stock,1996-05-13,null,Active
@@ -2304,7 +2311,7 @@ DHR-P-B,,NYSE,Stock,2020-05-08,null,Active
 DHS,WisdomTree U.S. High Dividend Fund,NYSE ARCA,ETF,2006-06-16,null,Active
 DHT,DHT Holdings Inc,NYSE,Stock,2005-10-13,null,Active
 DHX,DICE HOLDINGS INC,NYSE,Stock,2007-07-26,null,Active
-DHY,Credit Suisse High Yield Bond Fund ETF,NYSE MKT,ETF,1998-07-29,null,Active
+DHY,Credit Suisse High Yield Bond Fund,NYSE MKT,ETF,1998-07-29,null,Active
 DIA,SPDR Dow Jones Industrial Average ETF,NYSE ARCA,ETF,1998-01-20,null,Active
 DIAL,Columbia Diversified Fixed Income Allocation ETF,NYSE ARCA,ETF,2017-10-12,null,Active
 DIAX,Nuveen Dow 30SM Dynamic Overwrite Fund Shs,NYSE,ETF,2014-12-03,null,Active
@@ -2313,7 +2320,7 @@ DIM,WisdomTree International MidCap Dividend Fund,NYSE ARCA,ETF,2006-06-16,null,
 DIN,Dine Brands Global Inc,NYSE,Stock,1991-07-12,null,Active
 DINT,Davis Select International ETF,NASDAQ,ETF,2018-03-02,null,Active
 DIOD,Diodes Inc,NASDAQ,Stock,1992-03-17,null,Active
-DIS,Walt Disney Company The,NYSE,Stock,1962-01-02,null,Active
+DIS,Walt Disney Co (The),NYSE,Stock,1962-01-02,null,Active
 DISCA,Discovery Inc - Class A,NASDAQ,Stock,2005-07-08,null,Active
 DISCB,Discovery Inc - Class B,NASDAQ,Stock,2005-11-10,null,Active
 DISCK,Discovery Inc - Series C,NASDAQ,Stock,2008-09-18,null,Active
@@ -2322,7 +2329,7 @@ DISHR,DISH Network Corp Rt,NASDAQ,Stock,2019-11-25,null,Active
 DIT,Amcon Distributing Company,NYSE MKT,Stock,1995-08-04,null,Active
 DIV,Global X SuperDividend U.S. ETF,NYSE ARCA,ETF,2013-03-12,null,Active
 DIVA,AGFIQ HEDGED DIVIDEND INCOME FUND,NYSE ARCA,ETF,2015-01-15,null,Active
-DIVB,ISHARES U.S. DIVIDEND AND BUYBACK ETF,BATS,ETF,2017-11-09,null,Active
+DIVB,iShares U.S. Dividend and Buyback ETF,BATS,ETF,2017-11-09,null,Active
 DIVO,Amplify CPW Enhanced Dividend Income ETF,NYSE ARCA,ETF,2016-12-14,null,Active
 DJCB,UBS AG London Branch ETRACS Bloomberg Commodity Index Total Return ETN Ser B 10312039,NYSE ARCA,Stock,2019-10-25,null,Active
 DJCO,Daily Journal Corporation,NASDAQ,Stock,1992-02-25,null,Active
@@ -2536,7 +2543,6 @@ DXF,Dunxin Financial Holdings Ltd.,NYSE MKT,Stock,2018-03-02,null,Active
 DXGE,WISDOMTREE GERMANY HEDGED EQUITY FUND NA,NASDAQ,ETF,2013-10-17,null,Active
 DXJ,WisdomTree Japan Hedged Equity Fund,NYSE ARCA,ETF,2006-06-16,null,Active
 DXJS,WisdomTree Japan Hedged SmallCap Equity Fund,NASDAQ,ETF,2013-06-28,null,Active
-DXLG,Destination XL Group Inc,NASDAQ,Stock,1992-02-25,null,Active
 DXPE,DXP Enterprises Inc,NASDAQ,Stock,1998-05-07,null,Active
 DXR,Daxor Corp,NYSE MKT,Stock,1992-03-17,null,Active
 DXYN,Dixie Group Inc,NASDAQ,Stock,1990-03-26,null,Active
@@ -2573,7 +2579,7 @@ EBC,Eastern Bankshares Inc,NASDAQ,Stock,2020-10-15,null,Active
 EBF,Ennis Inc,NYSE,Stock,1987-09-24,null,Active
 EBIX,Ebix Inc,NASDAQ,Stock,1990-03-26,null,Active
 EBIZ,Global X E-commerce ETF,NASDAQ,ETF,2018-11-30,null,Active
-EBLU,Ecofin Global Water ESG Fund,BATS,ETF,2017-02-15,null,Active
+EBLU,Ecofin Global Water ESG Fund,NYSE ARCA,ETF,2017-02-15,null,Active
 EBMT,Eagle Bancorp Montana Inc,NASDAQ,Stock,2000-04-06,null,Active
 EBND,SPDR Bloomberg Barclays Emerging Markets Local Bond ETF,NYSE ARCA,ETF,2011-02-24,null,Active
 EBON,Ebang International Holdings Inc - Class A,NASDAQ,Stock,2020-06-26,null,Active
@@ -2907,7 +2913,7 @@ ETB,Eaton Vance Tax-Managed Buy-Write Income Fund,NYSE,ETF,2005-04-27,null,Activ
 ETG,Eaton Vance TaxAdvantaged Global Dividend Income Fund,NYSE,ETF,2004-01-29,null,Active
 ETH,Ethan Allen Interiors Inc,NYSE,Stock,1993-03-16,null,Active
 ETHO,FA Etho Climate Leadership U.S. ETF,NYSE ARCA,ETF,2015-11-19,null,Active
-ETI-P,Entergy Texas Inc. 5.375 PRF PERPETUAL USD 25 Ser A,NYSE,Stock,2019-09-04,null,Active
+ETI-P,Entergy Texas Inc,NYSE,Stock,2019-09-04,null,Active
 ETJ,Eaton Vance Risk-Managed Diversified Equity Income Fund,NYSE,ETF,2007-07-27,null,Active
 ETM,Entercom Communications Corp - Class A,NYSE,Stock,1999-01-29,null,Active
 ETN,Eaton Corporation plc,NYSE,Stock,1972-06-01,null,Active
@@ -3115,6 +3121,7 @@ FCVT,First Trust SSI Strategic Convertible Securities ETF,NASDAQ,ETF,2015-11-04,
 FCX,Freeport-McMoRan Inc,NYSE,Stock,1995-07-10,null,Active
 FDBC,Fidelity D&D Bancorp Inc,NASDAQ,Stock,2001-01-02,null,Active
 FDD,First Trust STOXX European Select Dividend Income Fund,NYSE ARCA,ETF,2007-08-30,null,Active
+FDEC,FT Cboe Vest U.S. Equity Buffer ETF - December,BATS,ETF,2020-12-21,null,Active
 FDEM,Fidelity Emerging Markets Multifactor ETF,BATS,ETF,2019-02-28,null,Active
 FDEU,First Trust Dynamic Europe Equity Income Fund,NYSE,ETF,2015-09-25,null,Active
 FDEV,Fidelity International Multifactor ETF,BATS,ETF,2019-02-28,null,Active
@@ -3141,7 +3148,6 @@ FDUSZ,Fidus Investment Corp 600 Note 02012024,NASDAQ,Stock,2019-02-11,null,Activ
 FDVV,Fidelity High Dividend ETF,NYSE ARCA,ETF,2016-09-15,null,Active
 FDX,Fedex Corp,NYSE,Stock,1978-04-12,null,Active
 FE,Firstenergy Corp,NYSE,Stock,1997-11-10,null,Active
-FEAC-WS,Skillz Inc - Warrants (26/02/2027),NYSE,Stock,2020-04-27,null,Active
 FEDU,Four Seasons Education Cayman Inc,NYSE,Stock,2017-11-07,null,Active
 FEDX,Emles Federal Contractors ETF,BATS,ETF,2020-10-15,null,Active
 FEI,First Trust MLP and Energy Income Fund,NYSE,ETF,2012-11-28,null,Active
@@ -3551,7 +3557,7 @@ FVCB,FVCbankcorp Inc,NASDAQ,Stock,2013-11-07,null,Active
 FVD,First Trust Value Line Dividend Index Fund,NYSE ARCA,ETF,2003-10-09,null,Active
 FVE,Five Star Senior Living Inc,NASDAQ,Stock,2001-12-17,null,Active
 FVRR,Fiverr International Ltd no par value,NYSE,Stock,2019-06-13,null,Active
-FWDB,ADVISORSHARES FOLIOBEYOND SMART CORE BOND ETF,NYSE ARCA,ETF,2011-06-21,null,Active
+FWDB,AdvisorShares FolioBeyond Smart Core Bond ETF,NYSE ARCA,ETF,2011-06-21,null,Active
 FWONA,Liberty Media Corp (Tracking Stock -Liberty Formula 1) Series A,NASDAQ,Stock,2013-01-10,null,Active
 FWONK,Liberty Media Corp (Tracking Stock -Liberty Formula 1) Series C,NASDAQ,Stock,2014-07-08,null,Active
 FWP,Forward Pharma AS,NASDAQ,Stock,2014-10-15,null,Active
@@ -3625,7 +3631,7 @@ GBUG,Barclays Bank PLC,NYSE ARCA,Stock,2019-10-08,null,Active
 GBX,Greenbrier Cos. Inc,NYSE,Stock,1994-07-14,null,Active
 GCAP,Gain Capital Holdings Inc,NYSE,Stock,2010-12-15,null,Active
 GCBC,Greene County Bancorp Inc,NASDAQ,Stock,1999-06-30,null,Active
-GCC,WisdomTree Continuous Commodity Index Fund,NYSE ARCA,ETF,2008-01-24,null,Active
+GCC,WisdomTree EnhancedContinuous Commodity Index Fund,NYSE ARCA,ETF,2008-01-24,null,Active
 GCI,Gannett Co Inc,NYSE,Stock,2014-02-04,null,Active
 GCMG,GCM Grosvenor Inc - Class A,NASDAQ,Stock,2020-11-18,null,Active
 GCMGW,GCM Grosvenor Inc - Warrants (17/11/2025),NASDAQ,Stock,2020-11-18,null,Active
@@ -3753,7 +3759,7 @@ GLADL,Gladstone Capital Corp 5.375 Notes 10302024,NASDAQ,Stock,2019-10-15,null,A
 GLAQU,Globis Acquisition Corp - Unit (1 Ordinary share & 1 Wrt),NASDAQ,Stock,2020-12-11,null,Active
 GLBS,Globus Maritime Ltd,NASDAQ,Stock,2008-03-11,null,Active
 GLBZ,Glen Burnie Bancorp,NASDAQ,Stock,1999-11-10,null,Active
-GLCN,VANECK VECTORS CHINA GROWTH LEADERS ETF,NYSE ARCA,ETF,2010-10-14,null,Active
+GLCN,VanEck Vectors China Growth Leaders ETF,NYSE ARCA,ETF,2010-10-14,null,Active
 GLD,SSgA SPDR Gold Shares,NYSE ARCA,ETF,2004-11-18,null,Active
 GLDD,Great Lakes Dredge Dock Corp,NASDAQ,Stock,2006-12-27,null,Active
 GLDI,Credit Suisse Gold Shrs Cov Call Exc ETN,NASDAQ,ETF,2013-01-29,null,Active
@@ -3763,7 +3769,7 @@ GLEO-U,Galileo Acquisition Corp Unit 1 Ord & 1 Red Wt,NYSE,Stock,2019-10-18,null
 GLEO-WS,Galileo Acquisition Corp Warrants 31102026,NYSE,Stock,2019-11-14,null,Active
 GLG,TD Holdings Inc,NASDAQ,Stock,2018-07-11,null,Active
 GLIBA,GCI Liberty Inc - Class A,NASDAQ,Stock,2018-03-12,null,Active
-GLIBP,GCI Liberty Inc PRF PERPETUAL USD Series A,NASDAQ,Stock,2018-03-12,null,Active
+GLIBP,GCI Liberty Inc,NASDAQ,Stock,2018-03-12,null,Active
 GLIF,AGFIQ GLOBAL INFRASTRUCTURE ETF,NYSE ARCA,Stock,2019-05-23,null,Active
 GLIN,VanEck Vectors India Growth Leaders ETF,NYSE ARCA,ETF,2010-08-25,null,Active
 GLL,ProShares UltraShort Gold,NYSE ARCA,ETF,2006-12-28,null,Active
@@ -3847,6 +3853,8 @@ GOAT,VanEck Vectors Morningstar Global Wide Moat ETF,BATS,ETF,2018-10-31,null,Ac
 GOAU,U.S. Global GO GOLD and Precious Metal Miners ETF,NYSE ARCA,ETF,2017-06-28,null,Active
 GOCO,GoHealth Inc - Class A,NASDAQ,Stock,2020-07-15,null,Active
 GOED,1847 Goedeker Inc,NYSE MKT,Stock,2020-07-31,null,Active
+GOEV,Canoo Inc - Class A,NASDAQ,Stock,2017-08-01,null,Active
+GOEVW,Canoo Inc - Warrants (05/09/2025),NASDAQ,Stock,2019-04-16,null,Active
 GOEX,Global X Gold Explorers ETF,NYSE ARCA,ETF,2010-11-04,null,Active
 GOF,Guggenheim Strategic Opportunities Fund,NYSE,ETF,2007-07-27,null,Active
 GOGL,Golden Ocean Group Ltd,NASDAQ,Stock,1997-02-07,null,Active
@@ -3932,7 +3940,6 @@ GS-P-J,Goldman Sachs Group Inc,NYSE,Stock,2013-04-22,null,Active
 GS-P-K,Goldman Sachs Group Inc,NYSE,Stock,2014-04-23,null,Active
 GS-P-N,Goldman Sachs Group Inc,NYSE,Stock,2016-02-25,null,Active
 GSAH,GS Acquisition Holdings Corp II - Class A,NYSE,Stock,2020-08-20,null,Active
-GSAH-WS,GS Acquisition Holdings Corp II,NYSE,Stock,2018-07-30,null,Active
 GSAT,Globalstar Inc,NYSE MKT,Stock,2006-11-02,null,Active
 GSBC,Great Southern Bancorp Inc,NASDAQ,Stock,1990-03-26,null,Active
 GSBD,Goldman Sachs BDC Inc,NYSE,Stock,2015-03-18,null,Active
@@ -4048,17 +4055,11 @@ HBNC,Horizon Bancorp Inc (IN),NASDAQ,Stock,2001-12-17,null,Active
 HBP,Huttig Building Products Inc,NASDAQ,Stock,2009-01-05,null,Active
 HBT,HBT Financial Inc,NASDAQ,Stock,2019-10-11,null,Active
 HCA,HCA Healthcare Inc,NYSE,Stock,2011-03-10,null,Active
-HCAC,Hennessy Capital Acquisition Corp IV - Class A,NASDAQ,Stock,2017-08-01,null,Active
-HCACU,Hennessy Capital Acquisition Corp IV - Units (1 Cls A & 3/4 Wrt ),NASDAQ,Stock,2019-03-01,null,Active
-HCACW,Hennessy Capital Acquisition Corp IV - Warrants (05/09/2025),NASDAQ,Stock,2019-04-16,null,Active
+HCACU,Canoo Inc - Units (1 Cls A & 3/4 Wrt ),NASDAQ,Stock,2019-03-01,null,Active
 HCAP,Harvest Capital Credit Corp,NASDAQ,Stock,2013-05-03,null,Active
 HCAPZ,Harvest Capital Credit Corporation 6125 Notes due 2022,NASDAQ,Stock,2017-08-31,null,Active
 HCAT,Health Catalyst Inc,NASDAQ,Stock,2019-07-25,null,Active
 HCC,Warrior Met Coal Inc,NYSE,Stock,2017-04-10,null,Active
-HCCH,HL Acquisitions Corp,NASDAQ,Stock,2018-07-18,null,Active
-HCCHR,HL Acquisitions Corp,NASDAQ,Stock,2018-07-18,null,Active
-HCCHU,HL Acquisitions Corp - Units (1 Ord1 Rts & 1 War),NASDAQ,Stock,2018-06-28,null,Active
-HCCHW,HL Acquisitions Corp - Warrants (21/06/2023),NASDAQ,Stock,2018-07-18,null,Active
 HCCI,Heritage-Crystal Clean Inc,NASDAQ,Stock,2008-03-12,null,Active
 HCDI,Harbor Custom Development Inc,NASDAQ,Stock,2020-08-28,null,Active
 HCFT,Hunt Companies Finance Trust Inc,NYSE,Stock,2013-03-22,null,Active
@@ -4528,7 +4529,7 @@ IHF,BTC iShares U.S. Healthcare Providers ETF,NYSE ARCA,ETF,2006-05-05,null,Acti
 IHG,Intercontinental Hotels Group,NYSE,Stock,2003-04-10,null,Active
 IHI,BTC iShares U.S. Medical Devices ETF,NYSE ARCA,ETF,2006-05-05,null,Active
 IHIT,Invesco High Income 2023 Target Term Fund of Beneficial Interest,NYSE,ETF,2016-11-23,null,Active
-IHRT,iHeartMedia Inc,NASDAQ,Stock,2019-05-07,null,Active
+IHRT,iHeartMedia Inc - Class A New,NASDAQ,Stock,2019-05-07,null,Active
 IHT,Innsuites Hospitality Trust,NYSE MKT,Stock,1987-12-30,null,Active
 IHTA,Invesco High Income 2024 Target Term Fund of Beneficial Interest No par value per share,NYSE,ETF,2017-11-30,null,Active
 IHY,VanEck Vectors International High Yield Bond ETF,NYSE ARCA,ETF,2012-04-03,null,Active
@@ -4706,8 +4707,6 @@ IRBO,iShares Robotics and Artificial Intelligence Multisector ETF,NYSE ARCA,ETF,
 IRBT,Irobot Corp,NASDAQ,Stock,2005-11-09,null,Active
 IRCP,IRSA Propiedades Comerciales SA,NASDAQ,Stock,2003-11-05,null,Active
 IRDM,Iridium Communications Inc,NASDAQ,Stock,2008-03-20,null,Active
-IRET,Investors Real Estate Trust,NYSE,Stock,1997-10-17,null,Active
-IRET-P-C,Investors Real Estate Trust 6625 Series C Cumulative Redeemable Preferred Shares Liquidation Preference 2500 Per Share,NYSE,Stock,2017-09-26,null,Active
 IRIX,IRIDEX Corp,NASDAQ,Stock,1996-02-16,null,Active
 IRL,New Ireland Fund Common,NYSE,ETF,1990-03-30,null,Active
 IRM,Iron Mountain Inc,NYSE,Stock,1996-02-01,null,Active
@@ -4771,9 +4770,11 @@ IVA,Inventiva,NASDAQ,Stock,2020-07-10,null,Active
 IVAC,Intevac Inc,NASDAQ,Stock,1995-11-21,null,Active
 IVAL,Alpha Architect International Quantitative Value ETF,BATS,ETF,2014-12-17,null,Active
 IVC,Invacare Corp,NYSE,Stock,1990-03-26,null,Active
+IVDG,Invesco Focused Discovery Growth ETF,BATS,ETF,2020-12-22,null,Active
 IVE,BTC iShares S&P 500 Value ETF,NYSE ARCA,ETF,2000-05-26,null,Active
-IVES,WEDBUSH ETFMG GLOBAL CLOUD TECHNOLOGY ETF,NYSE ARCA,ETF,2016-03-09,null,Active
+IVES,Wedbush ETFMG Global Cloud Technology ETF,NYSE ARCA,ETF,2016-03-09,null,Active
 IVH,Ivy High Income Opportunities Fund,NYSE,ETF,2013-05-29,null,Active
+IVLC,Invesco US Large Cap Core ESG ETF,BATS,ETF,2020-12-22,null,Active
 IVLU,BTC iShares MSCI Intl Value Factor ETF,NYSE ARCA,ETF,2015-07-15,null,Active
 IVOG,Vanguard S&P Mid-Cap 400 Growth ETF,NYSE ARCA,ETF,2010-09-09,null,Active
 IVOL,Quadratic Interest Rate Volatility And Inflation Hedge ETF,NYSE ARCA,ETF,2019-05-14,null,Active
@@ -4783,6 +4784,8 @@ IVR,Invesco Mortgage Capital Inc,NYSE,Stock,2009-07-01,null,Active
 IVR-P-A,Invesco Mortgage Capital Inc Pfd Ser A,NYSE,Stock,2014-09-22,null,Active
 IVR-P-B,Invesco Mortgage Capital Inc Preferred Series B Cum Fxd to Fltg,NYSE,Stock,2014-09-22,null,Active
 IVR-P-C,Invesco Mortgage Capital Inc,NYSE,Stock,2017-08-10,null,Active
+IVRA,Invesco Real Assets ESG ETF,BATS,ETF,2020-12-22,null,Active
+IVSG,Invesco Select Growth ETF,BATS,ETF,2020-12-22,null,Active
 IVV,BTC iShares Core S&P 500 ETF,NYSE ARCA,ETF,2000-05-19,null,Active
 IVW,BTC iShares S&P 500 Growth ETF,NYSE ARCA,ETF,2000-05-26,null,Active
 IVZ,Invesco Ltd,NYSE,Stock,1995-08-25,null,Active
@@ -5161,7 +5164,6 @@ KTF,DWS Municipal Income Trust,NYSE,ETF,1989-06-30,null,Active
 KTH,Structures Products Cp 8 CorTS Issued by Peco Energy Cap Tr II Preferred Stock,NYSE,Stock,2001-02-12,null,Active
 KTN,Structured Products Corp 8205 CorTS 8205 Corporate Backed Trust Securities CorTS,NYSE,Stock,2003-12-04,null,Active
 KTOS,Kratos Defense & Security Solutions Inc,NASDAQ,Stock,1999-11-05,null,Active
-KTOV,Kitov Pharma Ltd,NASDAQ,Stock,2015-11-20,null,Active
 KTP,Corts 7625 Pfd,NYSE,Stock,1999-07-06,null,Active
 KTRA,Kintara Therapeutics Inc,NASDAQ,Stock,2013-02-22,null,Active
 KURA,Kura Oncology Inc,NASDAQ,Stock,2015-11-05,null,Active
@@ -5215,6 +5217,7 @@ LBC,Luther Burbank Corp,NASDAQ,Stock,2001-01-02,null,Active
 LBJ,Direxion Daily Latin America Bull 2X Shares,NYSE ARCA,ETF,2009-12-03,null,Active
 LBRDA,Liberty Broadband Corp - Series A,NASDAQ,Stock,2014-11-04,null,Active
 LBRDK,Liberty Broadband Corp - Series C,NASDAQ,Stock,2014-11-04,null,Active
+LBRDP,Liberty Broadband Corp,NASDAQ,Stock,2020-12-22,null,Active
 LBRT,Liberty Oilfield Services Inc - Class A,NYSE,Stock,2018-01-11,null,Active
 LBTYA,Liberty Global plc - Class A,NASDAQ,Stock,2004-06-03,null,Active
 LBTYB,Liberty Global plc - Class B,NASDAQ,Stock,2004-06-09,null,Active
@@ -5290,7 +5293,7 @@ LGIH,LGI Homes Inc,NASDAQ,Stock,2013-11-07,null,Active
 LGL,LGL Group Inc,NYSE MKT,Stock,1992-03-17,null,Active
 LGL-WS,LGL Group Inc - Warrants (16/11/2025),NYSE MKT,Stock,2020-11-18,null,Active
 LGLV,SPDR SSGA US Large Cap Low Volatility Index ETF,NYSE ARCA,ETF,2013-02-21,null,Active
-LGND,Ligand Pharmaceuticals Inc - Class B,NASDAQ,Stock,1992-11-18,null,Active
+LGND,Ligand Pharmaceuticals Inc Class B,NASDAQ,Stock,1992-11-18,null,Active
 LGOV,First Trust Long Duration Opportunities ETF,NYSE ARCA,ETF,2019-01-23,null,Active
 LGVW,Longview Acquisition Corp Class A,NYSE,Stock,2020-07-13,null,Active
 LGVW-U,Longview Acquisition Corp. Units each consisting of one share of Class A common stock and onethird of one warrant,NYSE,Stock,2020-07-22,null,Active
@@ -5355,7 +5358,7 @@ LNDC,Landec Corp,NASDAQ,Stock,1996-02-15,null,Active
 LNFA-U,L&F Acquisition Corp - Units (1 Ord Class A & 1/2 War),NYSE,Stock,2020-11-19,null,Active
 LNG,Cheniere Energy Inc,NYSE MKT,Stock,1994-04-04,null,Active
 LNGR,Global X Longevity Thematic ETF,NASDAQ,ETF,2016-05-10,null,Active
-LNN,Lindsay Corporation,NYSE,Stock,1990-03-26,null,Active
+LNN,Lindsay Corp,NYSE,Stock,1990-03-26,null,Active
 LNSR,LENSAR Inc,NASDAQ,Stock,2020-10-02,null,Active
 LNT,Alliant Energy Corp,NASDAQ,Stock,1988-01-05,null,Active
 LNTH,Lantheus Holdings Inc,NASDAQ,Stock,2015-06-25,null,Active
@@ -5442,6 +5445,7 @@ LUNG,Pulmonx Corp,NASDAQ,Stock,2020-10-01,null,Active
 LUV,Southwest Airlines Company,NYSE,Stock,1980-01-02,null,Active
 LUXA,Lux Health Tech Acquisition Corp - Class A,NASDAQ,Stock,2020-12-18,null,Active
 LUXAU,Lux Health Tech Acquisition Corp - Units (1 Ord Share Class A & 1/3 War),NASDAQ,Stock,2020-10-27,null,Active
+LUXAW,Lux Health Tech Acquisition Corp - Warrants(30/11/2027),NASDAQ,Stock,2020-12-22,null,Active
 LUXE,Emles Luxury Goods ETF,BATS,ETF,2020-11-25,null,Active
 LVHD,Legg Mason Low Volatility High Dividend ETF,NASDAQ,ETF,2015-12-29,null,Active
 LVHI,Legg Mason International Low Volatility High Dividend ETF,BATS,ETF,2016-07-28,null,Active
@@ -5510,7 +5514,7 @@ MBIN,Merchants Bancorp,NASDAQ,Stock,2017-10-27,null,Active
 MBINO,Merchants Bancorp FXDFR PRF PERPETUAL USD 25 Ser B Dp sh 140 int,NASDAQ,Stock,2019-08-13,null,Active
 MBINP,Merchants Bancorp 700 FixedtoFloating Rate Series A NonCumulative Perpetual Preferred Stock,NASDAQ,Stock,2019-03-26,null,Active
 MBIO,Mustang Bio Inc,NASDAQ,Stock,2017-08-22,null,Active
-MBNKP,Medallion Bank UT Non Cum FxdFltg Perp Pfd Ser F,NASDAQ,Stock,2019-12-17,null,Active
+MBNKP,Medallion Bank,NASDAQ,Stock,2019-12-17,null,Active
 MBOT,Microbot Medical Inc,NASDAQ,Stock,1992-03-25,null,Active
 MBRX,Moleculin Biotech Inc,NASDAQ,Stock,2016-06-02,null,Active
 MBSD,FlexShares Disciplined Duration MBS Index Fund,NYSE ARCA,ETF,2014-09-04,null,Active
@@ -5525,7 +5529,6 @@ MCACU,Mountain Crest Acquisition Corp Units (1 & 1/10 Rts),NASDAQ,Stock,2020-06-
 MCB,MCB FINANCIAL CORP,NYSE,Stock,2017-11-08,null,Active
 MCBC,Macatawa Bank Corp,NASDAQ,Stock,1998-05-20,null,Active
 MCBS,MetroCity Bankshares Inc,NASDAQ,Stock,2017-10-19,null,Active
-MCC,Medley Capital Corp,NYSE,ETF,2011-01-21,null,Active
 MCD,McDonald`s Corp,NYSE,Stock,1970-01-02,null,Active
 MCEF,FIRST TRUST MUNICIPAL CEF INCOME OPPORTUNITY ETF,NASDAQ,ETF,2016-09-29,null,Active
 MCEP,MidCon Energy Partners LP,NASDAQ,Stock,2011-12-15,null,Active
@@ -5547,7 +5550,6 @@ MCRB,Seres Therapeutics Inc,NASDAQ,Stock,2015-06-26,null,Active
 MCRI,Monarch Casino & Resort Inc,NASDAQ,Stock,1993-08-10,null,Active
 MCRO,IQ HEDGE MACRO TRACKER ETF,NYSE ARCA,ETF,2009-06-09,null,Active
 MCS,Marcus Corp,NYSE,Stock,1990-03-29,null,Active
-MCV,Medley Capital Corp Pfd,NYSE,Stock,2013-03-22,null,Active
 MCY,Mercury General Corp,NYSE,Stock,1990-03-26,null,Active
 MD,MEDNAX Inc,NYSE,Stock,1995-09-20,null,Active
 MDB,MongoDB Inc - Class A,NASDAQ,Stock,2017-10-19,null,Active
@@ -5925,7 +5927,7 @@ MVO,MV Oil Trust,NYSE,Stock,2007-01-19,null,Active
 MVRL,ETRACS Monthly Pay 1.5X Leveraged Mortgage REIT ETN,NYSE ARCA,Stock,2020-06-03,null,Active
 MVT,Blackrock Munivest Fund II Inc,NYSE,ETF,1994-10-27,null,Active
 MVV,ProShares Ultra MidCap400,NYSE ARCA,ETF,2006-06-21,null,Active
-MWA,Mueller Water Products Inc Series A,NYSE,Stock,2006-05-26,null,Active
+MWA,Mueller Water Products Inc - Series A,NYSE,Stock,2006-05-26,null,Active
 MWK,Mohawk Group Holdings Inc,NASDAQ,Stock,2019-06-12,null,Active
 MX,MagnaChip Semiconductor Corp,NYSE,Stock,2011-03-11,null,Active
 MXC,Mexco Energy Corp,NYSE MKT,Stock,1997-03-05,null,Active
@@ -6028,6 +6030,7 @@ NEE,NextEra Energy Inc,NYSE,Stock,1983-06-10,null,Active
 NEE-P-K,NextEra Energy Inc Series K Junior Subordinated Debentures due June 1 2076,NYSE,Stock,2016-06-09,null,Active
 NEE-P-N,NextEra Energy Inc Series N Junior Subordinated Debentures due March 1 2079,NYSE,Stock,2019-03-18,null,Active
 NEE-P-P,,NYSE,Stock,2020-02-19,null,Active
+NEE-P-Q,NextEra Energy Inc. Corporate Units,NYSE,Stock,2020-12-01,null,Active
 NEE-Q,NextEra Energy Inc,NYSE,Stock,2020-09-16,null,Active
 NEM,Newmont Corp,NYSE,Stock,1983-04-06,null,Active
 NEN,New England Realty Associates LP,NYSE MKT,Stock,1995-08-18,null,Active
@@ -6088,7 +6091,6 @@ NGHCZ,National General Holdings Corp,NASDAQ,Stock,2015-08-19,null,Active
 NGL,NGL Energy Partners LP,NYSE,Stock,2011-05-16,null,Active
 NGL-P-B,NGL ENERGY PARTNERS LP 900 Class B FixedtoFloating Rate Cumulative Redeemable Perpetual Preferred Units representing limited partnership interests,NYSE,Stock,2017-06-07,null,Active
 NGL-P-C,NGL ENERGY PARTNERS LP 9625 Class C FixedtoFloating Rate Cumulative Redeemable Perpetual Preferred Units representing limited partner interests,NYSE,Stock,2019-03-27,null,Active
-NGLS-P-A,Targa Resources Partners LP 900 Series A FixedtoFloating Rate Cumulative Redeemable Perpetual Preferred Units representing preferred equity interests,NYSE,Stock,2015-10-20,null,Active
 NGM,Ngm Biopharmaceuticals Inc,NASDAQ,Stock,2019-04-04,null,Active
 NGMS,NeoGames SA,NASDAQ,Stock,2020-11-19,null,Active
 NGS,Natural Gas Services Group Inc,NYSE,Stock,2002-10-22,null,Active
@@ -6122,7 +6124,7 @@ NIQ,Nuveen Intermediate Duration Qlty Mun FD,NYSE,ETF,2013-02-08,null,Active
 NISN,NiSun International Enterprise Development Group Co Ltd - Class A,NASDAQ,Stock,2016-12-27,null,Active
 NIU,Niu Technologies,NASDAQ,Stock,2018-10-19,null,Active
 NJAN,Innovator Nasdaq-100 Power Buffer ETF - January,BATS,Stock,2020-01-02,null,Active
-NJR,New Jersey Resources Corporation,NYSE,Stock,1987-12-30,null,Active
+NJR,New Jersey Resources Corp,NYSE,Stock,1987-12-30,null,Active
 NJUL,Innovator Nasdaq-100 Power Buffer ETF - July,BATS,Stock,2020-07-01,null,Active
 NJV,Nuveen New Jersey Municipal Value Fund,NYSE,ETF,2009-04-28,null,Active
 NK,NantKwest Inc,NASDAQ,Stock,2015-07-28,null,Active
@@ -6279,7 +6281,7 @@ NTIC,Northern Technologies International Corp,NASDAQ,Stock,1993-09-13,null,Activ
 NTIP,Network-1 Technologies Inc,NYSE MKT,Stock,2013-10-25,null,Active
 NTLA,Intellia Therapeutics Inc,NASDAQ,Stock,2016-05-06,null,Active
 NTN,NTN Buzztime Inc,NYSE MKT,Stock,1992-10-19,null,Active
-NTNX,Nutanix Inc - Class A,NASDAQ,Stock,2016-09-30,null,Active
+NTNX,Nutanix Inc Class A,NASDAQ,Stock,2016-09-30,null,Active
 NTP,Nam Tai Property Inc,NYSE,Stock,1992-02-26,null,Active
 NTR,Nutrien Ltd,NYSE,Stock,2018-01-02,null,Active
 NTRA,Natera Inc,NASDAQ,Stock,2015-07-02,null,Active
@@ -6457,7 +6459,7 @@ OILK,ProShares K-1 Free Crude Oil Strategy ETF,BATS,ETF,2016-09-28,null,Active
 OILU,AccuShares SP GSCI Crude Oil Excess Return Up Shares,NYSE ARCA,ETF,2017-03-27,null,Active
 OILX,UBS AG London Branch ETRACS SP GSCI Crude Oil Total Return Index ETN Index Ser B 02222046,NYSE ARCA,ETF,2016-02-18,null,Active
 OIS,Oil States International Inc,NYSE,Stock,2001-02-09,null,Active
-OJSCY,OJSC OC ROSNEFT,NASDAQ,Stock,2015-11-20,null,Active
+OJSCY,PJSC Cherkizovo Group,NASDAQ,Stock,2015-11-20,null,Active
 OKE,Oneok Inc,NYSE,Stock,1985-07-01,null,Active
 OKTA,Okta Inc - Class A,NASDAQ,Stock,2017-04-07,null,Active
 OLB,OLB Group Inc,NASDAQ,Stock,2007-07-13,null,Active
@@ -6501,8 +6503,8 @@ ONVO,Organovo Holdings Inc,NASDAQ,Stock,2012-02-14,null,Active
 OOMA,Ooma Inc,NYSE,Stock,2015-07-17,null,Active
 OPBK,OP Bancorp,NASDAQ,Stock,2005-07-22,null,Active
 OPCH,Option Care Health Inc,NASDAQ,Stock,1996-08-15,null,Active
-OPEN,Social Capital Hedosophia Holdings Corp II - Class A,NASDAQ,Stock,2020-06-18,null,Active
-OPENW,Social Capital Hedosophia Holdings Corp II - Warrants (01/01/9999),NASDAQ,Stock,2020-06-18,null,Active
+OPEN,Opendoor Technologies Inc,NASDAQ,Stock,2020-06-18,null,Active
+OPENW,Opendoor Technologies Inc - Warrants (18/12/2025),NASDAQ,Stock,2020-06-18,null,Active
 OPER,CLEARSHARES ULTRASHORT MATURITY ETF,NYSE ARCA,ETF,2018-07-11,null,Active
 OPESU,BurgerFi International Inc - Units (1 Ord & 1 War),NASDAQ,Stock,2018-03-14,null,Active
 OPGN,Opgen Inc,NASDAQ,Stock,2015-05-05,null,Active
@@ -6562,6 +6564,7 @@ OTIC,Otonomy Inc,NASDAQ,Stock,2014-08-13,null,Active
 OTIS,Otis Worldwide Corp,NYSE,Stock,2020-03-19,null,Active
 OTLK,Outlook Therapeutics Inc,NASDAQ,Stock,2016-06-14,null,Active
 OTLKW,Outlook Therapeutics Inc - Warrants - Series A (18/02/2022),NASDAQ,Stock,2016-06-20,null,Active
+OTRA,OTR Acquisition Corp - Class A,NASDAQ,Stock,2020-12-21,null,Active
 OTRAU,OTR Acquisition Corp Units 1 Ord Share Class A & 12 War,NASDAQ,Stock,2020-11-16,null,Active
 OTRAW,OTR Acquisition Corp - Warrants (01/10/2025),NASDAQ,Stock,2020-12-16,null,Active
 OTRK,Ontrak Inc,NASDAQ,Stock,2013-06-06,null,Active
@@ -6802,7 +6805,9 @@ PFPT,Proofpoint Inc,NASDAQ,Stock,2012-04-20,null,Active
 PFS,Provident Financial Services Inc,NYSE,Stock,2003-01-16,null,Active
 PFSI,PennyMac Financial Services Inc,NYSE,Stock,2013-05-09,null,Active
 PFSW,PFSWEB Inc,NASDAQ,Stock,1999-12-02,null,Active
+PFX,Medley Capital Corp,NASDAQ,ETF,2011-01-21,null,Active
 PFXF,VanEck Vectors Preferred Securities ex Financials ETF,NYSE ARCA,ETF,2012-07-19,null,Active
+PFXNL,Medley Capital Corp,NASDAQ,Stock,2013-03-22,null,Active
 PG,Procter & Gamble Company,NYSE,Stock,1970-01-02,null,Active
 PGAL,Global X MSCI Portugal ETF,NYSE ARCA,ETF,2013-11-13,null,Active
 PGC,PeapackGladstone Financial Corp,NASDAQ,Stock,1999-04-27,null,Active
@@ -6847,9 +6852,8 @@ PI,Impinj Inc,NASDAQ,Stock,2016-07-21,null,Active
 PIAI,Prime Impact Acquisition I - Class A,NYSE,Stock,2020-11-02,null,Active
 PIAI-U,Prime Impact Acquisition I - Units (1 Ord Share Class A & 1/3 War),NYSE,Stock,2020-09-10,null,Active
 PIAI-WS,Prime Impact Acquisition I - Warrants (01/10/2030),NYSE,Stock,2020-11-02,null,Active
-PIC,Pivotal Investment Corp II - Class A,NYSE,Stock,2019-09-03,null,Active
-PIC-U,Pivotal Investment Corp II - Units (1 Ord Share Class A & 1/3 War),NYSE,Stock,2019-07-12,null,Active
-PIC-WS,Pivotal Investment Corp II Warrants 01062025,NYSE,Stock,2019-09-03,null,Active
+PIC-U,XL Fleet Corporation - Units (1 Ord Share Class A & 1/3 War),NYSE,Stock,2019-07-12,null,Active
+PIC-WS,XL Fleet Corporation - Warrants (01/06/2025),NYSE,Stock,2019-09-03,null,Active
 PICB,Invesco International Corporate Bond ETF,NYSE ARCA,ETF,2010-06-03,null,Active
 PICK,BTC iShares MSCI Global Metals & Mining Producers ETF,BATS,ETF,2012-02-02,null,Active
 PICO,Pico Holdings Inc,NASDAQ,Stock,1991-03-21,null,Active
@@ -6860,7 +6864,7 @@ PII,Polaris Inc,NYSE,Stock,1987-09-16,null,Active
 PILL,Direxion Daily Pharmaceutical & Medical Bull 3X Shares,NYSE ARCA,ETF,2017-11-15,null,Active
 PIM,Putnam Master Int Income,NYSE,ETF,1988-04-19,null,Active
 PIN,Invesco India ETF,NYSE ARCA,ETF,2008-03-05,null,Active
-PINC,Premier Inc - Class A,NASDAQ,Stock,2013-09-26,null,Active
+PINC,Premier Inc Class A,NASDAQ,Stock,2013-09-26,null,Active
 PINE,Alpine Income Property Trust Inc,NYSE,Stock,2019-11-22,null,Active
 PING,Ping Indentity Holding Corp,NYSE,Stock,2019-09-19,null,Active
 PINS,Pinterest Inc - Class A,NYSE,Stock,2019-04-18,null,Active
@@ -6953,7 +6957,7 @@ PNTG,Pennant Group Inc,NASDAQ,Stock,2019-10-01,null,Active
 PNW,Pinnacle West Capital Corp,NYSE,Stock,1984-07-19,null,Active
 POAI,Predictive Oncology Inc,NASDAQ,Stock,2018-01-29,null,Active
 POCT,Innovator S&P 500 Power Buffer ETF - October,BATS,ETF,2018-10-01,null,Active
-PODD,Insulet Corporation,NASDAQ,Stock,2007-05-15,null,Active
+PODD,Insulet Corp,NASDAQ,Stock,2007-05-15,null,Active
 POLA,Polar Power Inc,NASDAQ,Stock,2016-12-07,null,Active
 POOL,Pool Corporation,NASDAQ,Stock,1995-10-13,null,Active
 POPM,PopmailCom Inc,NASDAQ,Stock,2001-01-22,null,Active
@@ -6965,6 +6969,7 @@ POWL,Powell Industries Inc,NASDAQ,Stock,1990-03-26,null,Active
 POWW,AMMO Inc,NASDAQ,Stock,2016-01-07,null,Active
 PPA,Invesco Aerospace & Defense ETF,NYSE ARCA,ETF,2005-10-26,null,Active
 PPBI,Pacific Premier Bancorp Inc,NASDAQ,Stock,1997-06-25,null,Active
+PPBT,Purple Biotech Ltd,NASDAQ,Stock,2015-11-20,null,Active
 PPC,Pilgrim`s Pride Corp,NASDAQ,Stock,1987-12-30,null,Active
 PPD,PPD Inc,NASDAQ,Stock,2020-02-06,null,Active
 PPG,PPG Industries Inc,NYSE,Stock,1983-04-06,null,Active
@@ -7218,6 +7223,7 @@ QCLN,First Trust Nasdaq Clean Edge Green Energy Index Fund,NASDAQ,ETF,2007-02-14
 QCOM,Qualcomm Inc,NASDAQ,Stock,1991-12-16,null,Active
 QCRH,QCR Holding Inc,NASDAQ,Stock,1993-10-06,null,Active
 QD,QUADRAMED CORP,NYSE,Stock,2017-10-18,null,Active
+QDEC,FT Cboe Vest Growth-100 Buffer ETF - December,BATS,ETF,2020-12-21,null,Active
 QDEF,FlexShares Quality Dividend Defensive Index Fund,NYSE ARCA,ETF,2012-12-19,null,Active
 QDEL,Quidel Corp,NASDAQ,Stock,1992-03-03,null,Active
 QDF,FlexShares Quality Dividend Index Fund,NYSE ARCA,ETF,2012-12-19,null,Active
@@ -7365,7 +7371,7 @@ RDIV,Invesco S&P Ultra Dividend Revenue ETF,NYSE ARCA,ETF,2013-10-01,null,Active
 RDN,Radian Group Inc,NYSE,Stock,1992-10-30,null,Active
 RDNT,Radnet Inc,NASDAQ,Stock,1997-01-03,null,Active
 RDOG,ALPS REIT Dividend Dogs ETF,NYSE ARCA,ETF,2008-05-22,null,Active
-RDS-A,Royal Dutch Shell Plc ADR (Representing - Class A),NYSE,Stock,2005-07-21,null,Active
+RDS-A,Royal Dutch Shell Plc ADR Representing Class A,NYSE,Stock,2005-07-21,null,Active
 RDS-B,Royal Dutch Shell Plc,NYSE,Stock,1987-12-30,null,Active
 RDUS,Radius Health Inc,NASDAQ,Stock,2014-06-06,null,Active
 RDVT,Red Violet Inc,NASDAQ,Stock,2018-03-26,null,Active
@@ -7473,7 +7479,7 @@ RILYN,B. Riley Financial Inc,NASDAQ,Stock,2019-09-24,null,Active
 RILYO,B. Riley Financial Inc,NASDAQ,Stock,2019-05-08,null,Active
 RILYP,B. Riley Financial Inc,NASDAQ,Stock,2019-10-04,null,Active
 RILYZ,B. Riley Financial Inc,NASDAQ,Stock,2017-06-01,null,Active
-RINF,PROSHARES INFLATION EXPECTIATIONS ETF PROSHARES INFLATION EXPECTATIONS ETF,NYSE ARCA,ETF,2012-01-12,null,Active
+RINF,ProShares Inflation Expectations ETF,NYSE ARCA,ETF,2012-01-12,null,Active
 RING,BTC iShares MSCI Global Gold Miners ETF,NASDAQ,ETF,2012-02-02,null,Active
 RIO,Rio Tinto plc,NYSE,Stock,1990-06-28,null,Active
 RIOT,Riot Blockchain Inc,NASDAQ,Stock,2003-01-24,null,Active
@@ -7504,7 +7510,7 @@ RMBL,RumbleON Inc Class B,NASDAQ,Stock,2017-01-09,null,Active
 RMBS,Rambus Inc,NASDAQ,Stock,1997-05-14,null,Active
 RMCF,Rocky Mountain Chocolate Factory Inc,NASDAQ,Stock,1993-11-09,null,Active
 RMD,Resmed Inc,NYSE,Stock,1995-06-02,null,Active
-RMED,Ra Medical Systems Inc,NYSE,Stock,2018-09-27,null,Active
+RMED,Ra Medical Systems Inc,NYSE MKT,Stock,2018-09-27,null,Active
 RMG,RAGEN MACKENZIE GROUP INC,NYSE,Stock,2019-04-01,null,Active
 RMG-U,RMG Acquisition Corp Unit,NYSE,Stock,2019-02-08,null,Active
 RMG-WS,RMG Acquisition Corp Warrants each whole warrant exercisable for one share of Class A Common Stock at an exercise price of 1150,NYSE,Stock,2019-04-01,null,Active
@@ -7520,7 +7526,7 @@ RMTI,Rockwell Medical Inc,NASDAQ,Stock,1998-01-27,null,Active
 RNA,Avidity Biosciences Inc,NASDAQ,Stock,2020-06-12,null,Active
 RNDB,Randolph Bancorp Inc,NASDAQ,Stock,2016-07-01,null,Active
 RNDM,First Trust Developed International Equity Select ETF,NASDAQ,ETF,2017-06-23,null,Active
-RNDV,US EQUITY DIVIDEND SELECT ETF,NASDAQ,ETF,2017-06-22,null,Active
+RNDV,First Trust US Equity Dividend Select ETF,NASDAQ,ETF,2017-06-22,null,Active
 RNEM,First Trust Emerging Markets Equity Select ETF,NASDAQ,ETF,2017-06-23,null,Active
 RNET,RigNet Inc,NASDAQ,Stock,2010-12-15,null,Active
 RNG,RingCentral Inc Class A,NYSE,Stock,2013-09-27,null,Active
@@ -7690,7 +7696,7 @@ SALM,Salem Communications Corp,NASDAQ,Stock,1999-07-01,null,Active
 SALT,Scorpio Bulkers Inc,NYSE,Stock,2013-12-12,null,Active
 SAM,Boston Beer Co. Inc - Class A,NYSE,Stock,1995-11-21,null,Active
 SAMA,Schultze Special Purpose Acquisition Corp,NASDAQ,Stock,2019-01-09,null,Active
-SAMAU,Schultze Special Purpose Acquisition Corp Units 1 Ord 1 War,NASDAQ,Stock,2018-12-11,null,Active
+SAMAU,Schultze Special Purpose Acquisition Corp - Units (1 Ord & 1 War),NASDAQ,Stock,2018-12-11,null,Active
 SAMAW,Schultze Special Purpose Acquisition Corp - Warrants (31/12/2023),NASDAQ,Stock,2019-01-09,null,Active
 SAMG,Silvercrest Asset Management Group Inc - Class A,NASDAQ,Stock,2013-06-27,null,Active
 SAN,Banco Santander S.A.,NYSE,Stock,1988-01-05,null,Active
@@ -7974,6 +7980,7 @@ SJW,SJW Group,NYSE,Stock,1972-06-01,null,Active
 SKF,ProShares UltraShort Financials,NYSE ARCA,ETF,2007-02-01,null,Active
 SKLZ,Skillz Inc - Class A,NYSE,Stock,2020-04-27,null,Active
 SKLZ-WS,Skillz Inc Wt Exp 02262027,NYSE,Stock,2020-12-18,null,Active
+SKLZ-WS,Skillz Inc - Warrants (26/02/2027),NYSE,Stock,2020-04-27,null,Active
 SKM,SK Telecom Co Ltd,NYSE,Stock,1996-06-27,null,Active
 SKOR,FlexShares Credit-Scored US Corporate Bond Index Fund,NASDAQ,ETF,2014-11-13,null,Active
 SKT,Tanger Factory Outlet Centers Inc,NYSE,Stock,1993-05-28,null,Active
@@ -8272,7 +8279,7 @@ SSNC,SS&C Technologies Holdings Inc,NASDAQ,Stock,2010-03-31,null,Active
 SSNT,SILVERSUN TECH,NASDAQ,Stock,2012-03-15,null,Active
 SSO,ProShares Ultra S&P500,NYSE ARCA,ETF,2006-06-21,null,Active
 SSP,E.W. Scripps Company. Class A,NASDAQ,Stock,1990-03-26,null,Active
-SSPK,,NASDAQ,Stock,2019-10-01,null,Active
+SSPK,Silver Spike Acquisition Corp - Class A,NASDAQ,Stock,2019-10-01,null,Active
 SSPKU,Silver Spike Acquisition Corp Units 1 Ord Share Class A & 12 War,NASDAQ,Stock,2019-08-08,null,Active
 SSPKW,Silver Spike Acquisition Corp Wt,NASDAQ,Stock,2019-10-01,null,Active
 SSPY,Syntax Stratified LargeCap ETF,NYSE ARCA,ETF,2019-01-04,null,Active
@@ -8647,12 +8654,12 @@ TKC,Turkcell Iletisim Hizmetleri AS,NYSE,Stock,2000-07-11,null,Active
 TKGZY,Turkiye Garanti Bankasi A.S. ADR Sponsored Repstg 2000 Shs New,NASDAQ,Stock,2008-07-25,null,Active
 TKR,Timken Company,NYSE,Stock,1985-07-01,null,Active
 TLC,Taiwan Liposome Company Ltd,NASDAQ,Stock,2018-11-21,null,Active
-TLDH,FLEXSHARES CURRENCY HEDGED MORNINGSTAR DM EXUS FACTOR TILT INDEX FUND,NYSE ARCA,ETF,2015-11-10,null,Active
+TLDH,FlexShares Currency Hedged Morningstar DM ex-US Factor Tilt Index Fund,NYSE ARCA,ETF,2015-11-10,null,Active
 TLEH,FlexShares Currency Hedged Morningstar EM Factor Tilt Index Fund,NYSE ARCA,ETF,2015-11-10,null,Active
 TLGT,Teligent Inc,NASDAQ,Stock,2015-10-26,null,Active
 TLH,BTC iShares 10-20 Year Treasury Bond ETF,NYSE ARCA,ETF,2007-01-11,null,Active
 TLI,Western Asset Corporate Loan Fund Inc,NYSE,ETF,1998-11-20,null,Active
-TLK,Telekomunikasi,NYSE,Stock,2001-01-02,null,Active
+TLK,PT Telkom Indonesia (Persero) Tbk,NYSE,Stock,2001-01-02,null,Active
 TLMD,SOC Telemed Inc - Class A,NASDAQ,Stock,2020-01-28,null,Active
 TLMDW,SOC Telemed Inc - Warrants(30/10/2025),NASDAQ,Stock,2020-01-28,null,Active
 TLND,Talend SA,NASDAQ,Stock,2016-07-29,null,Active
@@ -8668,7 +8675,7 @@ TMBR,Timber Pharmaceuticals Inc,NYSE MKT,Stock,2015-06-09,null,Active
 TMDI,Titan Medical Inc,NASDAQ,Stock,2009-06-26,null,Active
 TMDV,ProShares Russell US Dividend Growers ETF,BATS,ETF,2019-11-07,null,Active
 TMDX,Transmedics Group Inc,NASDAQ,Stock,2019-05-02,null,Active
-TME,Tencent Music Entertainment Group ADS,NYSE,Stock,2018-12-12,null,Active
+TME,Tencent Music Entertainment Group,NYSE,Stock,2018-12-12,null,Active
 TMF,Direxion Daily 20+ Year Treasury Bull 3X Shares,NYSE ARCA,ETF,2009-04-16,null,Active
 TMFC,Motley Fool 100 Index ETF,BATS,ETF,2018-01-30,null,Active
 TMHC,Taylor Morrison Home Corp,NYSE,Stock,2013-04-10,null,Active
@@ -8709,7 +8716,7 @@ TOTAW,Tottenham Acquisition I Ltd - Warrants (06/05/2025),NASDAQ,Stock,2018-08-2
 TOTL,SPDR DoubleLine Total Return Tactical ETF,NYSE ARCA,ETF,2015-02-24,null,Active
 TOUR,Tuniu Corp,NASDAQ,Stock,2014-05-09,null,Active
 TOWN,TowneBank,NASDAQ,Stock,1999-05-05,null,Active
-TPAY,Ecofin Digital Payments Infrastructure Fund,BATS,Stock,2019-02-01,null,Active
+TPAY,Ecofin Digital Payments Infrastructure Fund,NYSE ARCA,Stock,2019-02-01,null,Active
 TPB,Turning Point Brands Inc,NYSE,Stock,2016-05-11,null,Active
 TPC,Tutor Perini Corp,NYSE,Stock,1973-05-03,null,Active
 TPCO,Tribune Publishing Company,NASDAQ,Stock,2014-07-24,null,Active
@@ -9192,7 +9199,7 @@ VIPS,Vipshop Holdings Ltd ADR,NYSE,Stock,2012-03-23,null,Active
 VIR,Vir Biotechnology Inc,NASDAQ,Stock,2019-10-11,null,Active
 VIRC,Virco Manufacturing Corp,NASDAQ,Stock,1992-03-17,null,Active
 VIRI,Virios Therapeutics Inc,NASDAQ,Stock,2020-12-17,null,Active
-VIRS,PACER BIOTHREAT STRATEGY ETF,BATS,Stock,2020-06-25,null,Active
+VIRS,Pacer BioThreat Strategy ETF,BATS,Stock,2020-06-25,null,Active
 VIRT,Virtu Financial Inc Class A,NASDAQ,Stock,2015-04-16,null,Active
 VIS,Vanguard Industrials ETF,NYSE ARCA,ETF,2004-09-29,null,Active
 VISL,Vislink Technologies Inc,NASDAQ,Stock,2012-04-18,null,Active
@@ -9293,10 +9300,12 @@ VRSK,Verisk Analytics Inc,NASDAQ,Stock,2009-10-07,null,Active
 VRSN,Verisign Inc,NASDAQ,Stock,1998-01-30,null,Active
 VRT,Vertiv Holdings Company Class A,NYSE,Stock,2018-07-30,null,Active
 VRT-U,GS Acquisition Holdings Corp Units each consisting of one share of Class A common stock and onethird of one redeemable warrant,NYSE,Stock,2018-06-08,null,Active
+VRT-WS,Vertiv Holdings Co - Warrants (18/01/2021),NYSE,Stock,2018-07-30,null,Active
 VRTS,Virtus Investment Partners Inc,NASDAQ,Stock,2009-01-02,null,Active
 VRTU,Virtusa Corp,NASDAQ,Stock,2007-08-03,null,Active
 VRTV,Veritiv Corp,NYSE,Stock,2014-07-01,null,Active
 VRTX,Vertex Pharmaceuticals Inc,NASDAQ,Stock,1991-07-24,null,Active
+VS,Versus Systems Inc,NASDAQ,Stock,2016-02-03,null,Active
 VSAT,Viasat Inc,NASDAQ,Stock,1996-12-03,null,Active
 VSDA,VictoryShares Dividend Accelerator ETF,NASDAQ,ETF,2017-04-18,null,Active
 VSEC,VSE Corp,NASDAQ,Stock,1995-08-18,null,Active
@@ -9375,7 +9384,7 @@ WAT,Waters Corp,NYSE,Stock,1995-11-17,null,Active
 WATT,Energous Corp,NASDAQ,Stock,2014-03-28,null,Active
 WB,Weibo Corp,NASDAQ,Stock,2014-04-17,null,Active
 WBA,Walgreens Boots Alliance Inc,NASDAQ,Stock,1985-07-01,null,Active
-WBAI,500com Ltd,NYSE,Stock,2013-11-22,null,Active
+WBAI,500.com Ltd,NYSE,Stock,2013-11-22,null,Active
 WBIE,WBI BullBear Rising Income 3000 ETF,NYSE ARCA,ETF,2014-08-27,null,Active
 WBIF,WBI BullBear Value 3000 ETF,NYSE ARCA,ETF,2014-08-27,null,Active
 WBIG,WBI BullBear Yield 3000 ETF,NYSE ARCA,ETF,2014-08-27,null,Active
@@ -9412,7 +9421,7 @@ WES,Western Midstream Partners LP,NYSE,Stock,2012-12-10,null,Active
 WETF,Wisdomtree Investments Inc,NASDAQ,Stock,1993-03-04,null,Active
 WEX,WEX Inc,NYSE,Stock,2005-02-16,null,Active
 WEYS,Weyco Group Inc,NASDAQ,Stock,1990-03-26,null,Active
-WF,Woori Finance Holdings Company. Ltd. ADR,NYSE,Stock,2003-10-01,null,Active
+WF,Woori Financial Group Inc,NYSE,Stock,2003-10-01,null,Active
 WFC,Wells Fargo & Company,NYSE,Stock,1972-06-01,null,Active
 WFC-P-A,Wells Fargo & Company,NYSE,Stock,2020-10-23,null,Active
 WFC-P-L,Wells Fargo & Company,NYSE,Stock,2014-09-22,null,Active
@@ -9578,7 +9587,7 @@ XENE,Xenon Pharmaceuticals Inc,NASDAQ,Stock,2014-11-05,null,Active
 XENT,Intersect ENT Inc,NASDAQ,Stock,2014-07-24,null,Active
 XERS,Xeris Pharmaceuticals Inc,NASDAQ,Stock,2018-06-21,null,Active
 XES,SSgA SPDR Oil & Gas Equipment and Services,NYSE ARCA,ETF,2006-06-22,null,Active
-XFLT,XAI Octagon Floating Rate Alternative Income Term Trust,NYSE,ETF,2017-09-27,null,Active
+XFLT,XAI Octagon Floating Rate & Alternative Income Term Trust,NYSE,ETF,2017-09-27,null,Active
 XFOR,X4 Pharmaceuticals Inc,NASDAQ,Stock,2017-11-16,null,Active
 XGN,Exagen Inc,NASDAQ,Stock,2019-09-19,null,Active
 XHB,SSgA SPDR Homebuilders,NYSE ARCA,ETF,2006-02-06,null,Active
@@ -9589,6 +9598,9 @@ XIN,Xinyuan Real Estate Company Ltd ADR,NYSE,Stock,2007-12-12,null,Active
 XITK,SPDR FactSet Innovative Technology ETF,NYSE ARCA,ETF,2016-01-14,null,Active
 XJH,iShares ESG Screened S&P Mid-Cap ETF,BATS,ETF,2020-09-24,null,Active
 XJR,iShares ESG Screened S&P Small-Cap ETF,BATS,ETF,2020-09-24,null,Active
+XL,XL Group plc,NYSE,Stock,1991-07-19,null,Active
+XL,XL Fleet Corporation - Class A,NYSE,Stock,2019-09-03,null,Active
+XL-WS,XL Fleet Corp Wt Exp 06012025,NYSE,Stock,2020-12-22,null,Active
 XLB,SSgA Materials Select Sector SPDR,NYSE ARCA,ETF,1998-12-22,null,Active
 XLC,Communication Services Select Sector SPDR Fund,NYSE ARCA,ETF,2018-06-19,null,Active
 XLE,SSgA Energy Select Sector SPDR,NYSE ARCA,ETF,1998-12-22,null,Active
@@ -9669,6 +9681,7 @@ YCBD,cbdMD Inc,NYSE MKT,Stock,2019-04-29,null,Active
 YCBD-P-A,cbdMD Inc,NYSE MKT,Stock,2019-10-21,null,Active
 YCL,ProShares Ultra Yen ETF,NYSE ARCA,ETF,2008-12-09,null,Active
 YCS,ProShares UltraShort Yen,NYSE ARCA,ETF,2008-11-25,null,Active
+YDEC,FT Cboe Vest International Equity Buffer ETF - December,BATS,ETF,2020-12-21,null,Active
 YELP,Yelp Inc,NYSE,Stock,2012-03-02,null,Active
 YETI,YETI Holdings Inc,NYSE,Stock,2018-10-25,null,Active
 YEXT,Yext Inc,NYSE,Stock,2017-04-13,null,Active
@@ -9738,7 +9751,7 @@ ZKIN,ZK International Group Company Ltd,NASDAQ,Stock,2017-09-01,null,Active
 ZLAB,Zai Lab Ltd,NASDAQ,Stock,2017-09-20,null,Active
 ZM,Zoom Video Communications Inc - Class A,NASDAQ,Stock,2019-04-18,null,Active
 ZNGA,Zynga Inc Class A,NASDAQ,Stock,2011-12-16,null,Active
-ZNH,China Southern Airlines Company Ltd ADR,NYSE,Stock,1997-07-30,null,Active
+ZNH,China Southern Airlines Company Ltd,NYSE,Stock,1997-07-30,null,Active
 ZNTEU,Zanite Acquisition Corp - Units (1 Ord Class A & 1/2 War),NASDAQ,Stock,2020-11-16,null,Active
 ZNTL,Zentalis Pharmaceuticals Inc,NASDAQ,Stock,2020-04-03,null,Active
 ZOM,Zomedica Corp,NYSE MKT,Stock,2016-07-29,null,Active

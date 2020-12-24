@@ -1,16 +1,11 @@
-import threading
 import Utility.multithreading as multi_threading
 import requests
 from Database.database import insert_error_log
 import Data.config_read as con
 import Database.database as database
 import csv
-import mysql.connector as connect
 import json
 import time
-from yaspin import yaspin
-
-from Interface import utility
 
 
 class gather_stock_data:
@@ -20,7 +15,6 @@ class gather_stock_data:
         self.stock_table_list_name = 'STOCK_LIST_TBL'
         self.conn_stock = database.database().conn_stock
 
-    # @yaspin(text="Downloading stock list..")
     def download_data(self):
         response = requests.get(f"https://www.alphavantage.co/query?function=LISTING_STATUS&apikey={self.alphavantage_api_key}")
         if response.status_code != 200:
@@ -29,7 +23,6 @@ class gather_stock_data:
         else:
             open("./stock_listings.csv", "wb").write(response.content)
 
-    # @yaspin(text="Updating stock list...")
     def update_stock_list(self):
         list_statements = []
 
@@ -185,7 +178,6 @@ class gather_stock_data:
         str = str[:1999]
         str = str.replace("'", "")
         str = str.replace('"', '')
-        # str = str.replace('`', '``')
         return str
 
 def check(data, key, type):

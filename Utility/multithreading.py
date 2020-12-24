@@ -6,13 +6,8 @@ from dbutils.pooled_db import PooledDB
 import mysql.connector.errors as err
 from time import sleep
 
-class mySqlObj:
-    def __init__(self, connection, sql_statement):
-        self.conn = connection
-        self.cursor = connection.cursor()
-        self.statement = sql_statement
 
-
+# TODO add proper error handling and ensure it either fails or starts back up
 class Multi_Threading:
     def __init__(self, list_of_statements, database):
         config = con.config()
