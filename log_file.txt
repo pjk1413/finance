@@ -1,0 +1,2222 @@
+Root user altered - all privileges granted to root userUser created successfully finance_userDatabase created successfully stock_technical_dataUSER: finance_user granted all privileges on stock_technical_dataDatabase created successfully stock_sentiment_dataUSER: finance_user granted all privileges on stock_sentiment_dataDatabase created successfully utilityUSER: finance_user granted all privileges on utilityDatabase created successfully stock_predict_dataUSER: finance_user granted all privileges on stock_predict_dataDatabase created successfully stock_fundamental_dataUSER: finance_user granted all privileges on stock_fundamental_dataFlushed all privilegesFINISHED : All database setup/startup completed succesfullyError Log table created successfullyStatus table created successfullyStock List table created successfullyStock List table created successfullyRoot user altered - all privileges granted to root userUser created successfully finance_userDatabase created successfully stock_technical_dataUSER: finance_user granted all privileges on stock_technical_dataDatabase created successfully stock_sentiment_dataUSER: finance_user granted all privileges on stock_sentiment_dataDatabase created successfully utilityUSER: finance_user granted all privileges on utilityDatabase created successfully stock_predict_dataUSER: finance_user granted all privileges on stock_predict_dataDatabase created successfully stock_fundamental_dataUSER: finance_user granted all privileges on stock_fundamental_dataFlushed all privilegesFINISHED : All database setup/startup completed succesfullyError Log table created successfullyStatus table created successfullyStock List table created successfullyStock List table created successfullyUSER: finance_user granted all privileges on stock_technical_dataUSER: finance_user granted all privileges on stock_sentiment_dataUSER: finance_user granted all privileges on utilityUSER: finance_user granted all privileges on stock_predict_dataUSER: finance_user granted all privileges on stock_fundamental_dataSTATUS: FINISHED : All tables setup/startup completed successfullyRoot user altered - all privileges granted to root userUser created successfully finance_userDatabase created successfully stock_technical_dataUSER: 'finance_user' granted all privileges on stock_technical_dataDatabase created successfully stock_sentiment_dataUSER: 'finance_user' granted all privileges on stock_sentiment_dataDatabase created successfully utilityUSER: 'finance_user' granted all privileges on utilityDatabase created successfully stock_predict_dataUSER: 'finance_user' granted all privileges on stock_predict_dataDatabase created successfully stock_fundamental_dataUSER: 'finance_user' granted all privileges on stock_fundamental_dataFlushed all privilegesFINISHED : All database setup/startup completed succesfullyError Log table created successfullyStatus table created successfullyStock List table created successfullyStock List table created successfullyUSER: 'finance_user' granted all privileges on stock_technical_dataUSER: 'finance_user' granted all privileges on stock_sentiment_dataUSER: 'finance_user' granted all privileges on utilityUSER: 'finance_user' granted all privileges on stock_predict_dataUSER: 'finance_user' granted all privileges on stock_fundamental_dataSTATUS: FINISHED : All tables setup/startup completed successfullyRoot user altered - all privileges granted to root userUser created successfully finance_userDatabase created successfully stock_technical_dataUSER: 'finance_user' granted all privileges on stock_technical_dataDatabase created successfully stock_sentiment_dataUSER: 'finance_user' granted all privileges on stock_sentiment_dataDatabase created successfully utilityUSER: 'finance_user' granted all privileges on utilityDatabase created successfully stock_predict_dataUSER: 'finance_user' granted all privileges on stock_predict_dataDatabase created successfully stock_fundamental_dataUSER: 'finance_user' granted all privileges on stock_fundamental_dataFlushed all privilegesFINISHED : All database setup/startup completed succesfullyError Log table created successfullyStatus table created successfullyStock List table created successfullyStock List table created successfullyUSER: 'finance_user' granted all privileges on stock_technical_dataUSER: 'finance_user' granted all privileges on stock_sentiment_dataUSER: 'finance_user' granted all privileges on utilityUSER: 'finance_user' granted all privileges on stock_predict_dataUSER: 'finance_user' granted all privileges on stock_fundamental_dataSTATUS: FINISHED : All tables setup/startup completed successfullyRoot user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Stock List table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Stock List table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Stock List table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Stock List table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Stock List table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+ERROR: ERROR: Failed to update data
+ERROR: ERROR: Failed to update data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+ERROR: ERROR: Failed to update data
+ERROR: ERROR: Failed to update data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+ERROR: ERROR: Failed to update data
+ERROR: ERROR: Failed to update data
+ERROR: ERROR: Failed to update data
+ERROR: ERROR: Failed to update data
+ERROR: ERROR: Failed to update data
+ERROR: ERROR: Failed to update data
+ERROR: ERROR: Failed to update data
+ERROR: ERROR: Failed to update data
+ERROR: ERROR: Failed to update data
+ERROR: ERROR: Failed to update data
+ERROR: ERROR: Failed to update data
+ERROR: ERROR: Failed to update data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+ERROR: ERROR: Failed to update data
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+ERROR: ERROR: Failed to update data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+ERROR: ERROR: Failed to update data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+ERROR: ERROR: Failed to update data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+ERROR: ERROR: Failed to update data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+ERROR: ERROR: detail:Ticker 'AAIC_P_B' not found
+ERROR: ERROR: Multiprocessor threw an error during data load
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+ERROR: ERROR: detail:Ticker 'AAIC.P.B' not found
+ERROR: ERROR: Multiprocessor threw an error during data load
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+ERROR: ERROR: detail:Ticker 'AAIC.P.B' not found
+ERROR: ERROR: Multiprocessor threw an error during data load
+ERROR: ERROR: detail:Ticker 'AAIC.P.B' not found
+ERROR: ERROR: Multiprocessor threw an error during data load
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+ERROR: ERROR: Multiprocessor threw an error during data load
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+ERROR: ERROR: Failed to update data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+ERROR: ERROR: Failed to update data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+ERROR: ERROR: Failed to update data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+ERROR: ERROR: Failed to update data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+ERROR: ERROR: Failed to update data
+Root user altered - all privileges granted to root user
+User created successfully finance_user
+Database created successfully stock_technical_data
+USER: 'finance_user' granted all privileges on stock_technical_data
+Database created successfully stock_sentiment_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+Database created successfully utility
+USER: 'finance_user' granted all privileges on utility
+Database created successfully stock_predict_data
+USER: 'finance_user' granted all privileges on stock_predict_data
+Database created successfully stock_fundamental_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+Flushed all privileges
+FINISHED : All database setup/startup completed succesfully
+Error Log table created successfully
+Status table created successfully
+Stock List table created successfully
+Dow30 table created successfully
+Stock Data table created successfully
+Sentiment reference table created successfully
+USER: 'finance_user' granted all privileges on stock_technical_data
+USER: 'finance_user' granted all privileges on stock_sentiment_data
+USER: 'finance_user' granted all privileges on utility
+USER: 'finance_user' granted all privileges on stock_predict_data
+USER: 'finance_user' granted all privileges on stock_fundamental_data
+STATUS: FINISHED : All tables setup/startup completed successfully
+ERROR: ERROR: Failed to update data
