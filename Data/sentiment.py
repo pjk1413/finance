@@ -1,18 +1,12 @@
 
 # Import libraries
-from urllib.error import HTTPError
 from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-import os
 import pandas as pd
 import Interface.utility as utility
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-from Database.crud_func import crud
-from Database.database import database
-from Data.config_read import config as get_values
-from Database.database import database
+from config_read import config as get_values
+from Database.Service.database import database
 import mysql.connector as connect
 import math
 import time

@@ -1,6 +1,6 @@
 import mysql.connector.errors as error
-import Database.database as db
-import datetime
+import Database.Service.database as db
+
 
 def find_most_recent_date(stock):
     """

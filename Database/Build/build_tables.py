@@ -1,21 +1,15 @@
-import threading
-
-from Database.database import database
-from Database.build_database import build_database as build
-import Data.stock_list as stk_list
-import Data.config_read as config
-from Database.database import insert_error_log
-from Database.database import insert_status_log
-import Interface.utility as utility
+from Database.Service.database import database
+from Database.Build.build_database import build_database as build
+import config_read as config
+from Database.Service.database import insert_error_log
+from Database.Service.database import insert_status_log
 from Database.utility import list_of_schema
-import Data.Technical_Data.Model.stock_model as stock_model
 import mysql.connector.errors as mysqlError
-from Database.database import insert_log_statement
-import os
+from Database.Service.database import insert_log_statement
 import sys
 import subprocess
 import Data.Init_Gather.gather_stock_data as gsd
-import time
+
 
 class build_tables:
     def __init__(self):
@@ -37,7 +31,7 @@ class build_tables:
             self.create_status_table(),
             self.create_stock_list_table(),
             self.prepare_dow_table(),
-            gsd.gather_stock_data().update_stock_list(),
+            gsd.gather_stock_data().run_init(),
             self.create_all_stock_tables(),
             self.create_all_sentiment_tables(),
             self.grant_access_to_stock_tables()
@@ -50,10 +44,8 @@ class build_tables:
                 if not result:
                     print("ERROR : Unable to create all tables.  Application will exit...")
                     insert_error_log("ERROR IN TABLE BUILD - DID NOT COMPLETE BUILD TABLE TASKS - PROGRAM TERMINATED")
-            subprocess.call('start py run.py', shell=True),
             insert_status_log("FINISHED : All tables setup/startup completed successfully")
-        except subprocess.SubprocessError:
-            print(subprocess.SubprocessError)
+        except:
             input("PRESS ANY KEY TO EXIT PROGRAM")
             sys.exit(0)
 

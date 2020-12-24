@@ -1,6 +1,6 @@
 import smtplib, ssl
-import Data.config_read as configuration
-import Database.clean as clean
+import config_read as configuration
+import Database.Service.clean as clean
 import datetime
 
 

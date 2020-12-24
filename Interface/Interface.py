@@ -2,7 +2,7 @@ from consolemenu import *
 from consolemenu.items import *
 import os
 import Init.schedule as schedule
-from Data.config_read import config as get_values
+from config_read import config as get_values
 import Data.Technical_Data.Retrieve_Data.retrieve_technical as rt
 import Data.Technical_Data.Retrieve_Data.retrieve_sentiment as rs
 
@@ -18,8 +18,8 @@ class view:
         main_menu = ConsoleMenu("Welcome to Finance.Quant")
 
         main_menu_item_list = [
-            FunctionItem("Update all Data Historical", self.gather_data_historical()),
-            FunctionItem("Update all Data Recent", self.gather_data_recent()),
+            FunctionItem("Update all Data Historical", self.gather_data_historical),
+            FunctionItem("Update all Data Recent", self.gather_data_recent),
             FunctionItem("Clean All Data", self.clean_data),
             FunctionItem("Edit Configuration File", self.edit_config, menu=main_menu),
             FunctionItem("View Schedule", self.view_schedule),
@@ -28,7 +28,6 @@ class view:
 
         for item in main_menu_item_list:
             main_menu.append_item(item)
-
         main_menu.show()
 
 
@@ -59,9 +58,9 @@ class view:
         rt.retrieve_technical_data().run_data_load(range='latest')
         rs.retrieve_sentiment_data().run_data_load(range='latest')
 
+    # TODO add gather_stock_data to this schedule
     def run_schedule(self):
         schedule.schedule_assist().run_schedule()
-
 
     def view_schedule(self):
         print(f"""
@@ -70,16 +69,8 @@ class view:
         """)
         input("Press any key to continue...")
 
-
-    def reset_program(self):
-        # Will erase everything
-        print("This will erase everything")
-        input("Press any key to continue...")
-
-
     def edit_config(self):
         os.system("start config.txt")
-
 
     def start_up(self):
         self.main_menu()

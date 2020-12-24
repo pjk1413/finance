@@ -7,12 +7,12 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import requests.exceptions as exc
 from Data.Technical_Data.Model.sentiment_model import sentiment_model
 from Data.stock_list import stock_list
-from Data.config_read import config as con
-from Database.database import database
+from config_read import config as con
+from Database.Service.database import database
 from Utility.string_manipulation import clean, list_to_database
 from Interface.utility import printProgressBar
 from Data.Technical_Data.Stock_Utility.date_helper import find_most_recent_date
-from Database.database import insert_error_log
+from Database.Service.database import insert_error_log
 import datetime
 import requests
 import json

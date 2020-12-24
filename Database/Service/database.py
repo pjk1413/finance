@@ -1,5 +1,5 @@
 import mysql.connector as connect
-from Data.config_read import config as get_values
+from config_read import config as get_values
 import datetime
 import mysql.connector.errors as error
 from time import sleep

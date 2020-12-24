@@ -1,10 +1,9 @@
 
-from Database.database import database
+from Database.Service.database import database
 import mysql.connector.errors as errors
-from Database.database import insert_error_log
+from Database.Service.database import insert_error_log
 from Data.Technical_Data.Model.sentiment_model import sentiment_model
 from Utility.string_manipulation import list_to_database
-import pymysql.converters as con
 from pymysql.converters import escape_string
 
 class sentiment_service:

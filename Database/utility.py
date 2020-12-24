@@ -1,4 +1,4 @@
-import Data.config_read as read_values
+import config_read as read_values
 
 def list_of_schema():
     config = read_values.config()

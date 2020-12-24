@@ -1,6 +1,6 @@
-from Data.config_read import config as get_values
+from config_read import config as get_values
 
-from Database.database import insert_log_statement
+from Database.Service.database import insert_log_statement
 import mysql.connector as connect
 import sys
 from Database.utility import list_of_schema

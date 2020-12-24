@@ -1,11 +1,11 @@
-from Data.config_read import config as con
+from config_read import config as con
 import Data.Technical_Data.Model.stock_model as stock_model
 from Data.Technical_Data.Model.stock_model import stock_model
 import requests
 import Utility.multithreading as multi_threading
 from Data.stock_list import stock_list
 import time
-from Database.database import insert_error_log
+from Database.Service.database import insert_error_log
 import datetime
 import json
 import requests.exceptions as exc

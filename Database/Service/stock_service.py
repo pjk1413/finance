@@ -1,10 +1,9 @@
 from ta.utils import dropna
 
 import Data.Technical_Data.Model.stock_model as stock_model
-from Database.database import database
+from Database.Service.database import database
 import mysql.connector.errors as errors
-from Database.database import insert_error_log
-from Database.database import insert_status_log
+from Database.Service.database import insert_error_log
 import Data.Technical_Data.Model.simple_moving_average_model as sma_model
 import pandas as pd
 # from Utility.multiprocessor

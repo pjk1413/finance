@@ -1,5 +1,5 @@
 
-import Data.config_read as con
+import config_read as con
 from threading import Thread
 import pymysql
 from dbutils.pooled_db import PooledDB

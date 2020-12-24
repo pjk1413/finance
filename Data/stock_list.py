@@ -1,10 +1,10 @@
 import requests
 import csv
-from Data.config_read import config as get_values
-import Database.build_tables as tables
-from Database.database import database
+from config_read import config as get_values
+import Database.Build.build_tables as tables
+from Database.Service.database import database
 import mysql.connector as connect
-from Database.database import insert_error_log
+from Database.Service.database import insert_error_log
 
 # Gathers a list of stocks to be brought into the database
 # Refreshes list on a regular basis

@@ -1,6 +1,6 @@
-from Data.config_read import config as con
+from config_read import config as con
 from Database.Service.stock_service import stock_service
-from Database.database import database
+from Database.Service.database import database
 from ta.trend import PSARIndicator
 from Utility.data_mainpulation import lowest_value as get_low, highest_value as get_high
 from statistics import stdev

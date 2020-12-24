@@ -1,10 +1,9 @@
 import Data.Init_Gather.gather_stock_data as gsd
-import sys
+import time
 
 print("Starting to gather stock ticker symbols and extra data...")
 run = True
-# Host, User, Password, Stock_DB, alphavantage_api_key
-# args = sys.argv[1:]
+time.sleep(500)
 while run:
     program = gsd.gather_stock_data()
     print("Updating stock list...")

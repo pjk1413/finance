@@ -5,7 +5,7 @@
 # https://iexcloud.io/core-data/
 
 import requests
-import Data.config_read as get_values
+import config_read as get_values
 import json
 
 

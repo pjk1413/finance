@@ -1,19 +1,38 @@
 import Utility.multithreading as multi_threading
 import requests
-from Database.database import insert_error_log
-import Data.config_read as con
-import Database.database as database
+from Database.Service.database import insert_error_log
+import config_read as con
+import Database.Service.database as database
 import csv
 import json
 import time
 
-
+#
 class gather_stock_data:
     def __init__(self):
         config = con.config()
         self.alphavantage_api_key = config.alpha_vantage_api_key
         self.stock_table_list_name = 'STOCK_LIST_TBL'
         self.conn_stock = database.database().conn_stock
+
+    def check_if_exists(self):
+        try:
+            sql_statement = f"SELECT count(*) FROM information_schema.TABLES " \
+                            f"WHERE (TABLE_SCHEMA = 'stock_technical_data') AND (TABLE_NAME = 'stock_list_tbl')"
+            cursor = self.conn_stock.cursor()
+            cursor.execute(sql_statement)
+            result = cursor.fetchone()
+        except:
+            print("ERROR")
+        if result[0] > 0:
+            return True
+        else:
+            return False
+
+    def run_init(self):
+        if not self.check_if_exists():
+            self.update_stock_list()
+        return True
 
     def download_data(self):
         response = requests.get(f"https://www.alphavantage.co/query?function=LISTING_STATUS&apikey={self.alphavantage_api_key}")
@@ -59,11 +78,6 @@ class gather_stock_data:
             return True
         except:
             print("Error using threader")
-
-    def execute_sql(self, sql_statement, thread_id):
-        cursor = self.conn_stock.cursor()
-        cursor.execute(sql_statement)
-        self.conn_stock.commit()
 
     # @yaspin(text="Gathering extra data...")
     def gather_extra_data(self):
