@@ -32,7 +32,7 @@ class retrieve_sentiment_data:
         start = time.perf_counter()
         if range == 'latest':
             l = len(self.list_of_stocks)
-            printProgressBar(0, l, prefix=f'Sentiment Progress:', suffix='Complete', length=50)
+            printProgressBar(0, l, prefix=f'Sentiment_Data Progress:', suffix='Complete', length=50)
             for i, entry in enumerate(self.list_of_stocks):
                 sentiment_obj_list = self.parse_sentiment_obj(self.retrieve_latest(entry[0]))
                 sql_statement_list = []
@@ -45,7 +45,7 @@ class retrieve_sentiment_data:
 
         if range == 'historical':
             l = len(self.list_of_stocks)
-            printProgressBar(0, l, prefix='Sentiment Progress:', suffix='Complete', length=50)
+            printProgressBar(0, l, prefix='Sentiment_Data Progress:', suffix='Complete', length=50)
             for i, entry in enumerate(self.list_of_stocks):
                 sentiment_obj_list = self.parse_sentiment_obj(self.retrieve_historical(entry[0]))
                 sql_statement_list = []

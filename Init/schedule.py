@@ -1,7 +1,7 @@
 import schedule
 import keyboard
 import Data.Technical_Data.Retrieve_Data.retrieve_technical as rt
-import Data.Technical_Data.Retrieve_Data.retrieve_sentiment as rs
+import Data.Sentiment_Data.Retrieve_Data.retrieve_sentiment as rs
 import Data.Init_Gather.gather_stock_data as gsd
 import Database.Build.build_tables as build_tables
 import config_read as config
@@ -13,7 +13,7 @@ class schedule_assist:
         self.weekly_schedule_run_time = con.weekly_schedule_run_time
 
     def daily_schedule_function_group(self):
-        rt.retrieve_technical_data().run_data_load()
+        rt.retrieve_technical_bulk().run_data_load()
         rs.retrieve_sentiment_data().run_data_load()
         # email.send_email().daily_update_email()
 

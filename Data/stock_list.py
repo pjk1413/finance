@@ -60,9 +60,9 @@ class stock_list:
                         print("ERROR: Could not replace stock listings")
 
 
-    def get_list_of_stocks(self):
-        sql_statement = f"SELECT ticker, sector, industry, market FROM STOCK_LIST_TBL;"
-
+    def get_list_of_stocks(self, status="active", assetType="stock"):
+        sql_statement = f"SELECT ticker, sector, industry, market FROM STOCK_LIST_TBL WHERE " \
+                        f"status='{status}' AND assetType='{assetType}';"
         try:
             cursor = self.conn_stock.cursor()
             cursor.execute(sql_statement)

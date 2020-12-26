@@ -109,7 +109,7 @@ class build_tables:
         try:
             cursor = self.conn_sentiment.cursor()
             cursor.execute(sql_statement_sentiment)
-            insert_log_statement("Sentiment reference table created successfully")
+            insert_log_statement("Sentiment_Data reference table created successfully")
         except mysqlError:
             insert_error_log(f"ERROR CREATING TABLE REFERENCE: {mysqlError}")
             result = False

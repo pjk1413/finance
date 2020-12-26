@@ -4,7 +4,7 @@ import os
 import Init.schedule as schedule
 from config_read import config as get_values
 import Data.Technical_Data.Retrieve_Data.retrieve_technical as rt
-import Data.Technical_Data.Retrieve_Data.retrieve_sentiment as rs
+import Data.Sentiment_Data.Retrieve_Data.retrieve_sentiment as rs
 
 
 class view:
@@ -51,11 +51,11 @@ class view:
 
     def gather_data_historical(self):
         print("Beginning update of all stock data tables...")
-        rt.retrieve_technical_data().run_data_load(range='historical')
+        rt.retrieve_technical_bulk().run_data_load(range='historical')
         rs.retrieve_sentiment_data().run_data_load(range='historical')
 
     def gather_data_recent(self):
-        rt.retrieve_technical_data().run_data_load(range='latest')
+        rt.retrieve_technical_bulk().run_data_load(range='latest')
         rs.retrieve_sentiment_data().run_data_load(range='latest')
 
     # TODO add gather_stock_data to this schedule
