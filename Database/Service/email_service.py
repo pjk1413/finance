@@ -9,13 +9,14 @@ class send_email:
         config = configuration.config()
         self.username = config.email_username
         self.password = config.email_password
+        self.email_receive = config.email_receive
 
     def weekly_update_email(self):
         port = 465  # For SSL
 
         context = ssl.create_default_context()
         sender_email = self.username
-        receiver_email = "pjk1413@gmail.com"
+        receiver_email = self.email_receive
 
         warnings = ""
 
@@ -43,7 +44,7 @@ class send_email:
 
         context = ssl.create_default_context()
         sender_email = self.username
-        receiver_email = "pjk1413@gmail.com"
+        receiver_email = self.email_receive
 
         warnings = ""
 
@@ -65,6 +66,9 @@ class send_email:
         with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
             server.login(self.username, self.password)
             server.sendmail(sender_email, receiver_email, message)
+
+    def send_email(self, message):
+        pass
 
 def warning_email(self, message):
     port = 465

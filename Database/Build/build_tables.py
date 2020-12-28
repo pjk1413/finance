@@ -136,7 +136,7 @@ class build_tables:
         result = True
         sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS SENTIMENT_DATA (id INT AUTO_INCREMENT PRIMARY KEY, " \
                                   f"crawlDate DATETIME, publishedDate VARCHAR(100), tickers VARCHAR(2000), tags VARCHAR(2000), " \
-                                  f"description TEXT, source VARCHAR(255), title VARCHAR(500), url VARCHAR(500), " \
+                                  f"source VARCHAR(255), title VARCHAR(500), url VARCHAR(500), " \
                                   f"sent_neg FLOAT(8,4), sent_neutral FLOAT(8,4), sent_pos FLOAT(8,4), sent_compound FLOAT(8,4), " \
                                   f"CONSTRAINT unique_value UNIQUE (url, publishedDate));"
         try:

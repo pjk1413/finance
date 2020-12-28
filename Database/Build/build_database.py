@@ -16,7 +16,6 @@ class build_database:
         self.db_user_root = config.db_user_root
         self.db_root_pass = config.db_pass_root
         self.list_of_db = list_of_schema()
-        self.user_host = '192.168.1.48'
         self.char_set = config.character_set
         self.sentiment_db_name = config.sentiment_db_name
 

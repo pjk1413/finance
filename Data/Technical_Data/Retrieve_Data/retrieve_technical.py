@@ -14,6 +14,7 @@ from multiprocessing.pool import ThreadPool
 import multiprocessing
 from time import time as timer
 
+# TODO clean up code/simplify and add proper logging and error handling
 class retrieve_technical_bulk:
     def __init__(self):
         config = con()
@@ -25,7 +26,6 @@ class retrieve_technical_bulk:
         self.cores = multiprocessing.cpu_count()
 
     def run_data_load(self, range='latest'):
-
         url_list = []
         # Create temp csv file
         with open(self.temp_csv_file_name, mode='w', newline='') as data_download:
@@ -49,9 +49,6 @@ class retrieve_technical_bulk:
             for i, path in enumerate(results):
                 path
                 printProgressBar(i + 1, l, prefix='Progress:', suffix='Complete', length=50)
-        except IOError as e:
-            print(e)
-            print("ERROR")
         except:
             print("ERROR")
         print(f"Download and File Write: {timer() - start}")
@@ -76,7 +73,6 @@ class retrieve_technical_bulk:
             for x in obj_list:
                 data_writer.writerow([x.date, x.symbol, x.open, x.close, x.high, x.low, x.adj_close, x.volume, x.split, x.dividend])
 
-    # TODO evaluate data prior to being parsed
     def parse_stock_obj(self, ticker, data):
         obj_list = []
         if "Error" not in data:
@@ -102,7 +98,6 @@ class retrieve_technical_bulk:
         else:
             return
 
-    # TODO build into class and calculate the overall size of the download
     def retrieve_data(self, url_data):
         ticker = url_data[0]
         url = url_data[1]
