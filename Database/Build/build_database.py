@@ -60,10 +60,7 @@ class build_database:
 
 
     def create_database(self, db_name):
-        if db_name == self.sentiment_db_name:
-            sql_statement = f"CREATE DATABASE IF NOT EXISTS {db_name} CHARACTER SET {self.char_set};"
-        else:
-            sql_statement = f"CREATE DATABASE IF NOT EXISTS {db_name};"
+        sql_statement = f"CREATE DATABASE IF NOT EXISTS {db_name};"
         try:
             conn = connect.connect(
                 host=f"{self.host}",

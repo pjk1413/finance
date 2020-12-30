@@ -103,9 +103,8 @@ class build_tables:
 
     def create_sentiment_reference_table(self):
         result = True
-        sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS SENTIMENT_DATA_REFERENCE (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                                  f"ticker VARCHAR(10), SENTIMENT_ID INT, " \
-                                  f"FOREIGN KEY (SENTIMENT_ID) REFERENCES SENTIMENT_DATA(id));"
+        sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS SENTIMENT_DATA_REFERENCE (ticker VARCHAR(10), SENTIMENT_ID INT, " \
+                                  f"PRIMARY KEY (ticker, SENTIMENT_ID));"
         try:
             cursor = self.conn_sentiment.cursor()
             cursor.execute(sql_statement_sentiment)

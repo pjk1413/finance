@@ -5,6 +5,7 @@ import Init.schedule as schedule
 from config_read import config as get_values
 import Data.Technical_Data.Retrieve_Data.retrieve_technical as rt
 import Data.Sentiment_Data.Retrieve_Data.retrieve_sentiment as rs
+import Data.Sentiment_Data.Retrieve_Data.sentiment_reference as sr
 
 
 class view:
@@ -18,9 +19,10 @@ class view:
         main_menu = ConsoleMenu("Welcome to Finance.Quant")
 
         main_menu_item_list = [
-            FunctionItem("Update all Data Historical", self.gather_data_historical),
-            FunctionItem("Update all Data Recent", self.gather_data_recent),
-            FunctionItem("Clean All Data", self.clean_data),
+            FunctionItem("Load All Data Historical", self.gather_data_historical),
+            FunctionItem("Update Data Latest", self.gather_data_recent),
+            FunctionItem("Update Sentiment Reference", sr.sentiment_reference().run_reference_load),
+            FunctionItem("Clean Data", self.clean_data),
             FunctionItem("Edit Configuration File", self.edit_config, menu=main_menu),
             FunctionItem("View Schedule", self.view_schedule),
             FunctionItem("Run Schedule", self.run_schedule)
