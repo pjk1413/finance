@@ -7,7 +7,8 @@ from Database.utility import list_of_schema
 import mysql.connector.errors as mysqlError
 from Database.Service.database import insert_log_statement
 import sys
-import subprocess
+from Logger.logger import log_error
+from Logger.logger import log_status
 import Data.Init_Gather.gather_stock_data as gsd
 
 
@@ -27,14 +28,15 @@ class build_tables:
 
     def build_tables(self):
         function_list = [
-            self.create_error_log_table(),
-            self.create_status_table(),
             self.create_stock_list_table(),
             self.prepare_dow_table(),
             gsd.gather_stock_data().run_init(),
             self.create_all_stock_tables(),
             self.create_all_sentiment_tables(),
-            self.grant_access_to_stock_tables()
+            self.grant_access_to_stock_tables(),
+            self.build_user_table(),
+            self.build_schedule_table(),
+            self.create_status_table()
         ]
 
         try:
@@ -43,38 +45,11 @@ class build_tables:
                 result = func
                 if not result:
                     print("ERROR : Unable to create all tables.  Application will exit...")
-                    insert_error_log("ERROR IN TABLE BUILD - DID NOT COMPLETE BUILD TABLE TASKS - PROGRAM TERMINATED")
-            insert_status_log("FINISHED : All tables setup/startup completed successfully")
+                    log_error("Could not build all tables.")
+            log_status("All tables setup/startup completed successfully")
         except:
             input("PRESS ANY KEY TO EXIT PROGRAM")
             sys.exit(0)
-
-    def create_status_table(self):
-        sql_statement = "CREATE TABLE IF NOT EXISTS STATUS_TBL (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                        "dt DATETIME, statement VARCHAR(255));"
-        try:
-            cursor = self.conn_utility.cursor()
-            cursor.execute(sql_statement)
-
-            insert_log_statement("Status table created successfully")
-            return True
-        except mysqlError:
-            insert_log_statement(f"ERROR : Could not create Status table \n SQL Error: {mysqlError}")
-            return False
-
-
-    def create_error_log_table(self):
-        sql_statement = "CREATE TABLE IF NOT EXISTS error_log (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                        "dt DATETIME, description VARCHAR(255));"
-        try:
-            cursor = self.conn_utility.cursor()
-            cursor.execute(sql_statement)
-            insert_log_statement("Error Log table created successfully")
-            return True
-        except mysqlError:
-            insert_log_statement(f"ERROR : Could not create Error Log table \n SQL Error : {mysqlError}")
-            return False
-
 
     def create_stock_list_table(self):
         table_name = "STOCK_LIST_TBL"
@@ -95,10 +70,10 @@ class build_tables:
         try:
             cursor = self.conn_stock.cursor()
             cursor.execute(sql_statement)
-            insert_log_statement("Stock List table created successfully")
+            log_status("Stock List table created successfully")
             return True
-        except mysqlError:
-            insert_error_log(f"ERROR : Could not create Stock List table \n SQL Error : {mysqlError}")
+        except:
+            log_error(f"Could not create Stock List table")
             return False
 
     def create_sentiment_reference_table(self):
@@ -108,9 +83,9 @@ class build_tables:
         try:
             cursor = self.conn_sentiment.cursor()
             cursor.execute(sql_statement_sentiment)
-            insert_log_statement("Sentiment_Data reference table created successfully")
+            log_status("Sentiment_Data reference table created successfully")
         except mysqlError:
-            insert_error_log(f"ERROR CREATING TABLE REFERENCE: {mysqlError}")
+            log_error(f"Could not create sentiment_data_reference table")
             result = False
         return result
 
@@ -141,8 +116,9 @@ class build_tables:
         try:
             cursor = self.conn_sentiment.cursor()
             cursor.execute(sql_statement_sentiment)
+            log_status("Created sentimenta data table")
         except mysqlError:
-            insert_error_log(f"ERROR CREATING TABLE SENTIMENT: {mysqlError}")
+            log_error(f"Could not create sentiment data table")
             result = False
         return result
 
@@ -162,11 +138,35 @@ class build_tables:
         try:
             cursor = self.conn_stock.cursor()
             cursor.execute(sql_statement)
-            insert_log_statement("Stock Data table created successfully")
-        except mysqlError:
-            insert_error_log(f"ERROR CREATING TABLE PRICES: {self.conn.get_warnings}")
+            log_status("Stock Data table created successfully")
+        except:
+            log_error(f"Could not create table stock_data")
             result = False
         return result
+
+    def build_user_table(self):
+        sql_statement = f"CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(100), password VARCHAR(100));"
+        try:
+            cusor = self.conn_utility.cursor()
+            cusor.execute(sql_statement)
+            log_status("User table created successfully")
+            return True
+        except:
+            log_error("Could not create user table")
+            return False
+
+    def build_schedule_table(self):
+        sql_statement = f"CREATE TABLE IF NOT EXISTS schedules (id INT AUTO_INCREMENT PRIMARY KEY, description VARCHAR(100), " \
+                        f"time TIME, frequency VARCHAR(10));"
+        try:
+            cusor = self.conn_utility.cursor()
+            cusor.execute(sql_statement)
+            log_status("Schedule table created successfully")
+            return True
+        except:
+            log_error("Could not create schedules table")
+            return False
+
 
     def prepare_dow_table(self):
         # TODO List of dow_30 stocks needs to be placed somewhere to be looped through
@@ -175,8 +175,20 @@ class build_tables:
         try:
             cursor = self.conn_stock.cursor()
             cursor.execute(sql_statement)
-            insert_log_statement("Dow30 table created successfully")
+            log_status("Dow30 table created successfully")
             return True
         except:
-            insert_error_log(f"ERROR CREATING TABLE DOW_30: {self.conn.get_warnings}")
+            log_error(f"Could not create Dow30 table")
+            return False
+
+    def create_status_table(self):
+        sql_statement = f"CREATE TABLE IF NOT EXISTS table_status (id INT AUTO_INCREMENT PRIMARY KEY, table_name VARCHAR(50), " \
+                        f"last_update DATETIME);"
+        try:
+            cursor = self.conn_stock.cursor()
+            cursor.execute(sql_statement)
+            log_status("table_status table created successfully")
+            return True
+        except:
+            log_error(f"Could not create table_status table")
             return False

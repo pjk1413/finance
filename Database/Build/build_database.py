@@ -1,6 +1,6 @@
 from config_read import config as get_values
-
-from Database.Service.database import insert_log_statement
+from Logger.logger import log_error
+from Logger.logger import log_status
 import mysql.connector as connect
 import sys
 from Database.utility import list_of_schema
@@ -23,6 +23,7 @@ class build_database:
     def build_database(self):
         result = False
         result = self.root_prep()
+        result = self.global_database_settings()
         result = self.create_user()
 
         for db in self.list_of_db:
@@ -31,7 +32,7 @@ class build_database:
 
         result = self.flush_all()
         if result:
-            insert_log_statement("FINISHED : All database setup/startup completed succesfully")
+            log_status("Database setup/startup was successful", )
         else:
             print("""
             ERROR : Error during setup/startup of database \n \n
@@ -52,10 +53,10 @@ class build_database:
             cursor.execute(sql_statement)
             conn.close()
 
-            insert_log_statement("Root user altered - all privileges granted to root user")
+            log_status("Root user altered - all privileges granted to root user")
             return True
-        except connect.errors as err:
-            insert_log_statement("ERROR : Could not alter root user\n SQL Error : " + err)
+        except:
+            log_error("ERROR : Could not alter root user")
             return False
 
 
@@ -71,10 +72,28 @@ class build_database:
             cursor.execute(sql_statement)
             conn.close()
 
-            insert_log_statement(f"Database created successfully {db_name}")
+            log_status(f"Database created successfully {db_name}")
             return True
-        except connect.errors as err:
-            insert_log_statement(f"ERROR : Could not create database {db_name} \n SQL Error : " + err)
+        except:
+            log_error(f"ERROR : Could not create database {db_name}")
+            return False
+
+    def global_database_settings(self, io_capacity=1000):
+        sql_statement = f"SET GLOBAL innodb_io_capacity={io_capacity};"
+
+        try:
+            conn = connect.connect(
+                host=f"{self.host}",
+                user=f"{self.db_user_root}",
+                password=f"{self.db_root_pass}",
+            )
+            cursor = conn.cursor()
+            cursor.execute(sql_statement)
+            conn.close()
+            log_status(f"Global innodb_capacity set to " + io_capacity)
+            return True
+        except:
+            log_error(f"ERROR : Could not set innodb_capacity")
             return False
 
     def create_user(self):
@@ -89,10 +108,10 @@ class build_database:
             cursor = conn.cursor()
             cursor.execute(sql_statement)
             conn.close()
-            insert_log_statement(f"User created successfully {self.user}")
+            log_status(f"User created successfully {self.user}")
             return True
         except connect.errors as err:
-            insert_log_statement(f"ERROR : Could not create {self.user} \n SQL Error : " + err)
+            log_error(f"ERROR : Could not create {self.user}")
             return False
 
 
@@ -108,10 +127,10 @@ class build_database:
             cursor = conn.cursor()
             cursor.execute(sql_statement)
             conn.close()
-            insert_log_statement(f"USER: '{self.user}' granted all privileges on {db_name}")
+            log_status(f"USER: '{self.user}' granted all privileges on {db_name}")
             return True
-        except connect.errors as err:
-            insert_log_statement(f"ERROR : Could not grant privileges to '{self.user}' on {db_name} \n SQL Error : " + err)
+        except:
+            log_error(f"ERROR : Could not grant privileges to '{self.user}' on {db_name}")
             return False
 
 
@@ -127,9 +146,9 @@ class build_database:
             cursor = conn.cursor()
             cursor.execute(sql_statement)
             conn.close()
-            insert_log_statement("Flushed all privileges")
+            log_status("Flushed all privileges")
             return True
-        except connect.errors as err:
-            insert_log_statement("ERROR : Could not flush privileges \n SQL Error : " + err)
+        except:
+            log_error("ERROR : Could not flush privileges")
             return False
 

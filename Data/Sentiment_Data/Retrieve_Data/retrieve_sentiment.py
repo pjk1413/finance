@@ -56,7 +56,7 @@ class retrieve_sentiment_data:
             response = requests.get(f"https://api.tiingo.com/tiingo/news?tickers={ticker}&"
                                     f"startDate={start_date}&format=json&resampleFreq=daily&token={self.tiingo_api_key}")
             if "Error:" in response.text:
-                insert_error_log(f"ERROR: {clean(response.text).replace('Error: ', '')}")
+                print("ERROR")
                 return "Error"
             else:
                 return json.loads(response.text)

@@ -41,6 +41,9 @@ class config:
         self.ema_periods = self.get_values_list("ema_periods", return_type="num")
         self.ema_smoothing = int(self.get_value("ema_smoothing"))
 
+    def get_schedule_run_times(self):
+        sql_statement = "SELECT "
+
     def get_values_list(self, str, return_type= "str"):
         file = open("config.txt")
 

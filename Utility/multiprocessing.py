@@ -1,26 +1,29 @@
 import multiprocessing
+import datetime
+import subprocess
 import time
 
-class multiprocessing:
-    def __init__(self, threads = multiprocessing.cpu_count() - 2):
-        self.o = None
+# def run(function, args=()):
+#     func = multiprocessing.Process(target=function, args=args)
+#     func.start()
 
 
-    def start(self):
-        for j in self.jobs:
-            j.start()
 
-        for j in self.jobs:
-            j.join()
+class multi_processing:
+    def __init__(self):
+        self.list_of_processes = []
+        self.max_process = multiprocessing.cpu_count() -1
 
+    def add_process(self, function, shell=False):
+        new_process = multiprocessing.Process(target=function, name=f'{datetime.datetime.now().strftime("%d_%M_%S")}')
+        new_process.daemon = True
+        if len(self.list_of_processes) > self.max_process:
+            self.join_processes()
+            return False
+        new_process.start()
+        self.list_of_processes.append(new_process)
+        return True
 
-    def add_job(self, function, args: ()):
-        self.jobs.append(multiprocessing.Process(target=function, args=args))
-        if len(self.jobs) >= self.threads:
-            self.start()
-
-
-class multiprocessing:
-    def __init__(self, processes = 5):
-        self.processes = processes
-        self.jobs = []
+    def join_processes(self):
+        for process in self.list_of_processes:
+            process.join()
