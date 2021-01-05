@@ -1,6 +1,6 @@
 import functools
 import Database.QueryHandler as qh
-import Data.Technical_Data.Retrieve_Data.retrieve_technical as rt
+import Init.schedule as schedule
 from flask import Blueprint
 import subprocess
 from flask import flash
@@ -13,13 +13,30 @@ from flask import url_for
 from Utility.global_ import global_dict
 
 bp = Blueprint("schedule", __name__, url_prefix="/schedule")
+schedule_process = None
 
-@bp.route('/run')
+@bp.route('/change-start-time/<description>/<time>/<frequency>')
+def change_start_time(description, time, frequency):
+    # time format 00:00
+    schedule.update_start_time(description, time, frequency)
+    return {
+        'description': description,
+        'time': time,
+        'frequency': frequency
+    }
+
+@bp.route('/start')
 def run_schedule():
-    subprocess.call('start python run_subprocess.py run_schedule', shell=True)
-    return 'Schedule started'
+    global schedule_process
+    schedule_process = subprocess.Popen('start python run_subprocess.py run_schedule', shell=True, stdout=subprocess.PIPE)
+    return {
+        'schedule': True
+    }
 
 @bp.route('/stop')
 def stop_schedule():
-    global_dict['run'] = False
-    return 'Schedule stopped'
+    global schedule_process
+    schedule_process.terminate()
+    return {
+        'schedule': False
+    }
