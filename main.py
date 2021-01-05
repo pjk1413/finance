@@ -13,6 +13,7 @@ import Data.stock_list as st_list
 import time
 
 app = create_app()
+CORS(app)
 
 if __name__ == '__main__':
     startup()
