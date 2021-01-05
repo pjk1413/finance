@@ -108,8 +108,8 @@ class build_tables:
 
     def create_sentiment_table(self):
         result = True
-        sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS SENTIMENT_DATA (id INT AUTO_INCREMENT PRIMARY KEY, " \
-                                  f"crawlDate DATETIME, publishedDate VARCHAR(100), tickers VARCHAR(2000), tags VARCHAR(2000), " \
+        sql_statement_sentiment = f"CREATE TABLE IF NOT EXISTS SENTIMENT_DATA " \
+                                  f"(crawlDate DATETIME, publishedDate VARCHAR(100), tickers VARCHAR(2000), tags VARCHAR(2000), " \
                                   f"source VARCHAR(255), title VARCHAR(500), url VARCHAR(500), " \
                                   f"sent_neg FLOAT(8,4), sent_neutral FLOAT(8,4), sent_pos FLOAT(8,4), sent_compound FLOAT(8,4), " \
                                   f"CONSTRAINT unique_value UNIQUE (url, publishedDate));"
@@ -131,7 +131,7 @@ class build_tables:
 
     def create_all_stock_tables(self):
         result = True
-        sql_statement = f"CREATE TABLE IF NOT EXISTS STOCK_DATA (id INT AUTO_INCREMENT PRIMARY KEY, ticker VARCHAR(15), " \
+        sql_statement = f"CREATE TABLE IF NOT EXISTS STOCK_DATA (ticker VARCHAR(15), " \
                         f"dt DATETIME NOT NULL, open FLOAT(12,4), close FLOAT(12,4), high FLOAT(12,4), low FLOAT(12,4), adj_close FLOAT(12,4), " \
                         f"volume INT, split VARCHAR(25), dividend FLOAT(12,4), " \
                         f"CONSTRAINT unique_entry UNIQUE (ticker, dt));"

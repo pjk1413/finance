@@ -50,7 +50,7 @@ class retrieve_sentiment_data:
             if start_date is None:
                 start_date = (datetime.datetime.now() - datetime.timedelta(days=365 * years_back)).strftime('%Y-%m-%d')
         if range == 'historical':
-            start_date = (datetime.datetime.now() - datetime.timedelta(days=365 * years_back)).strftime('%Y-%m-%d')
+            start_date = datetime.datetime.strptime('2018-01-01', '%Y-%m-%d')
         if start_date is not None:
             # TODO combine tickers into groups of 5 to grab more data at once
             response = requests.get(f"https://api.tiingo.com/tiingo/news?tickers={ticker}&"

@@ -1,4 +1,5 @@
 import csv
+import time
 from json import JSONDecodeError
 import mysql.connector as connect
 from Interface.utility import printProgressBar
@@ -6,6 +7,7 @@ from config_read import config as con
 import Data.Technical_Data.Model.stock_model as stock_model
 from Data.Technical_Data.Model.stock_model import stock_model
 import requests
+import mysql.connector.errors as err
 from Data.stock_list import stock_list
 from Database.Service.database import insert_error_log
 import datetime
@@ -21,14 +23,16 @@ class retrieve_technical_bulk:
         self.np = config.process_number
         self.tiingo_api_key = config.tiingo_api_key
         self.list_of_stocks = stock_list().get_list_of_stocks()
+        # self.list_of_stocks = [('AAPL',), ('GOOG',), ('IBM',), ('GM',)]
         self.temp_csv_file_name = "temp_data_load.csv"
         self.size = 0
         self.cores = multiprocessing.cpu_count()
 
     def run_data_load(self, range='latest'):
         url_list = []
+        st = time.perf_counter()
         # Create temp csv file
-        with open(self.temp_csv_file_name, mode='w', newline='') as data_download:
+        with open(self.temp_csv_file_name, mode='w', newline='', encoding='utf-8') as data_download:
             data_writer = csv.writer(data_download, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             data_writer.writerow(['date', 'ticker', 'open', 'close', 'high', 'low', 'adj_close',
                                     'volume', 'split', 'dividend'])
@@ -56,10 +60,14 @@ class retrieve_technical_bulk:
         # Load data into database
         self.bulk_load_data()
         print(f"Load data into database: {timer() - start}")
+        fin = time.perf_counter()
+        f = open('time_file.txt', 'a')
+        f.write(f'Technical Finish: {fin - st} seconds')
+        f.close()
 
     def build_url(self, ticker, range, years_back = 2):
         if range == "historical":
-            start_date = (datetime.datetime.now() - datetime.timedelta(days=365 * years_back)).strftime('%Y-%m-%d')
+            start_date = datetime.datetime.strptime('2018-01-01', '%Y-%m-%d')
         elif range == "latest":
             start_date = (datetime.datetime.now() - datetime.timedelta(days=3)).strftime('%Y-%m-%d')
         elif range == "month":
@@ -68,10 +76,10 @@ class retrieve_technical_bulk:
         return url
 
     def to_csv(self, obj_list):
-        with open(self.temp_csv_file_name, mode='a', newline='') as data_download:
+        with open(self.temp_csv_file_name, mode='a', newline='', encoding='utf-8') as data_download:
             data_writer = csv.writer(data_download, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             for x in obj_list:
-                data_writer.writerow([x.date, x.symbol, x.open, x.close, x.high, x.low, x.adj_close, x.volume, x.split, x.dividend])
+                data_writer.writerow([x.symbol, x.date, x.open, x.close, x.high, x.low, x.adj_close, x.volume, x.split, x.dividend])
 
     def parse_stock_obj(self, ticker, data):
         obj_list = []
@@ -116,6 +124,8 @@ class retrieve_technical_bulk:
             pass
 
     def bulk_load_data(self):
+        TEMP_TABLE = 'TEMPORARY_TECHNICAL_DATA_TABLE'
+
         config = con()
         try:
             conn_admin = connect.connect(
@@ -128,45 +138,49 @@ class retrieve_technical_bulk:
                 user=f"{config.db_user}",
                 password=f"{config.db_pass}",
                 database=f"{config.stock_db_name}",
-                allow_local_infile=True
+                allow_local_infile=True,
+                charset='utf8'
             )
 
             cursor = conn_admin.cursor()
-            cursor.execute(f"SET GLOBAL local_infile = ON;")
+            cursor.execute(f"SET GLOBAL local_infile = true;")
             cursor.close()
 
             # Create temporary table like the table being inserted into
             cursor = conn.cursor()
-            cursor.execute(f"CREATE TEMPORARY TABLE temporary_technical_data_table LIKE stock_technical_data.stock_data;")
+            cursor.execute(f"CREATE TEMPORARY TABLE {TEMP_TABLE} LIKE stock_technical_data.stock_data;")
             cursor.close()
 
             # Load data into temporary table
             cursor = conn.cursor()
             cursor.execute(f"""LOAD DATA LOCAL INFILE '{self.temp_csv_file_name}' 
-                INTO TABLE temporary_technical_data_table 
+                IGNORE  
+                INTO TABLE {TEMP_TABLE} 
                 FIELDS TERMINATED BY ',' 
-                ENCLOSED BY '"'
-                LINES TERMINATED BY '\n'
+                ENCLOSED BY '"' 
+                LINES TERMINATED BY '\n' 
                 IGNORE 1 ROWS;""")
             cursor.close()
 
             # Load data into proper table
             cursor = conn.cursor()
-            cursor.execute(f"""INSERT INTO stock_technical_data.stock_data
-                SELECT * FROM temporary_technical_data_table
+            cursor.execute(f"""INSERT INTO stock_technical_data.stock_data 
+                SELECT * FROM {TEMP_TABLE} 
                 ON DUPLICATE KEY UPDATE ticker = VALUES(ticker), dt = VALUES(dt), open = VALUES(open), close = VALUES(close), high = VALUES(high), 
                 low = VALUES(low), adj_close = VALUES(adj_close), volume = VALUES(volume), split = VALUES(split), dividend = VALUES(dividend);""")
+            conn.commit()
             cursor.close()
 
             # Drop temporary table
             cursor = conn.cursor()
-            cursor.execute("DROP TEMPORARY TABLE temporary_technical_data_table;")
+            cursor.execute(f"DROP TEMPORARY TABLE {TEMP_TABLE};")
             cursor.close()
 
             cursor = conn_admin.cursor()
-            cursor.execute(f"SET GLOBAL local_infile = OFF;")
+            cursor.execute(f"SET GLOBAL local_infile = false;")
             cursor.close()
             conn.close()
             conn_admin.close()
-        except:
+        except err:
+            print(err)
             print("ERROR")

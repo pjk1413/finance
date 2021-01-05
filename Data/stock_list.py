@@ -5,6 +5,7 @@ import Database.Build.build_tables as tables
 from Database.Service.database import database
 import mysql.connector as connect
 from Database.Service.database import insert_error_log
+import mysql.connector.errors as err
 
 # Gathers a list of stocks to be brought into the database
 # Refreshes list on a regular basis
@@ -46,17 +47,21 @@ class stock_list:
                     delistingDate = row[5]
                     status = row[6]
 
+                    if delistingDate == 'null' or delistingDate == None:
+                        delistingDate = '0000-00-00'
+
                     sql_statement = f"REPLACE INTO {self.stock_table_list_name} SET ticker = '{ticker}', name = '{name}', status = '{status}', " \
-                                f"exchange = '{exchange}', assetType = '{assetType}', ipoDate = '{ipoDate}', delistingDate = '{delistingDate}';"
+                                f"assetType = '{assetType}', ipoDate = '{ipoDate}', delistingDate = '{delistingDate}';"
                     try:
-                        cursor = connect.connect(
-                            host=f"{self.host}",
-                            user=f"{self.user}",
-                            password=f"{self.password}",
-                            database=f"{self.stock_db}"
-                        ).cursor()
+                        # cursor = connect.connect(
+                        #     host=f"{self.host}",
+                        #     user=f"{self.user}",
+                        #     password=f"{self.password}",
+                        #     database=f"{self.stock_db}"
+                        # ).cursor()
+                        cursor = self.conn_stock.cursor()
                         cursor.execute(sql_statement)
-                    except:
+                    except err:
                         print("ERROR: Could not replace stock listings")
 
 
