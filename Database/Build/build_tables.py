@@ -156,8 +156,9 @@ class build_tables:
             return False
 
     def build_schedule_table(self):
-        sql_statement = f"CREATE TABLE IF NOT EXISTS schedules (id INT AUTO_INCREMENT PRIMARY KEY, description VARCHAR(100), " \
-                        f"time TIME, frequency VARCHAR(10) UNIQUE (description));"
+        sql_statement = f"CREATE TABLE IF NOT EXISTS schedules (id INT AUTO_INCREMENT PRIMARY KEY, description VARCHAR(50), " \
+                        f"time TIME, frequency VARCHAR(10) " \
+                        f"CONSTRAINT unique_entry UNIQUE (description));"
         try:
             cusor = self.conn_utility.cursor()
             cusor.execute(sql_statement)
