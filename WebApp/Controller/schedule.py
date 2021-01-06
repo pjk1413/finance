@@ -15,6 +15,10 @@ from Utility.global_ import global_dict
 bp = Blueprint("schedule", __name__, url_prefix="/schedule")
 schedule_process = None
 
+@bp.route('/get')
+def get_data():
+    return schedule.get_data()
+
 @bp.route('/change-start-time/<description>/<time>/<frequency>')
 def change_start_time(description, time, frequency):
     # time format 00:00

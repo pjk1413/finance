@@ -15,6 +15,18 @@ con = config.config()
 daily_schedule_run_time = con.daily_schedule_run_time
 weekly_schedule_run_time = con.weekly_schedule_run_time
 
+def get_data():
+    sql_statement = f"SELECT * from schedules;"
+    try:
+        conn = db.database().conn_utility
+        cursor = conn.cursor()
+        cursor.execute(sql_statement)
+        results = cursor.fetchall()
+        cursor.close()
+        return results
+    except:
+        print("ERROR")
+
 def update_start_time(description, time, frequency):
     sql_statement = f"REPLACE INTO schedules (description, time, frequency) VALUES('{description}', {time}, '{frequency}');"
     try:
