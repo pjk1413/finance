@@ -19,7 +19,7 @@ def get_data():
     sql_statement = f"SELECT * from schedules;"
     try:
         conn = db.database().conn_utility
-        cursor = conn.cursor()
+        cursor = conn.cursor(dictionary=True)
         cursor.execute(sql_statement)
         results = cursor.fetchall()
         cursor.close()
