@@ -24,11 +24,21 @@ def get_data():
         cursor.execute(sql_statement)
         results = cursor.fetchall()
         cursor.close()
-        return {
-            'schedules': json.dumps(results)
+        dict = {
+            'schedules': []
         }
-    except:
-        print("ERROR")
+        for result in results:
+            dict['schedules'].append({
+                'id': result['id'],
+                'description': result['description'],
+                'time': str(result['time']),
+                'frequency': result['frequency']
+            })
+        print(dict)
+        return dict
+    except json.JSONDecodeError as e:
+        print(e)
+        return "Error"
 
 def update_start_time(description, time, frequency):
     sql_statement = f"REPLACE INTO schedules (description, time, frequency) VALUES('{description}', {time}, '{frequency}');"
