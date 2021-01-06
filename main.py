@@ -1,6 +1,7 @@
 from Init.init import startup
 from flask_cors import CORS
 from flask import Flask
+from Init.schedule import get_data
 from Init.schedule import run_schedule as sched_run
 from Init.schedule import stop_schedule as sched_stop
 import Data.Technical_Data.Retrieve_Data.retrieve_technical as rt
@@ -16,8 +17,9 @@ app = create_app()
 CORS(app)
 
 if __name__ == '__main__':
-    startup()
-    app.run(debug=True, use_reloader=True)
+    get_data()
+    # startup()
+    # app.run(debug=True, use_reloader=True)
     # print(lr.linear_regression().retrieve_data('AAPL'))
 
 

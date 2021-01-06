@@ -23,7 +23,11 @@ def get_data():
         cursor.execute(sql_statement)
         results = cursor.fetchall()
         cursor.close()
-        return results
+
+        print(results)
+        return {
+            'schedules': results
+        }
     except:
         print("ERROR")
 
