@@ -6,6 +6,7 @@ import Data.Sentiment_Data.Retrieve_Data.retrieve_sentiment as rs
 import Data.Init_Gather.gather_stock_data as gsd
 import Database.Build.build_tables as build_tables
 import config_read as config
+import json
 from Utility.global_ import global_dict
 import os
 
@@ -23,10 +24,8 @@ def get_data():
         cursor.execute(sql_statement)
         results = cursor.fetchall()
         cursor.close()
-
-        print(results)
         return {
-            'schedules': results
+            'schedules': json.dumps(results)
         }
     except:
         print("ERROR")
