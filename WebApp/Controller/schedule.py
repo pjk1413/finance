@@ -15,6 +15,13 @@ from Utility.global_ import global_dict
 bp = Blueprint("schedule", __name__, url_prefix="/schedule")
 schedule_process = None
 
+@bp.route('/status', methods=['GET'])
+def status():
+    if schedule_process == None:
+        return False
+    else:
+        return True
+
 @bp.route('/get', methods=['GET'])
 def get_data():
     return schedule.get_data()
