@@ -18,9 +18,9 @@ schedule_process = None
 @bp.route('/status', methods=['GET'])
 def status():
     if schedule_process == None:
-        return False
+        return 'False'
     else:
-        return True
+        return 'True'
 
 @bp.route('/get', methods=['GET'])
 def get_data():
@@ -48,6 +48,7 @@ def run_schedule():
 def stop_schedule():
     global schedule_process
     schedule_process.terminate()
+    schedule_process = None
     return {
         'schedule': False
     }
