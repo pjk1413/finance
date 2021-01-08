@@ -12,14 +12,16 @@ import Data.Prediction_Data.Retrieve_Data.linear_regression as lr
 import datetime
 import Data.stock_list as st_list
 import time
+import run_subprocess
 
 app = create_app()
 CORS(app)
 
 if __name__ == '__main__':
-    get_data()
-    # startup()
-    # app.run(debug=True, use_reloader=True)
+    startup()
+    proc = run_subprocess.processor()
+    globals()['multiprocessor'] = proc
+    app.run(debug=True, use_reloader=True)
     # print(lr.linear_regression().retrieve_data('AAPL'))
 
 

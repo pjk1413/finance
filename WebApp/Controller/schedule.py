@@ -13,6 +13,7 @@ from flask import url_for
 from Utility.global_ import global_dict
 
 bp = Blueprint("schedule", __name__, url_prefix="/schedule")
+
 schedule_process = None
 
 @bp.route('/status', methods=['GET'])
@@ -39,7 +40,9 @@ def change_start_time(description, time, frequency):
 @bp.route('/start')
 def run_schedule():
     global schedule_process
-    schedule_process = subprocess.Popen('start python run_subprocess.py run_schedule', shell=True, stdout=subprocess.PIPE)
+    processor = globals()['multiprocessor']
+    processor.run_process('run_schedule')
+    schedule_process = True
     return {
         'schedule': True
     }
@@ -47,7 +50,8 @@ def run_schedule():
 @bp.route('/stop')
 def stop_schedule():
     global schedule_process
-    schedule_process.terminate()
+    processor = globals()['multiprocessor']
+    processor.terminate_process('schedule')
     schedule_process = None
     return {
         'schedule': False
