@@ -10,10 +10,10 @@ from flask import render_template
 from flask import request
 from flask import session
 from flask import url_for
-from Utility.global_ import global_dict
+from Utility.config import global_dict
+import run_subprocess
 
 bp = Blueprint("schedule", __name__, url_prefix="/schedule")
-
 schedule_process = None
 
 @bp.route('/status', methods=['GET'])
@@ -40,8 +40,7 @@ def change_start_time(description, time, frequency):
 @bp.route('/start')
 def run_schedule():
     global schedule_process
-    processor = globals()['multiprocessor']
-    processor.run_process('run_schedule')
+    run_subprocess.add_process('schedule', schedule.run_schedule)
     schedule_process = True
     return {
         'schedule': True
@@ -50,8 +49,7 @@ def run_schedule():
 @bp.route('/stop')
 def stop_schedule():
     global schedule_process
-    processor = globals()['multiprocessor']
-    processor.terminate_process('schedule')
+    run_subprocess.terminate_process('schedule')
     schedule_process = None
     return {
         'schedule': False

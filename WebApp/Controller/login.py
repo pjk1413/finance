@@ -12,7 +12,7 @@ from werkzeug.security import check_password_hash
 from werkzeug.security import generate_password_hash
 import random
 import json
-from Utility.global_ import global_dict
+from Utility.config import global_dict
 
 bp = Blueprint("auth", __name__, url_prefix="/auth")
 

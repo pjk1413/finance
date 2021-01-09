@@ -13,15 +13,14 @@ import datetime
 import Data.stock_list as st_list
 import time
 import run_subprocess
+from Utility.config import global_dict
 
 app = create_app()
 CORS(app)
 
 if __name__ == '__main__':
     startup()
-    proc = run_subprocess.processor()
-    globals()['multiprocessor'] = proc
-    app.run(debug=True, use_reloader=True)
+    run_subprocess.start_server(app)
     # print(lr.linear_regression().retrieve_data('AAPL'))
 
 

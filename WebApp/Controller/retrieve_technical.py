@@ -10,7 +10,7 @@ from flask import render_template
 from flask import request
 from flask import session
 from flask import url_for
-from Utility.global_ import global_dict
+from Utility.config import global_dict
 
 bp = Blueprint("technical", __name__, url_prefix="/stock")
 

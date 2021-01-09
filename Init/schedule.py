@@ -7,7 +7,7 @@ import Data.Init_Gather.gather_stock_data as gsd
 import Database.Build.build_tables as build_tables
 import config_read as config
 import json
-from Utility.global_ import global_dict
+from Utility.config import global_dict
 import os
 
 
